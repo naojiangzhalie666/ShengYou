@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/color_white"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_88"
+        android:background="@color/color_white">
+
+        <ImageView
+            android:id="@+id/iv_black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:padding="@dimen/dp_13"
+            android:src="@mipmap/square_release_back" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="@dimen/dp_13"
+            android:text="图文发布"
+            android:textColor="@color/color_black"
+            android:textSize="@dimen/sp_20" />
+
+        <TextView
+            android:id="@+id/tv_release"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginRight="@dimen/dp_13"
+            android:layout_marginBottom="@dimen/dp_13"
+            android:enabled="false"
+            android:background="@drawable/shape_button_rounded_reg_select"
+            android:paddingLeft="@dimen/dp_13"
+            android:paddingTop="@dimen/dp_8"
+            android:paddingRight="@dimen/dp_13"
+            android:paddingBottom="@dimen/dp_8"
+            android:text="发布"
+            android:textColor="@color/color_white"
+            android:textSize="@dimen/dp_12" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/title"
+        android:background="@color/color_white">
+
+        <EditText
+            android:id="@+id/et_content"
+            android:layout_width="match_parent"
+            android:layout_height="160dp"
+            android:layout_margin="12dp"
+            android:background="@android:color/transparent"
+            android:gravity="start"
+            android:hint="说点什么吧..."
+            android:maxLength="500"
+            android:textColor="@color/color_black"
+            android:textColorHint="#C6C6C6" />
+
+        <TextView
+            android:id="@+id/tv_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@id/et_content"
+            android:layout_alignBottom="@id/et_content"
+            android:text="0/500"
+            android:textColor="@color/color_dddddd"
+            android:textSize="@dimen/sp_12" />
+
+
+    </RelativeLayout>
+
+    <cn.bingoogolapple.photopicker.widget.BGASortableNinePhotoLayout
+        android:id="@+id/snpl_moment_add_photos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rl_content"
+        android:layout_margin="12dp"
+        app:bga_snpl_deleteDrawable="@mipmap/bga_pp_ic_delete"
+        app:bga_snpl_deleteDrawableOverlapQuarter="false"
+        app:bga_snpl_editable="true"
+        app:bga_snpl_itemCornerRadius="10dp"
+        app:bga_snpl_itemSpanCount="3"
+        app:bga_snpl_itemWhiteSpacing="10dp"
+        app:bga_snpl_itemWidth="120dp"
+        app:bga_snpl_maxItemCount="9"
+        app:bga_snpl_otherWhiteSpacing="100dp"
+        app:bga_snpl_placeholderDrawable="@mipmap/bga_pp_ic_holder_light"
+        app:bga_snpl_plusDrawable="@mipmap/square_release_increase"
+        app:bga_snpl_plusEnable="true"
+        app:bga_snpl_sortable="true" />
+
+</RelativeLayout>

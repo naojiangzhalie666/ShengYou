@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".mvp.ui.activity.studio.RoomNotiyAct">
+
+    <com.xiaoshanghai.nancang.mvp.ui.view.TitleBarView
+        android:id="@+id/title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:blackImg="@mipmap/square_release_back"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="房间公告"
+        app:titleColor="@color/black" />
+
+    <EditText
+        android:id="@+id/et_notiy_title"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_40"
+        android:layout_marginStart="@dimen/dp_20"
+        android:layout_marginTop="@dimen/dp_20"
+        android:layout_marginEnd="@dimen/dp_20"
+        android:background="@drawable/shape_edit_bg"
+        android:gravity="center_vertical"
+        android:hint="请输入标题"
+        android:maxLength="15"
+        android:maxLines="1"
+        android:paddingLeft="@dimen/dp_10"
+        android:textSize="@dimen/sp_16"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title_bar" />
+
+    <TextView
+        android:id="@+id/tv_num_15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_5"
+        android:text="/15"
+        android:textColor="@color/color_9a9a9a"
+        android:textSize="@dimen/sp_12"
+        app:layout_constraintEnd_toEndOf="@id/et_notiy_title"
+        app:layout_constraintTop_toBottomOf="@id/et_notiy_title" />
+
+    <TextView
+        android:id="@+id/tv_title_num"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:textColor="@color/color_9a9a9a"
+        android:textSize="@dimen/sp_12"
+        app:layout_constraintBaseline_toBaselineOf="@id/tv_num_15"
+        app:layout_constraintBottom_toBottomOf="@id/tv_num_15"
+        app:layout_constraintEnd_toStartOf="@id/tv_num_15"
+        app:layout_constraintTop_toTopOf="@id/tv_num_15" />
+
+
+    <EditText
+        android:id="@+id/et_notiy_commen"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_150"
+        android:layout_marginStart="@dimen/dp_20"
+        android:layout_marginTop="@dimen/dp_20"
+        android:layout_marginEnd="@dimen/dp_20"
+        android:background="@drawable/shape_edit_bg"
+        android:gravity="left"
+        android:hint="请输入内容"
+        android:maxLength="300"
+        android:padding="@dimen/dp_10"
+        android:textSize="@dimen/sp_16"
+        app:layout_constraintEnd_toEndOf="@id/tv_num_15"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_num_15" />
+
+    <TextView
+        android:id="@+id/tv_notiy_commen_300"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_5"
+        android:text="/300"
+        android:textColor="@color/color_9a9a9a"
+        android:textSize="@dimen/sp_12"
+        app:layout_constraintEnd_toEndOf="@id/et_notiy_commen"
+        app:layout_constraintTop_toBottomOf="@id/et_notiy_commen" />
+
+    <TextView
+        android:id="@+id/tv_notiy_commen_num"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:textColor="@color/color_9a9a9a"
+        android:textSize="@dimen/sp_12"
+        app:layout_constraintBaseline_toBaselineOf="@id/tv_notiy_commen_300"
+        app:layout_constraintBottom_toBottomOf="@id/tv_notiy_commen_300"
+        app:layout_constraintEnd_toStartOf="@id/tv_notiy_commen_300"
+        app:layout_constraintTop_toTopOf="@id/tv_notiy_commen_300" />
+
+    <TextView
+        android:enabled="false"
+        android:id="@+id/tv_commit"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_40"
+        android:layout_marginStart="@dimen/dp_38"
+        android:layout_marginEnd="@dimen/dp_38"
+        android:layout_marginBottom="@dimen/dp_50"
+        android:gravity="center"
+        android:text="确定"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp_16"
+        android:background="@drawable/shape_button_rounded_reg_select"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

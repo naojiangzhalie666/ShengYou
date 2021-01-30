@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context=".mvp.ui.activity.mine.BindPhoneAct">
+
+    <com.xiaoshanghai.nancang.mvp.ui.view.TitleBarView
+        android:id="@+id/title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:title="绑定手机"
+        app:titleColor="@color/black" />
+
+    <ImageView
+        android:layout_width="@dimen/dp_132"
+        android:layout_height="@dimen/dp_134"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/dp_40"
+        android:src="@mipmap/icon_my_phone_num" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/dp_33"
+        android:text="您当前绑定的手机号为"
+        android:textColor="@color/black"
+        android:textSize="@dimen/sp_12" />
+
+    <TextView
+        android:id="@+id/tv_phone_num"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/dp_10"
+        android:text="134****8989"
+        android:textColor="@color/color_ff6489"
+        android:textSize="@dimen/sp_16" />
+
+    <TextView
+        android:id="@+id/tv_change"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_45"
+        android:layout_marginStart="@dimen/dp_60"
+        android:layout_marginTop="@dimen/dp_40"
+        android:layout_marginEnd="@dimen/dp_60"
+        android:background="@drawable/shape_p_r20_bg"
+        android:gravity="center"
+        android:text="更改手机号"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp_16" />
+
+
+</LinearLayout>

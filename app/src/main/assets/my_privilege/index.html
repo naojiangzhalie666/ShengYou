@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>贵族特权</title>
+</head>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  li {
+    list-style-type: none;
+  }
+
+  .w {
+    height: 100%;
+    padding: 0 12px;
+
+  }
+
+  a {
+    display: block;
+    text-decoration: none;
+    color: #fff;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  }
+
+  .w_hd {
+    display: inline-flex;
+    width: 100%;
+    height: 26px;
+    line-height: 26px;
+    text-align: center;
+    font-size: 12px;
+    color: #010101;
+  }
+
+  .w_hd>li {
+    flex: 1;
+  }
+
+  .li1 {
+    color: #CAA351;
+    border-bottom: 1px solid #CAA351;
+  }
+
+  .li_a {
+    color: #111;
+  }
+
+  .w_swiper {
+    height: 180px;
+    background: url('./images/my_nobleman_background@3x.png') no-repeat;
+    background-size: 100%;
+
+  }
+
+  .w_swiper_tag {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 29px;
+    width: 86px;
+    height: 83px;
+    background: url('./images/baron@3x.png') no-repeat;
+    background-size: 100%;
+  }
+
+  .w_swiper_tag_1 {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 29px;
+    width: 77px;
+    height: 87px;
+    background: url('./images/Viscount@3x.png') no-repeat;
+    background-size: 100%;
+  }
+
+  .w_swiper_tag_2 {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 29px;
+    width: 88px;
+    height: 89px;
+    background: url('./images/earl@3x.png') no-repeat;
+    background-size: 100%;
+  }
+
+  .w_swiper_tag_3 {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 29px;
+    width: 114px;
+    height: 91px;
+    background: url('./images/marquis@3x.png') no-repeat;
+    background-size: 100%;
+  }
+
+  .w_swiper_tag_4 {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 29px;
+    width: 126px;
+    height: 126px;
+    background: url('./images/duke@3x.png') no-repeat;
+    background-size: 100%;
+  }
+
+  .w_swiper_tag_5 {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 15px;
+    width: 128px;
+    height: 133px;
+    background: url('./images/king@3x.png') no-repeat;
+    background-size: 100%;
+  }
+
+  .w_swiper_tag_7 {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 29px;
+    width: 146px;
+    height: 126px;
+    background: url('./images/emperor@3x.png') no-repeat;
+    background-size: 100%;
+  }
+
+  .w_swiper_name {
+    position: absolute;
+    top: 150px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #CAA351;
+    font-size: 12px;
+  }
+
+  .w_tq {
+    width: 100%;
+    text-align: center;
+  }
+
+  .w_tq_ul {
+    margin-top: -5px;
+  }
+
+  .w_tq_ul>li {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 800
+  }
+
+  .w_tq_li {
+    width: 17px;
+    height: 12px;
+    margin: 0 3px;
+  }
+
+  .w_tq_li1 {
+    background: url('./images/my_nobleman_privilege_ico2@3x.png');
+    background-size: 100%;
+  }
+
+  .w_tq_li2 {
+    background: url('./images/my_nobleman_privilege_ico3@3x.png');
+    background-size: 100%;
+  }
+
+  .w_tq_p {
+    display: inline-block;
+    width: 17px;
+    height: 10px;
+    background: url('./images/my_nobleman_privilege_ico@3x.png');
+    background-size: 100%;
+  }
+
+  .list {
+    width: 100%;
+    height: 480px;
+  }
+
+  .list_ul {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    margin-bottom: 81px;
+  }
+
+  .list_li {
+    flex: 33.33%;
+    margin-top: 20px;
+  }
+
+  .list_li_i1 {
+    display: inline-block;
+    width: 43px;
+    height: 43px;
+    background: url('./images/my_home.png');
+    background-size: 100%;
+  }
+
+  .list_li_i1_a {
+    display: inline-block;
+    width: 43px;
+    height: 43px;
+    background: url('./images/my_nobleman_privilege_medal@3x.png');
+    background-size: 100%;
+  }
+
+  .list_li_i2 {
+    display: inline-block;
+    width: 43px;
+    height: 43px;
+    background: url('./images/my_nobleman_privilege_medal@3x.png');
+    background-size: 100%;
+  }
+
+  .list_li_i3 {
+    display: inline-block;
+    width: 43px;
+    height: 43px;
+    background: url('./images/my_nobleman_privilege_gift@3x.png');
+    background-size: 100%;
+  }
+
+  .list_li_i4 {
+    display: inline-block;
+    width: 43px;
+    height: 43px;
+    background: url('./images/my_nobleman_privilege_expression@3x.png');
+    background-size: 100%;
+  }
+
+  .list_li_i5 {
+    display: inline-block;
+    width: 43px;
+    height: 43px;
+    background: url('./images/my_nobleman_privilege_effect-off@3x.png');
+    background-size: 100%;
+  }
+
+  .list_li_i5_1 {
+    display: inline-block;
+    width: 43px;
+    height: 43px;
+    background: url('./images/my_nobleman_privilege_effect@3x.png');
+    background-size: 100%;
+  }
+
+  .list_li_i6 {
+    display: inline-block;
+    width: 43px;
+    height: 43px;
+    background: url('./images/my_nobleman_privilege_background-off@3x.png');
+    background-size: 100%;
+  }
+
+  .list_li_i6_1 {
+    display: inline-block;
+    width: 43px;
+    height: 43px;
+    background: url('./images/my_nobleman_privilege_background@3x.png');
+    background-size: 100%;
+  }
+
+  .list_li_i7 {
+    display: inline-block;
+    width: 43px;
+    height: 43px;
+    background: url('./images/my_nobleman_privilege_portrait-off@3x.png');
+    background-size: 100%;
+  }
+
+  .list_li_i7_1 {
+    display: inline-block;
+    width: 43px;
+    height: 43px;
+    background: url('./images/my_nobleman_privilege_portrait@3x.png');
+    background-size: 100%;
+  }
+
+  .list_li_i8 {
+    display: inline-block;
+    width: 43px;
+    height: 43px;
+    background: url('./images/my_nobleman_privilege_Bubble-off@3x.png');
+    background-size: 100%;
+  }
+
+  .list_li_i8_1 {
+    display: inline-block;
+    width: 43px;
+    height: 43px;
+    background: url('./images/my_nobleman_privilege_Bubble@3x.png');
+    background-size: 100%;
+  }
+
+  .list_li_i9 {
+    display: inline-block;
+    width: 43px;
+    height: 43px;
+    background: url('./images/my_nobleman_privilege_Halo-off@3x.png');
+    background-size: 100%;
+  }
+
+  .list_li_i9_1 {
+    display: inline-block;
+    width: 43px;
+    height: 43px;
+    background: url('./images/my_nobleman_privilege_Halo@3x.png');
+    background-size: 100%;
+  }
+
+  .list_li_i10 {
+    display: inline-block;
+    width: 43px;
+    height: 43px;
+    background: url('./images/my_nobleman_privilege_invisible-off@3x.png');
+    background-size: 100%;
+  }
+
+  .list_li_i10_1 {
+    display: inline-block;
+    width: 43px;
+    height: 43px;
+    background: url('./images/my_nobleman_privilege_invisible@3x.png');
+    background-size: 100%;
+  }
+
+  .list_li_i11 {
+    display: inline-block;
+    width: 43px;
+    height: 43px;
+    background: url('./images/my_nobleman_privilege_List-off@3x.png');
+    background-size: 100%;
+  }
+
+  .list_li_i11_1 {
+    display: inline-block;
+    width: 43px;
+    height: 43px;
+    background: url('./images/my_nobleman_privilege_List@3x.png');
+    background-size: 100%;
+  }
+
+  .list_li_i12 {
+    display: inline-block;
+    width: 43px;
+    height: 43px;
+    background: url('./images/my_nobleman_privilege_service-off@3x.png');
+    background-size: 100%;
+  }
+
+  .list_li_i12_1 {
+    display: inline-block;
+    width: 43px;
+    height: 43px;
+    background: url('./images/my_nobleman_privilege_service@3x.png');
+    background-size: 100%;
+  }
+
+  .list_li_i13 {
+    display: inline-block;
+    width: 43px;
+    height: 43px;
+    background: url('./images/my_nobleman_privilege_liang-off@3x.png');
+    background-size: 100%;
+  }
+
+  .list_li_i13_1 {
+    display: inline-block;
+    width: 43px;
+    height: 43px;
+    background: url('./images/my_nobleman_privilege_liang@3x.png');
+    background-size: 100%;
+  }
+
+  .list_li_i14 {
+    display: inline-block;
+    width: 43px;
+    height: 43px;
+    background: url('./images/my_nobleman_privilege_hot-off@3x.png');
+    background-size: 100%;
+  }
+
+  .list_li_i14_1 {
+    display: inline-block;
+    width: 43px;
+    height: 43px;
+    background: url('./images/my_nobleman_privilege_hot@3x.png');
+    background-size: 100%;
+  }
+
+
+  .list_li_i15 {
+    display: inline-block;
+    width: 43px;
+    height: 43px;
+    background: url('./images/my_nobleman_privilege_prevent-off@3x.png');
+    background-size: 100%;
+  }
+
+  .list_li_i15_1 {
+    display: inline-block;
+    width: 43px;
+    height: 43px;
+    background: url('./images/my_nobleman_privilege_prevent@3x.png');
+    background-size: 100%;
+  }
+
+</style>
+
+<body>
+<div class="w">
+    <ul class="w_hd">
+        <li class="li1" onclick="go(1)">男爵</li>
+        <li class="li2" onclick="go(2)">子爵</li>
+        <li class="li3" onclick="go(3)">伯爵</li>
+        <li class="li4" onclick="go(4)">侯爵</li>
+        <li class="li5" onclick="go(5)">公爵</li>
+        <li class="li6" onclick="go(6)">国王</li>
+        <li class="li7" onclick="go(7)">皇帝</li>
+    </ul>
+    <div class="w_swiper">
+        <div class="w_swiper_tag"></div>
+        <p class="w_swiper_name">· 男爵贵族 ·</p>
+    </div>
+    <div class="w_tq">
+        <p class="w_tq_p"></p>
+        <ul class="w_tq_ul">
+            <li class="w_tq_li1 w_tq_li"></li>
+            <li>专属特权</li>
+            <li class="w_tq_li2 w_tq_li"></li>
+        </ul>
+    </div>
+    <div class="list">
+        <ul class="list_ul">
+            <li class="list_li">
+                <i class="list_li_i1"></i>
+                <p>贵族主页</p>
+            </li>
+            <li class="list_li">
+                <i class="list_li_i2"></i>
+                <p>贵族勋章</p>
+            </li>
+            <li class="list_li">
+                <i class="list_li_i3"></i>
+                <p>贵族礼物</p>
+            </li>
+            <li class="list_li">
+                <i class="list_li_i4"></i>
+                <p>贵族表情</p>
+            </li>
+            <li class="list_li">
+                <i class="list_li_i5"></i>
+                <p>进出特效</p>
+            </li>
+            <li class="list_li">
+                <i class="list_li_i6"></i>
+                <p>贵族背景</p>
+            </li>
+            <li class="list_li">
+                <i class="list_li_i7"></i>
+                <p>头像勋章</p>
+            </li>
+            <li class="list_li">
+                <i class="list_li_i8"></i>
+                <p>特殊气泡</p>
+            </li>
+            <li class="list_li">
+                <i class="list_li_i9"></i>
+                <p>特殊说话光晕</p>
+            </li>
+            <li class="list_li">
+                <i class="list_li_i10"></i>
+                <p>进场隐身</p>
+            </li>
+            <li class="list_li">
+                <i class="list_li_i11"></i>
+                <p>榜单隐身</p>
+            </li>
+            <li class="list_li">
+                <i class="list_li_i12"></i>
+                <p>专属客服</p>
+            </li>
+            <li class="list_li">
+                <i class="list_li_i13"></i>
+                <p>专属靓号</p>
+            </li>
+            <li class="list_li">
+                <i class="list_li_i14"></i>
+                <p>推荐上热门</p>
+            </li>
+            <li class="list_li">
+                <i class="list_li_i15"></i>
+                <p>防禁言 踢麦</p>
+            </li>
+        </ul>
+    </div>
+</div>
+</body>
+<script>
+  let li1 = document.querySelector('.li1')
+  let li2 = document.querySelector('.li2')
+  let li3 = document.querySelector('.li3')
+  let li4 = document.querySelector('.li4')
+  let li5 = document.querySelector('.li5')
+  let li6 = document.querySelector('.li6')
+  let li7 = document.querySelector('.li7')
+  let w_swiper_name = document.querySelector('.w_swiper_name')
+  let w_swiper_tag = document.querySelector('.w_swiper_tag')
+  let list_li_i5 = document.querySelector('.list_li_i5')
+  let list_li_i6 = document.querySelector('.list_li_i6')
+  let list_li_i7 = document.querySelector('.list_li_i7')
+  let list_li_i8 = document.querySelector('.list_li_i8')
+  let list_li_i9 = document.querySelector('.list_li_i9')
+  let list_li_i10 = document.querySelector('.list_li_i10')
+  let list_li_i11 = document.querySelector('.list_li_i11')
+  let list_li_i12 = document.querySelector('.list_li_i12')
+  let list_li_i13 = document.querySelector('.list_li_i13')
+  let list_li_i14 = document.querySelector('.list_li_i14')
+  let list_li_i15 = document.querySelector('.list_li_i15')
+  function go(e) {
+<!--      window.webkit.messageHandlers.Noble.postMessage({"index":e})-->
+      noble.selectNoble(e)
+  }
+  li1.addEventListener('click', function () {
+    li1.className = 'li1'
+    // li1.classList.remove('li1')
+    li2.classList.remove('li1')
+    li3.classList.remove('li1')
+    li4.classList.remove('li1')
+    li5.classList.remove('li1')
+    li6.classList.remove('li1')
+    li7.classList.remove('li1')
+    w_swiper_name.innerHTML = '· 男爵贵族 ·'
+    w_swiper_name.style.top = '150px'
+    w_swiper_tag.className = 'w_swiper_tag'
+    list_li_i5.className = 'list_li_i5'
+    list_li_i6.className = 'list_li_i6'
+    list_li_i7.className = 'list_li_i7'
+    list_li_i8.className = 'list_li_i8'
+    list_li_i9.className = 'list_li_i9'
+    list_li_i10.className = 'list_li_i10'
+    list_li_i11.className = 'list_li_i11'
+    list_li_i12.className = 'list_li_i12'
+    list_li_i13.className = 'list_li_i13'
+    list_li_i14.className = 'list_li_i14'
+    list_li_i15.className = 'list_li_i15'
+  })
+  li2.addEventListener('click', function () {
+    li2.className = 'li1'
+    li1.classList.remove('li1')
+    li3.classList.remove('li1')
+    li4.classList.remove('li1')
+    li5.classList.remove('li1')
+    li6.classList.remove('li1')
+    li7.classList.remove('li1')
+
+    w_swiper_name.innerHTML = '· 子爵贵族 ·'
+    w_swiper_tag.className = 'w_swiper_tag_1'
+    w_swiper_name.style.top = '150px'
+    list_li_i5.className = 'list_li_i5_1'
+    list_li_i6.className = 'list_li_i6_1'
+    list_li_i7.className = 'list_li_i7'
+    list_li_i8.className = 'list_li_i8'
+    list_li_i9.className = 'list_li_i9'
+    list_li_i10.className = 'list_li_i10'
+    list_li_i11.className = 'list_li_i11'
+    list_li_i12.className = 'list_li_i12'
+    list_li_i13.className = 'list_li_i13'
+    list_li_i14.className = 'list_li_i14'
+    list_li_i15.className = 'list_li_i15'
+
+  })
+  li3.addEventListener('click', function () {
+    li3.className = 'li1'
+    li1.classList.remove('li1')
+    li2.classList.remove('li1')
+    li4.classList.remove('li1')
+    li5.classList.remove('li1')
+    li6.classList.remove('li1')
+    li7.classList.remove('li1')
+
+    w_swiper_name.innerHTML = '· 伯爵贵族 ·'
+    w_swiper_tag.className = 'w_swiper_tag_2'
+    w_swiper_name.style.top = '160px'
+    list_li_i5.className = 'list_li_i5_1'
+    list_li_i6.className = 'list_li_i6_1'
+    list_li_i7.className = 'list_li_i7'
+    list_li_i8.className = 'list_li_i8'
+    list_li_i9.className = 'list_li_i9'
+    list_li_i10.className = 'list_li_i10'
+    list_li_i11.className = 'list_li_i11'
+    list_li_i12.className = 'list_li_i12'
+    list_li_i13.className = 'list_li_i13'
+    list_li_i14.className = 'list_li_i14'
+    list_li_i15.className = 'list_li_i15'
+
+  })
+  li4.addEventListener('click', function () {
+    li4.className = 'li1'
+    li1.classList.remove('li1')
+    li2.classList.remove('li1')
+    li3.classList.remove('li1')
+    li5.classList.remove('li1')
+    li6.classList.remove('li1')
+    li7.classList.remove('li1')
+
+    w_swiper_name.innerHTML = '· 侯爵贵族 ·'
+    w_swiper_tag.className = 'w_swiper_tag_3'
+    w_swiper_name.style.top = '160px'
+    list_li_i5.className = 'list_li_i5_1'
+    list_li_i6.className = 'list_li_i6_1'
+    list_li_i7.className = 'list_li_i7_1'
+    list_li_i8.className = 'list_li_i8_1'
+    list_li_i9.className = 'list_li_i9'
+    list_li_i10.className = 'list_li_i10'
+    list_li_i11.className = 'list_li_i11'
+    list_li_i12.className = 'list_li_i12'
+    list_li_i13.className = 'list_li_i13'
+    list_li_i14.className = 'list_li_i14'
+    list_li_i15.className = 'list_li_i15'
+  })
+  li5.addEventListener('click', function () {
+    li5.className = 'li1'
+    li1.classList.remove('li1')
+    li2.classList.remove('li1')
+    li3.classList.remove('li1')
+    li4.classList.remove('li1')
+    li6.classList.remove('li1')
+    li7.classList.remove('li1')
+
+    w_swiper_name.innerHTML = '· 公爵贵族 ·'
+    w_swiper_tag.className = 'w_swiper_tag_4'
+    w_swiper_name.style.top = '175px'
+    list_li_i5.className = 'list_li_i5_1'
+    list_li_i6.className = 'list_li_i6_1'
+    list_li_i7.className = 'list_li_i7_1'
+    list_li_i8.className = 'list_li_i8_1'
+    list_li_i9.className = 'list_li_i9_1'
+    list_li_i10.className = 'list_li_i10_1'
+    list_li_i11.className = 'list_li_i11'
+    list_li_i12.className = 'list_li_i12'
+    list_li_i13.className = 'list_li_i13'
+    list_li_i14.className = 'list_li_i14'
+    list_li_i15.className = 'list_li_i15'
+  })
+  li6.addEventListener('click', function () {
+    li6.className = 'li1'
+    li1.classList.remove('li1')
+    li2.classList.remove('li1')
+    li3.classList.remove('li1')
+    li4.classList.remove('li1')
+    li5.classList.remove('li1')
+    li7.classList.remove('li1')
+
+    w_swiper_name.innerHTML = '· 国王贵族 ·'
+    w_swiper_tag.className = 'w_swiper_tag_5'
+    w_swiper_name.style.top = '180px'
+    list_li_i5.className = 'list_li_i5_1'
+    list_li_i6.className = 'list_li_i6_1'
+    list_li_i7.className = 'list_li_i7_1'
+    list_li_i8.className = 'list_li_i8_1'
+    list_li_i9.className = 'list_li_i9_1'
+    list_li_i10.className = 'list_li_i10_1'
+    list_li_i11.className = 'list_li_i11_1'
+    list_li_i12.className = 'list_li_i12_1'
+    list_li_i13.className = 'list_li_i13_1'
+    list_li_i14.className = 'list_li_i14'
+    list_li_i15.className = 'list_li_i15'
+  })
+  li7.addEventListener('click', function () {
+    li7.className = 'li1'
+    li1.classList.remove('li1')
+    li3.classList.remove('li1')
+    li4.classList.remove('li1')
+    li5.classList.remove('li1')
+    li6.classList.remove('li1')
+    li2.classList.remove('li1')
+
+    w_swiper_name.innerHTML = '· 皇帝贵族 ·'
+    w_swiper_name.style.top = '185px'
+    w_swiper_tag.className = 'w_swiper_tag_7'
+    list_li_i5.className = 'list_li_i5_1'
+    list_li_i6.className = 'list_li_i6_1'
+    list_li_i7.className = 'list_li_i7_1'
+    list_li_i8.className = 'list_li_i8_1'
+    list_li_i9.className = 'list_li_i9_1'
+    list_li_i10.className = 'list_li_i10_1'
+    list_li_i11.className = 'list_li_i11_1'
+    list_li_i12.className = 'list_li_i12_1'
+    list_li_i13.className = 'list_li_i13_1'
+    list_li_i14.className = 'list_li_i14_1'
+    list_li_i15.className = 'list_li_i15_1'
+  })
+
+</script>
+
+</html>

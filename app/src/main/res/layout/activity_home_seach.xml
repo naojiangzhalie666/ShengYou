@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".mvp.ui.activity.main.HomeSeachAct">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_104"
+        android:background="@color/color_white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/iv_black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:padding="@dimen/dp_13"
+            android:src="@mipmap/icon_my_home_slide_back"
+            app:layout_constraintBottom_toBottomOf="@id/rl_seach"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/rl_seach" />
+
+        <LinearLayout
+            android:id="@+id/rl_seach"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dp_40"
+            android:layout_marginEnd="@dimen/dp_10"
+            android:layout_marginBottom="@dimen/dp_15"
+            android:layout_weight="1"
+            android:background="@drawable/shape_round_gay"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/tv_seach"
+            app:layout_constraintStart_toEndOf="@id/iv_black">
+
+            <ImageView
+                android:id="@+id/iv_seach"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/dp_16"
+                android:layout_marginEnd="@dimen/dp_10"
+                android:src="@mipmap/icon_seach" />
+
+            <EditText
+                android:id="@+id/et_seach"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_toEndOf="@id/iv_seach"
+                android:layout_weight="1"
+                android:background="@color/transparent"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:hint="搜索昵称、房间、ID"
+                android:imeOptions="actionSearch"
+                android:maxLines="1"
+                android:textColor="@color/color_999999"
+                android:textSize="@dimen/sp_12" />
+
+            <ImageView
+                android:id="@+id/iv_clear_seach"
+                android:layout_width="@dimen/dp_40"
+                android:layout_height="@dimen/dp_40"
+                android:layout_alignParentEnd="true"
+                android:scaleType="centerInside"
+                android:src="@mipmap/icon_delete"
+                android:visibility="gone" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_seach"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/dp_12"
+            android:text="搜索"
+            android:textColor="@color/black"
+            android:textSize="@dimen/sp_16"
+            app:layout_constraintBottom_toBottomOf="@id/rl_seach"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/rl_seach" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/tv_seach_record"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/sp_12"
+        android:layout_marginTop="@dimen/dp_15"
+        android:text="搜索记录"
+        android:textColor="@color/black"
+        android:textSize="@dimen/sp_16"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title" />
+
+    <ImageView
+        android:id="@+id/iv_delete_seach_record"
+        android:layout_width="@dimen/dp_30"
+        android:layout_height="@dimen/dp_30"
+        android:layout_marginEnd="@dimen/dp_12"
+        android:scaleType="centerInside"
+        android:src="@mipmap/icon_search_delete"
+        app:layout_constraintBottom_toBottomOf="@id/tv_seach_record"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rcy_seach_record"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_40"
+        android:layout_marginStart="@dimen/dp_12"
+        android:layout_marginTop="@dimen/dp_20"
+        android:layout_marginEnd="@dimen/dp_12"
+        android:layout_marginBottom="@dimen/dp_20"
+        app:layout_constraintTop_toBottomOf="@id/tv_seach_record" />
+
+    <TextView
+        android:id="@+id/tv_enter_record"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/sp_12"
+        android:layout_marginTop="@dimen/dp_15"
+        android:text="进房记录"
+        android:textColor="@color/black"
+        android:textSize="@dimen/sp_16"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/rcy_seach_record" />
+
+    <ImageView
+        android:id="@+id/iv_delete_enter_record"
+        android:layout_width="@dimen/dp_30"
+        android:layout_height="@dimen/dp_30"
+        android:layout_marginEnd="@dimen/dp_12"
+        android:scaleType="centerInside"
+        android:src="@mipmap/icon_search_delete"
+        app:layout_constraintBottom_toBottomOf="@id/tv_enter_record"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rcy_enter_record"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_85"
+        android:layout_marginStart="@dimen/dp_12"
+        android:layout_marginTop="@dimen/dp_20"
+        android:layout_marginEnd="@dimen/dp_12"
+        android:layout_marginBottom="@dimen/dp_20"
+        app:layout_constraintTop_toBottomOf="@id/tv_enter_record" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/group_seach_record"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:constraint_referenced_ids="tv_seach_record,iv_delete_seach_record,rcy_seach_record" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/group_enter_room"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:constraint_referenced_ids="tv_enter_record,iv_delete_enter_record,rcy_enter_record" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rcy_seach_result"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_0"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

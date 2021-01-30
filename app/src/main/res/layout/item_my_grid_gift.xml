@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/constrat_bg"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center">
+
+    <ImageView
+        android:id="@+id/iv_gift"
+        android:layout_width="@dimen/dp_90"
+        android:layout_height="@dimen/dp_70"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toTopOf="@id/tv_gift_name"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <TextView
+        android:id="@+id/tv_gift_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_7"
+        android:text=""
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp_12"
+        app:layout_constraintBottom_toTopOf="@id/tv_gift_price"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv_gift" />
+
+    <TextView
+        android:id="@+id/tv_gift_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_7"
+        android:layout_marginBottom="@dimen/dp_7"
+        android:text=""
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp_10"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_gift_name" />
+
+    <TextView
+        android:layout_marginStart="@dimen/dp_10"
+        android:id="@+id/tv_num"
+        app:layout_constraintStart_toStartOf="@id/iv_gift"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_goneMarginTop="@dimen/dp_15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_7"
+        android:layout_marginBottom="@dimen/dp_7"
+        android:text="x2560"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp_10" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

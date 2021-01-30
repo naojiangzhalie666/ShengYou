@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".mvp.ui.activity.mine.NobleOrderAct">
+
+    <com.xiaoshanghai.nancang.mvp.ui.view.TitleBarView
+        android:id="@+id/title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:bgColor="@color/white"
+        app:title="订单确认"
+        app:titleColor="@color/color_black" />
+
+    <RelativeLayout
+        android:id="@+id/rl_comit"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_68"
+        android:layout_alignParentBottom="true">
+
+        <LinearLayout
+            android:id="@+id/ll_buy"
+            android:background="@drawable/shape_noble_button"
+            android:gravity="center"
+            android:layout_width="300dp"
+            android:layout_height="@dimen/dp_45"
+            android:layout_centerInParent="true"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_money"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/color_2d1f01"
+                android:textSize="@dimen/sp_16" />
+
+            <TextView
+                android:id="@+id/tv_money_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/color_2d1f01"
+                android:textSize="@dimen/sp_16" />
+
+            <TextView
+                android:layout_marginLeft="@dimen/dp_5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="立即支付"
+                android:textColor="@color/color_2d1f01"
+                android:textSize="@dimen/sp_16" />
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rcy_noble"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/rl_comit"
+        android:layout_below="@id/title_bar" />
+
+</RelativeLayout>

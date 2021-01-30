@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_marginLeft="@dimen/dp_17"
+    android:layout_marginRight="@dimen/dp_17"
+    android:layout_marginTop="@dimen/dp_10"
+    android:background="@drawable/shape_my_headwear"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dp_87">
+
+    <ImageView
+        android:id="@+id/iv_headwear"
+        android:layout_width="@dimen/dp_72"
+        android:layout_height="@dimen/dp_72"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/dp_12"
+        android:layout_marginRight="@dimen/dp_12" />
+
+    <TextView
+        android:visibility="gone"
+        android:id="@+id/tv_stint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/iv_headwear"
+        android:layout_alignTop="@id/iv_headwear"
+        android:background="@drawable/shape_yellow"
+        android:gravity="center"
+        android:text="限"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp_10" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@id/iv_headwear"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:id="@+id/tv_headwear_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dp_7"
+            android:text="树叶"
+            android:textColor="@color/color_black"
+            android:textSize="@dimen/sp_16" />
+
+        <TextView
+            android:drawablePadding="@dimen/dp_5"
+            android:drawableLeft="@mipmap/icon_decorate_time"
+            android:id="@+id/tv_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_headwear_name"
+            android:layout_marginTop="@dimen/dp_7"
+            android:text="剩余2天"
+            android:textColor="@color/color_848484"
+            android:textSize="12sp" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tv_use"
+        android:layout_width="@dimen/dp_67"
+        android:layout_height="@dimen/dp_27"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="@dimen/dp_17"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp_12"
+        android:visibility="visible" />
+
+
+</RelativeLayout>

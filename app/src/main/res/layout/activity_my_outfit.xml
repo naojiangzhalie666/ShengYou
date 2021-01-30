@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".mvp.ui.activity.mine.MyOutfitAct">
+
+    <com.xiaoshanghai.nancang.mvp.ui.view.TitleBarView
+        android:id="@+id/title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:title="我的装扮"
+        app:titleColor="@color/color_black" />
+
+    <LinearLayout
+        android:id="@+id/ll_index"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_45"
+        android:layout_below="@id/title_bar"
+        android:layout_marginTop="@dimen/dp_30">
+
+        <net.lucode.hackware.magicindicator.MagicIndicator
+            android:id="@+id/mag_index"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/ll_index" />
+
+</RelativeLayout>

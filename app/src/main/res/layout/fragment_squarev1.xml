@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <net.lucode.hackware.magicindicator.MagicIndicator
+                android:id="@+id/index"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_45"
+                android:background="@color/color_white"
+                android:paddingLeft="@dimen/dp_12" />
+
+
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/ns_view_pager"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/index" />
+
+
+        </RelativeLayout>
+
+        <ImageView
+            android:visibility="gone"
+            android:src="@mipmap/icon_button"
+            android:id="@+id/iv_release"
+            android:layout_width="@dimen/dp_52"
+            android:layout_height="@dimen/dp_52"
+            android:layout_gravity="right|bottom"
+            android:layout_marginRight="@dimen/dp_17"
+            android:layout_marginBottom="@dimen/dp_55" />
+
+    </FrameLayout>
+
+
+</RelativeLayout>

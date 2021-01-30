@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".mvp.ui.activity.mine.BindPayAct">
+
+    <com.xiaoshanghai.nancang.mvp.ui.view.TitleBarView
+        android:id="@+id/title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:bgColor="@color/white"
+        app:title="绑定账号"
+        app:titleColor="@color/black" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_marginTop="@dimen/dp_10"
+        android:id="@+id/con_bind_wx"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_110"
+        android:layout_marginStart="@dimen/dp_12"
+        android:layout_marginEnd="@dimen/dp_12"
+        android:background="@drawable/shape_tx_wx_bg">
+
+        <ImageView
+            android:id="@+id/iv_wx_logo"
+            android:layout_width="@dimen/dp_62"
+            android:layout_height="@dimen/dp_62"
+            android:layout_marginStart="@dimen/dp_28"
+            android:layout_marginTop="@dimen/dp_20"
+            android:scaleType="centerInside"
+            android:src="@mipmap/icon_weixin_logo"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_wx_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_33"
+            android:layout_marginEnd="@dimen/dp_20"
+            android:text="微信账号"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_20"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_go_bind"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="去绑定"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_14"
+            app:layout_constraintEnd_toEndOf="@id/tv_wx_num"
+            app:layout_constraintTop_toBottomOf="@id/tv_wx_num" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/con_bind_zfb"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_110"
+        android:layout_marginStart="@dimen/dp_12"
+        android:layout_marginTop="@dimen/dp_10"
+        android:layout_marginEnd="@dimen/dp_12"
+        android:background="@drawable/shape_tx_zfb_bg">
+
+        <ImageView
+            android:id="@+id/iv_zfb_logo"
+            android:layout_width="@dimen/dp_62"
+            android:layout_height="@dimen/dp_62"
+            android:layout_marginStart="@dimen/dp_28"
+            android:layout_marginTop="@dimen/dp_20"
+            android:scaleType="centerInside"
+            android:src="@mipmap/icon_zfb_logo"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_zfb_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_33"
+            android:layout_marginEnd="@dimen/dp_20"
+            android:text="支付宝账号"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_20"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_go_bind_zfb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="去绑定"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_14"
+            app:layout_constraintEnd_toEndOf="@id/tv_zfb_num"
+            app:layout_constraintTop_toBottomOf="@id/tv_zfb_num" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/con_bind_yhk"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_110"
+        android:layout_marginStart="@dimen/dp_12"
+        android:layout_marginTop="@dimen/dp_10"
+        android:layout_marginEnd="@dimen/dp_12"
+        android:background="@drawable/shape_tx_yhk_bg">
+
+        <ImageView
+            android:id="@+id/iv_yhk_logo"
+            android:layout_width="@dimen/dp_62"
+            android:layout_height="@dimen/dp_62"
+            android:layout_marginStart="@dimen/dp_28"
+            android:layout_marginTop="@dimen/dp_20"
+            android:scaleType="centerInside"
+            android:src="@mipmap/icon_yinlian_logo"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_yhk_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_33"
+            android:layout_marginEnd="@dimen/dp_20"
+            android:text="银行卡账号"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_20"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_go_bind_yhk"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="去绑定"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_14"
+            app:layout_constraintEnd_toEndOf="@id/tv_yhk_num"
+            app:layout_constraintTop_toBottomOf="@id/tv_yhk_num" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</LinearLayout>

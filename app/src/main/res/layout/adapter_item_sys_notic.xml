@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_marginBottom="@dimen/dp_20"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/iv_sys_photo"
+        android:layout_width="@dimen/dp_54"
+        android:layout_height="@dimen/dp_54"
+        android:layout_marginStart="@dimen/dp_20"
+        android:src="@drawable/icon_friends_kf"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_10"
+        android:layout_marginTop="@dimen/dp_6"
+        android:layout_marginEnd="@dimen/dp_20"
+        android:layout_toRightOf="@id/iv_sys_photo"
+        android:background="@drawable/img_im_white_bg"
+        android:orientation="vertical"
+        app:layout_constraintStart_toEndOf="@id/iv_sys_photo"
+        app:layout_constraintTop_toTopOf="@id/iv_sys_photo">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_20"
+            android:layout_marginTop="@dimen/dp_10"
+            android:layout_marginEnd="@dimen/dp_20"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_weight="1"
+                android:id="@+id/tv_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="系统消息标题系统消息"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp_14" />
+
+            <TextView
+                android:id="@+id/tv_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_10"
+                android:text="2012-06-09 15:38"
+                android:textColor="@color/color_c2c2c2"
+                android:textSize="@dimen/sp_10" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_20"
+            android:layout_marginTop="@dimen/dp_10"
+            android:layout_marginEnd="@dimen/dp_10"
+            android:paddingBottom="@dimen/dp_20"
+            android:text=""
+            android:textColor="@color/black"
+            android:textSize="@dimen/sp_12" />
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>

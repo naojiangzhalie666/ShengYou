@@ -1,0 +1,15 @@
+# Project exclude paths
+/.gradle/
+/build/
+/faceplatform/build/
+/faceplatform-ui/build/
+/library/build/
+/library/build/intermediates/javac/debug/classes/
+/refresh/refresh-header/build/
+/refresh/refresh-header/build/intermediates/javac/debug/classes/
+/refresh/refresh-layout/build/
+/refresh/refresh-layout/build/intermediates/javac/debug/classes/
+/trtcvoiceroommodule/build/
+/trtcvoiceroommodule/build/intermediates/javac/debug/classes/
+/tuikit/build/
+/tuikit/build/intermediates/javac/debug/classes/

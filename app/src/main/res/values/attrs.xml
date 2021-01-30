@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 圆角图片 -->
+    <declare-styleable name="YLCircleImageView">
+        <attr name="radius" format="dimension">圆角半径</attr>
+        <attr name="topLeftRadius" format="dimension">左上</attr>
+        <attr name="topRightRadius" format="dimension">右上</attr>
+        <attr name="bottomLeftRadius" format="dimension">左下</attr>
+        <attr name="bottomRightRadius" format="dimension">右下</attr>
+
+        <attr name="topLeftRadius_x" format="dimension">左上X轴</attr>
+        <attr name="topLeftRadius_y" format="dimension">左上Y轴</attr>
+
+        <attr name="topRightRadius_x" format="dimension">右上X轴</attr>
+        <attr name="topRightRadius_y" format="dimension">右上Y轴</attr>
+
+        <attr name="bottomLeftRadius_x" format="dimension">左下X轴</attr>
+        <attr name="bottomLeftRadius_y" format="dimension">左下Y轴</attr>
+
+        <attr name="bottomRightRadius_x" format="dimension">右下X轴</attr>
+        <attr name="bottomRightRadius_y" format="dimension">右下Y轴</attr>
+
+        <attr name="borderWidth" format="dimension">描边宽度</attr>
+        <attr name="borderColor" format="color">描边颜色</attr>
+        <attr name="borderSpace" format="dimension">描边与图片间距</attr>
+        <!-- 无论是什么展示形式，都会填充满整个控件，如果不想填充满，自己去改onDraw里面的 dst -->
+        <attr name="scaleType" format="enum">
+            <enum name="top" value="0">从图片顶部开始绘制，即肯定会展示图片顶部，默认</enum>
+            <enum name="center" value="1">展示图片中心</enum>
+            <enum name="bottom" value="2">从图片底部开始绘制，即肯定会展示图片底部</enum>
+            <enum name="fitXY" value="3">完全展示，有可能变形</enum>
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="ExpandableTextView">
+        <attr name="maxCollapsedLines" format="integer"/>
+        <attr name="animDuration" format="integer"/>
+        <attr name="animAlphaStart" format="float"/>
+        <attr name="expandIndicator" format="reference"/>
+        <attr name="collapseIndicator" format="reference"/>
+        <attr name="expandToggleType" format="enum">
+            <enum name="ImageButton" value="0"/>
+            <enum name="TextView" value="1"/>
+        </attr>
+        <attr name="expandableTextId" format="reference"/>
+        <attr name="expandCollapseToggleId" format="reference"/>
+        <attr name="expandToggleOnTextClick" format="boolean"/>
+    </declare-styleable>
+
+    <declare-styleable name="TitleBarView">
+        <attr name="blackImg" format="reference">左侧返回图片资源id</attr>
+        <attr name="titleColor" format="color">头部字体颜色</attr>
+        <attr name="title" format="string">标题文字</attr>
+        <attr name="right1Img" format="reference">右1图片</attr>
+        <attr name="right1Text" format="string">右1文字</attr>
+        <attr name="right2Img" format="reference">右2图片</attr>
+        <attr name="right2Text" format="string">右2文字</attr>
+        <attr name="bgColor" format="color">背景颜色</attr>
+        <attr name="right1Color" format="color">右1文字颜色</attr>
+        <attr name="right2Color" format="color">右2文字颜色</attr>
+    </declare-styleable>
+
+    <declare-styleable name="Avatar">
+        
+        <attr name="headwearPadding" format="dimension">头饰与头衔间距</attr>
+        <attr name="def_avatar" format="reference">默认头像</attr>
+        <attr name="def_headwear" format="reference">默认头饰</attr>
+        <attr name="avatar_radius" format="dimension">头像圆角</attr>
+        <attr name="fixed_padding" format="dimension">固定边距</attr>
+
+    </declare-styleable>
+
+    <declare-styleable name="ConstellationView">
+
+    </declare-styleable>
+
+    <declare-styleable name="InputEditViewLayout">
+        <!-- 密码的个数 -->
+        <attr name="passwordNumber" format="integer"/>
+        <!-- 密码圆点的半径 -->
+        <attr name="passwordRadius" format="integer" />
+        <!-- 密码圆点的颜色 -->
+        <attr name="passwordColor" format="color" />
+        <!-- 分割线的颜色 -->
+        <attr name="divisionLineColor" format="color" />
+        <!-- 分割线的大小 -->
+        <attr name="divisionLineSize" format="color" />
+        <!-- 背景边框的颜色 -->
+        <attr name="et_bgColor" format="color" />
+        <!-- 背景边框的大小 -->
+        <attr name="bgSize" format="integer" />
+        <!-- 背景边框的圆角大小 -->
+        <attr name="bgCorner" format="integer"/>
+        <!--是否为密码模式-->
+        <attr name="isPassword" format="boolean"/>
+        <!--文字大小，仅仅对，明文模式有效-->
+        <attr name="iTextSise" format="integer"/>
+    </declare-styleable>
+    <declare-styleable name="DancingNumberView">
+        <attr name="dnv_duration" format="integer"/>
+        <attr name="dnv_format" format="string"/>
+    </declare-styleable>
+</resources>

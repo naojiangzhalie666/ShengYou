@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.scwang.smartrefresh.layout.SmartRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/refresh"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    app:srlEnableAutoLoadMore="false"
+    tools:context=".mvp.ui.activity.mine.AttentionMineAct">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rcy_friend"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</com.scwang.smartrefresh.layout.SmartRefreshLayout>

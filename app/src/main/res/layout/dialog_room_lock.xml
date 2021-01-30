@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="@dimen/dp_300"
+    android:layout_height="@dimen/dp_200"
+    android:layout_centerInParent="true"
+    android:layout_gravity="center"
+    android:background="@drawable/shape_rounded_white">
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_20"
+        android:text="房间密码"
+        android:textColor="@color/black"
+        android:textSize="@dimen/sp_16"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/et_psw"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_45"
+        android:layout_marginStart="@dimen/dp_15"
+        android:layout_marginTop="@dimen/dp_30"
+        android:layout_marginEnd="@dimen/dp_15"
+        android:background="@drawable/shape_hs_r20_bg"
+        android:paddingStart="@dimen/dp_15"
+        android:paddingEnd="@dimen/dp_15"
+        android:hint="请输入密码"
+        android:textColor="@color/color_333333"
+        android:textSize="@dimen/sp_14"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_title" />
+
+<!--    <TextView-->
+<!--        android:id="@+id/tv_name"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:ellipsize="end"-->
+<!--        android:maxLength="8"-->
+<!--        android:text=""-->
+<!--        android:textColor="@color/black"-->
+<!--        android:textSize="@dimen/sp_16"-->
+<!--        app:layout_constraintBottom_toBottomOf="@id/et_psw"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toEndOf="@id/et_psw"-->
+<!--        app:layout_constraintTop_toTopOf="@id/et_psw" />-->
+
+    <TextView
+        android:id="@+id/tv_cancel"
+        android:layout_width="@dimen/dp_90"
+        android:layout_height="@dimen/dp_30"
+        android:layout_marginTop="@dimen/dp_30"
+        android:layout_marginEnd="@dimen/dp_10"
+        android:background="@drawable/shape_button_r15_bg"
+        android:gravity="center"
+        android:text="取消"
+        android:textColor="@color/color_222222"
+        android:textSize="@dimen/sp_12"
+        app:layout_constraintEnd_toStartOf="@id/tv_confirm"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/et_psw" />
+
+    <TextView
+        android:id="@+id/tv_confirm"
+        android:layout_width="@dimen/dp_90"
+        android:layout_height="@dimen/dp_30"
+        android:layout_marginStart="@dimen/dp_10"
+        android:background="@drawable/shape_button_r15_p_bg"
+        android:gravity="center"
+        android:text="确定"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp_12"
+        app:layout_constraintBottom_toBottomOf="@id/tv_cancel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tv_cancel"
+        app:layout_constraintTop_toTopOf="@id/tv_cancel" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

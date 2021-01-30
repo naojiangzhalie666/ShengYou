@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:paddingLeft="@dimen/dp_14"
+    android:paddingRight="@dimen/dp_14">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_66"
+        android:layout_marginLeft="@dimen/dp_14">
+
+        <FrameLayout
+            android:id="@+id/fl_user_avatar"
+            android:layout_width="@dimen/dp_42"
+            android:layout_height="@dimen/dp_45"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/dp_10">
+
+            <com.xiaoshanghai.nancang.view.CircleImageView
+                android:id="@+id/civ_avatar"
+                android:layout_width="@dimen/dp_42"
+                android:layout_height="@dimen/dp_42"
+                android:scaleType="centerInside"
+                app:radius="@dimen/dp_45" />
+
+            <TextView
+                android:id="@+id/tv_patriarch_tag"
+                android:layout_width="@dimen/dp_30"
+                android:layout_height="@dimen/dp_14"
+                android:layout_gravity="center_horizontal|bottom"
+                android:background="@drawable/shape_patriarch_bg"
+                android:gravity="center"
+                android:text="@string/family_patriarch"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_8"
+                android:visibility="gone" />
+
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_toRightOf="@id/fl_user_avatar"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/tv_nick_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/dp_5"
+                        android:minWidth="@dimen/dp_60"
+                        android:textColor="@color/color_black"
+                        android:textSize="@dimen/sp_16" />
+
+                    <com.xiaoshanghai.nancang.mvp.ui.view.UserLevelView
+                        android:id="@+id/ul_user_lv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="@dimen/dp_5"
+                        android:layout_marginRight="@dimen/dp_5" />
+
+                    <com.xiaoshanghai.nancang.mvp.ui.view.CharmLevelView
+                        android:id="@+id/clv_charm_lv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="@dimen/dp_5" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="+"
+                        android:textColor="@color/color_999999"
+                        android:textSize="@dimen/sp_12" />
+
+                    <TextView
+                        android:id="@+id/tv_user_income"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/color_999999"
+                        android:textSize="@dimen/sp_12" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_view"
+                android:layout_width="@dimen/dp_53"
+                android:layout_height="@dimen/dp_27"
+                android:background="@drawable/shape_r13_b_bg"
+                android:gravity="center"
+                android:text="查看"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_12" />
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

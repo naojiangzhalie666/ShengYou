@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>排行榜</title>
+    <link rel="stylesheet" href="./css/index.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+<body>
+<div id="app" :class="isflag ? 'w' : 'w_2'">
+    <!-- 顶部按钮 -->
+    <div :class="isflag ? 'fixed_box' : 'fixed_box_1'">
+        <div class="fixed_box_btn">
+            <div :class="isflag ? 'star_btn' : 'rick_btn'" @click="getRick">壕气冲天榜</div>
+            <div :class="isflag ? 'rick_btn' : 'star_btn'" @click="getStar">人气新星榜</div>
+        </div>
+    </div>
+    <!-- 日榜/周榜 -->
+    <div class="date_box">
+        <div :class="isDay ? 'day_btn' : 'week_btn'" @click="getDay">日榜</div>
+        <div :class="isDay ? 'week_btn' : 'day_btn'" @click="getWeek">周榜</div>
+    </div>
+    <!-- 前三名为空 -->
+    <div class="top_three" v-if="islist">
+        <div class="top_box">
+            <div class="top_3">
+                <div>
+                    <div class="img_k_3">
+                        <img src="./images/Avatarsample155-225@3x.png" alt="" class="img_tx">
+                    </div>
+                    <div class="await_t_3">虚位以待</div>
+                </div>
+            </div>
+            <div class="top_1">
+                <div class="img_k_1">
+                    <img src="./images/Avatarsample1551-225@3x.png" alt="" class="img_tx">
+                </div>
+                <div class="await_t_1">虚位以待</div>
+            </div>
+            <div class="top_2">
+                <div class="img_k_2">
+                    <img src="./images/Avatarsample1552-225@3x.png" alt="" class="img_tx_2">
+                </div>
+                <div class="await_t_2">虚位以待</div>
+            </div>
+        </div>
+        <div class="list">
+            <div class="list_no">排行榜暂时为空！快来霸榜吧~</div>
+        </div>
+    </div>
+    <!-- 有排名 -->
+    <div class="top_three" v-else>
+        <div class="top_box">
+            <!-- 第三名 -->
+            <div class="top_3" @click="go(getNum[2].userId)">
+                <div v-if="getNum[2] !== undefined">
+                    <div class="img_k_3">
+                        <img :src="getNum[2].userPicture" alt="" class="img_tx">
+                    </div>
+                    <div class="await_t_3">{{getNum[2].userName}}</div>
+                    <div class="id_liang">
+                        <img
+                                v-if="getNum[2].isBeautiful === 1"
+                                src="./images/lianghao@3x.png"
+                                class="item_icon"
+                                alt=""/>
+                        <div class="Id_liang_text_3">ID:{{ getNum[2].userNumber }}</div>
+                        <div class="Id_liang_ju">距上一名:
+                            <span style="color: #FF5F84">{{ number[1] }}</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="top_3" v-else>
+                    <div>
+                        <div class="img_k_3">
+                            <img src="./images/Avatarsample155-225@3x.png" alt="" class="img_tx">
+                        </div>
+                        <div class="await_t_3">虚位以待</div>
+                    </div>
+                </div>
+            </div>
+            <!-- 第一名 -->
+            <div class="top_1" @click="go(getNum[0].userId)">
+                <div class="img_k_1">
+                    <img :src="getNum[0].userPicture" alt="" class="img_tx">
+                </div>
+                <div class="await_t_1">{{getNum[0].userName}}</div>
+                <div class="id_liang">
+                    <img
+                            v-if="getNum[0].isBeautiful === 1"
+                            src="./images/lianghao@3x.png"
+                            class="item_icon_1"
+                            alt=""/>
+                    <div class="Id_liang_text_1">ID:{{ getNum[0].userNumber }}</div>
+                    <div class="Id_liang_No">No.1</div>
+                </div>
+            </div>
+            <!-- 第二名 -->
+            <div class="top_2" @click="go(getNum[1].userId)">
+                <div v-if="getNum[1] !== undefined">
+                    <div class="img_k_2">
+                        <img :src="getNum[1].userPicture" alt="" class="img_tx_2">
+                    </div>
+                    <div class="await_t_2">{{getNum[1].userName}}</div>
+                    <div class="id_liang">
+                        <img
+                                v-if="getNum[1].isBeautiful === 1"
+                                src="./images/lianghao@3x.png"
+                                class="item_icon"
+                                alt=""/>
+                        <div class="Id_liang_text_3">ID:{{ getNum[1].userNumber }}</div>
+                        <div class="Id_liang_ju">距上一名:
+                            <span style="color: #35C5F3">{{ number[0] }}</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="top_2" v-else>
+                    <div class="img_k_2">
+                        <img src="./images/Avatarsample1552-225@3x.png" alt="" class="img_tx_2">
+                    </div>
+                    <div class="await_t_2">虚位以待</div>
+                </div>
+            </div>
+        </div>
+        <div :class="list">
+            <div
+                    class="list_item"
+                    v-for="item in itemList"
+                    :key="item.id"
+                    @click="go(item.userId)">
+                <div class="item_index">{{ item.rankNo }}</div>
+                <div class="item_maxImg">
+                    <img :src="item.userPicture" class="item_img" alt=""/>
+                </div>
+                <div class="item_name">
+                    <div class="item_name_user">{{ item.userName }}</div>
+                    <div class="item_id">
+                        <img
+                                v-if="item.isBeautiful === 1"
+                                src="./images/lianghao@3x.png"
+                                class="item_icon"
+                                alt=""/>
+                        <div class="Id_liang_text_3">ID:{{ item.userNumber }}</div>
+                    </div>
+                </div>
+                <div class="iten_grade">
+                    <div class="iten_grade_num">{{ item.item }}</div>
+                    <div class="iten_grade_btm">距离前一名</div>
+                </div>
+            </div>
+        </div>
+        <!-- 自己的排名 -->
+        <div class="list_item" v-if="data2.length !== 0">
+            <div class="item_index">{{ data2[0].rankNo }}</div>
+            <div class="item_maxImg">
+                <img :src="data2[0].userPicture" class="item_img" alt=""/>
+            </div>
+            <div class="item_name">
+                <div class="item_name_user">{{ data2[0].userName }}</div>
+                <div class="item_id">
+                    <img
+                            v-if="data2[0].isBeautiful === 1"
+                            src="./images/lianghao@3x.png"
+                            class="item_icon"
+                            alt=""/>
+                    <div class="Id_liang_text_3">ID:{{ data2[0].userNumber }}</div>
+                </div>
+            </div>
+            <div class="iten_grade">
+                <div class="iten_grade_num">{{ data2[0].item }}</div>
+                <div class="iten_grade_btm">距离前一名</div>
+            </div>
+        </div>
+        <div v-else>
+            <div class="noRank">
+                <div class="lt-no">未上榜</div>
+                <img :src="userList.userPicture" alt="" class="no-img"/>
+                <div class="no-name">
+                    <div class="item_name_user">{{userList.userName}}</div>
+                    <div class="item_id">
+                        <img
+                                v-if="userList.isBeautiful === '1'"
+                                src="./images/lianghao@3x.png"
+                                class="item_icon"
+                                alt=""/>
+                        <div class="Id_liang_text_3">ID:{{userList.userNumber}}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script>
+    var app = new Vue({
+        el:'#app',
+        data:{
+            isflag: true,
+            isDay: true,
+            islist: false,
+            getNum: [],
+            list: 'list',
+            userList: '',
+            userId: '无',
+            data2: []
+        },
+        created() {
+          axios.defaults.baseURL = "http://39.99.159.131:9997/"
+          this.getlist()
+        },
+        mounted() {
+          Window.getUser = this.getUser
+        },
+        methods: {
+          go(id) {
+            var u = navigator.userAgent;
+            console.log(u);
+            var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/);
+            var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
+            if(isiOS) {
+              window.webkit.messageHandlers.Noble.postMessage({"index": id})
+            } else if(isAndroid) {
+              user.userId(id)
+            }
+            
+          },
+          getUser(val) {
+            this.userList = val
+            this.userId = val.userId
+            this.getlist()
+          },
+            getCountPrice(val) {
+                var item = [];
+                for (let index = 1; index < val.length; index++) {
+                    let number = "";
+                    let numberA = val[index - 1].countPrice;
+                    let NumberB = val[index].countPrice;
+                    number = numberA - NumberB;
+                    if (number / 10000 > 1) {
+                    let num = number / 10000;
+                    num = num.toFixed(2) + "万";
+                    item.push(num);
+                    } else {
+                    item.push(number);
+                    }
+                }
+                return item;
+            },
+            async getlist() {
+                let data = new FormData()
+                    data.set("type", 1);
+                    const res = await axios.post("app_room/sys_ranking", data);
+                    console.log(res.data.data.length === 0);
+                    if (res.data.data.length === 0) {
+                      this.islist = true
+                    } else {
+                      this.islist = false
+                    }
+                    console.log(res);
+                    //   列表的数据
+                    this.lists = res.data.data;
+                    this.data2 = this.lists.filter(value => {
+                      return value.userId ===  this.userId
+                      }
+                    )
+                    //   前三名;
+                    this.getNum = this.lists.slice(0, 3);
+                    console.log(this.getNum[2]);
+                    this.items = this.lists.slice(2, 17);
+                    //   后十七名的数据
+                    this.itemList = this.lists.slice(3, 16);
+                    if(this.itemList.length < 5) {
+                        this.list = 'list_max'
+                    } else {
+                        this.list = 'list'
+                    }
+                    // 前三名差距
+                    this.number = this.getCountPrice(this.getNum);
+                    //   后17名差距
+                    this.listNum = this.getCountPrice(this.items);
+                    console.log( this.number);
+                    for (let index = 0; index < this.listNum.length; index++) {
+                        this.itemList[index].item = this.listNum[index];
+                    }
+            },
+           async getRick() {
+                this.isflag = true
+                if(this.isDay) {
+                    let data = new FormData()
+                    data.set("type", 1);
+                    const res = await axios.post("app_room/sys_ranking", data);
+                    if (res.data.data.length === 0) {
+                      this.islist = true
+                    } else {
+                      this.islist = false
+                    }
+                    //   列表的数据
+                    this.lists = res.data.data;
+                    this.data2 = this.lists.filter(value => {
+                      return value.userId ===  this.userId
+                      }
+                    )
+                    //   前三名;
+                    this.getNum = this.lists.slice(0, 3);
+                    this.items = this.lists.slice(2, 17);
+                    this.itemList = this.lists.slice(3, 16);
+                    //   后十七名的数据
+                    this.listNum = this.getCountPrice(this.items);
+                    if(this.itemList.length < 5) {
+                        this.list = 'list_max'
+                    } else {
+                        this.list = 'list'
+                    }
+                    // 前三名差距
+                    this.number = this.getCountPrice(this.getNum);
+                    //   后17名差距
+                    this.listNum = this.getCountPrice(this.items);
+                    console.log( this.itemList);
+                    for (let index = 0; index < this.listNum.length; index++) {
+                        this.itemList[index].item = this.listNum[index];
+                    }
+                } else {
+                    let data = new FormData()
+                    data.set("type", 2);
+                    const res = await axios.post("app_room/sys_ranking", data);
+                    console.log(res);
+                    let datas = res.data.data
+                    console.log(this.userName);
+                    this.data2 = datas.filter(value => {
+                      return value.userName ===  this.userName
+                      }
+                    )
+                    console.log(this.data2);
+                    if (res.data.data.length === 0) {
+                      this.islist = true
+                    } else {
+                      this.islist = false
+                    }
+                    //   列表的数据
+                    this.lists = res.data.data;
+                    this.data2 = this.lists.filter(value => {
+                      return value.userId ===  this.userId
+                      }
+                    )
+                    //   前三名;
+                    this.getNum = this.lists.slice(0, 3);
+                    this.items = this.lists.slice(2, 17);
+                    //   后十七名的数据
+                    this.itemList = this.lists.slice(3, 16);
+                    if(this.itemList.length < 5) {
+                        this.list = 'list_max'
+                    } else {
+                        this.list = 'list'
+                    }
+                    // 前三名差距
+                    this.number = this.getCountPrice(this.getNum);
+                    //   后17名差距
+                    this.listNum = this.getCountPrice(this.items);
+                    console.log( this.itemList);
+                    for (let index = 0; index < this.listNum.length; index++) {
+                        this.itemList[index].item = this.listNum[index];
+                    }
+                }
+            },
+            async getStar() {
+                this.isflag = false
+                if(this.isDay) {
+                    let data = new FormData()
+                    data.set("type", 3);
+                    const res = await axios.post("app_room/sys_ranking", data);
+                    console.log(res);
+                    if (res.data.data.length === 0) {
+                      this.islist = true
+                    } else {
+                      this.islist = false
+                    }
+                    //   列表的数据
+                    this.lists = res.data.data;
+                    this.data2 = this.lists.filter(value => {
+                      return value.userId ===  this.userId
+                      }
+                    )
+                    //   前三名;
+                    this.getNum = this.lists.slice(0, 3);
+                    this.items = this.lists.slice(2, 17);
+                    //   后十七名的数据
+                    this.itemList = this.lists.slice(3, 16);
+                    if(this.itemList.length < 5) {
+                        this.list = 'list_max'
+                    } else {
+                        this.list = 'list'
+                    }
+                    // 前三名差距
+                    this.number = this.getCountPrice(this.getNum);
+                    //   后17名差距
+                    this.listNum = this.getCountPrice(this.items);
+                    console.log( this.number);
+                    for (let index = 0; index < this.listNum.length; index++) {
+                        this.itemList[index].item = this.listNum[index];
+                    }
+                } else {
+                    let data = new FormData()
+                    data.set("type", 4);
+                    const res = await axios.post("app_room/sys_ranking", data);
+                    if (res.data.data.length === 0) {
+                      this.islist = true
+                    } else {
+                      this.islist = false
+                    }
+                    //   列表的数据
+                    this.lists = res.data.data;
+                    this.data2 = this.lists.filter(value => {
+                      return value.userId ===  this.userId
+                      }
+                    )
+                    //   前三名;
+                    this.getNum = this.lists.slice(0, 3);
+                    this.items = this.lists.slice(2, 17);
+                    //   后十七名的数据
+                    this.itemList = this.lists.slice(3, 16);
+                    if(this.itemList.length < 5) {
+                        this.list = 'list_max'
+                    } else {
+                        this.list = 'list'
+                    }
+                    // 前三名差距
+                    this.number = this.getCountPrice(this.getNum);
+                    //   后17名差距
+                    this.listNum = this.getCountPrice(this.items);
+                    console.log( this.number);
+                    for (let index = 0; index < this.listNum.length; index++) {
+                        this.itemList[index].item = this.listNum[index];
+                    }
+                }
+
+            },
+            async getDay() {
+                this.isDay = true
+                if(this.isflag) {
+                    let data = new FormData()
+                    data.set("type", 1);
+                    const res = await axios.post("app_room/sys_ranking", data);
+                    if (res.data.data.length === 0) {
+                      this.islist = true
+                    } else {
+                      this.islist = false
+                    }
+                    //   列表的数据
+                    this.lists = res.data.data;
+                    this.data2 = this.lists.filter(value => {
+                      return value.userId ===  this.userId
+                      }
+                    )
+                    //   前三名;
+                    this.getNum = this.lists.slice(0, 3);
+                    this.items = this.lists.slice(2, 17);
+                    //   后十七名的数据
+                    this.itemList = this.lists.slice(3, 16);
+                    if(this.itemList.length < 5) {
+                        this.list = 'list_max'
+                    } else {
+                        this.list = 'list'
+                    }
+                    // 前三名差距
+                    this.number = this.getCountPrice(this.getNum);
+                    //   后17名差距
+                    this.listNum = this.getCountPrice(this.items);
+                    console.log( this.number);
+                    for (let index = 0; index < this.listNum.length; index++) {
+                        this.itemList[index].item = this.listNum[index];
+                    }
+                } else {
+                    let data = new FormData()
+                    data.set("type", 3);
+                    const res = await axios.post("app_room/sys_ranking", data);
+                    console.log(res);
+                    if (res.data.data.length === 0) {
+                      this.islist = true
+                    } else {
+                      this.islist = false
+                    }
+                    //   列表的数据
+                    this.lists = res.data.data;
+                    this.data2 = this.lists.filter(value => {
+                      return value.userId ===  this.userId
+                      }
+                    )
+                    //   前三名;
+                    this.getNum = this.lists.slice(0, 3);
+                    this.items = this.lists.slice(2, 17);
+                    //   后十七名的数据
+                    this.itemList = this.lists.slice(3, 16);
+                    if(this.itemList.length < 5) {
+                        this.list = 'list_max'
+                    } else {
+                        this.list = 'list'
+                    }
+                    // 前三名差距
+                    this.number = this.getCountPrice(this.getNum);
+                    //   后17名差距
+                    this.listNum = this.getCountPrice(this.items);
+                    console.log( this.number);
+                    for (let index = 0; index < this.listNum.length; index++) {
+                        this.itemList[index].item = this.listNum[index];
+                    }
+                }
+
+            },
+            async getWeek() {
+                this.isDay = false
+                if(this.isflag) {
+                    let data = new FormData()
+                    data.set("type", 2);
+                    const res = await axios.post("app_room/sys_ranking", data);
+                    console.log(res);
+                    if (res.data.data.length === 0) {
+                      this.islist = true
+                    } else {
+                      this.islist = false
+                    }
+                    //   列表的数据
+                    this.lists = res.data.data;
+                    this.data2 = this.lists.filter(value => {
+                      return value.userId ===  this.userId
+                      }
+                    )
+                    //   前三名;
+                    this.getNum = this.lists.slice(0, 3);
+                    this.items = this.lists.slice(2, 17);
+                    //   后十七名的数据
+                    this.itemList = this.lists.slice(3, 16);
+                    if(this.itemList.length < 5) {
+                        this.list = 'list_max'
+                    } else {
+                        this.list = 'list'
+                    }
+                    // 前三名差距
+                    this.number = this.getCountPrice(this.getNum);
+                    //   后17名差距
+                    this.listNum = this.getCountPrice(this.items);
+                    console.log( this.itemList);
+                    for (let index = 0; index < this.listNum.length; index++) {
+                        this.itemList[index].item = this.listNum[index];
+                    }
+                } else {
+                    let data = new FormData()
+                    data.set("type", 4);
+                    const res = await axios.post("app_room/sys_ranking", data);
+                    console.log(res);
+                    this.islist = false;
+                    if (res.data.data.length === 0) {
+                      this.islist = true
+                    } else {
+                      this.islist = false
+                    }
+                    //   列表的数据
+                    this.lists = res.data.data;
+                    this.data2 = this.lists.filter(value => {
+                      return value.userId ===  this.userId
+                      }
+                    )
+                    //   前三名;
+                    this.getNum = this.lists.slice(0, 3);
+                    this.items = this.lists.slice(2, 17);
+                    //   后十七名的数据
+                    this.itemList = this.lists.slice(3, 16);
+                    if(this.itemList.length < 5) {
+                        this.list = 'list_max'
+                    } else {
+                        this.list = 'list'
+                    }
+                    // 前三名差距
+                    this.number = this.getCountPrice(this.getNum);
+                    //   后17名差距
+                    this.listNum = this.getCountPrice(this.items);
+                    console.log( this.number);
+                    for (let index = 0; index < this.listNum.length; index++) {
+                        this.itemList[index].item = this.listNum[index];
+                    }
+                }
+            }
+        }
+    })
+
+</script>
+</html>

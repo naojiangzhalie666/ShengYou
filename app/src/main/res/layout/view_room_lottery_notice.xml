@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_horizontal">
+
+    <ImageView
+        android:id="@+id/iv_bg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"
+        android:src="@mipmap/ing_lottery_gift"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.xiaoshanghai.nancang.view.CircleImageView
+        android:id="@+id/civ_user_avatar"
+        android:layout_width="@dimen/dp_45"
+        android:layout_height="@dimen/dp_45"
+        android:layout_marginStart="@dimen/dp_55"
+        android:src="@mipmap/icon_default_avatar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:radius="@dimen/dp_45" />
+
+    <TextView
+        android:id="@+id/tv_user_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_10"
+        android:layout_marginBottom="@dimen/dp_3"
+        android:text="豌豆射手"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp_16"
+        app:layout_constraintBottom_toTopOf="@id/tv_cz"
+        app:layout_constraintStart_toEndOf="@id/civ_user_avatar"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <TextView
+        android:id="@+id/tv_cz"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_10"
+        android:layout_marginTop="@dimen/dp_3"
+        android:text="抽中"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp_12"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/civ_user_avatar"
+        app:layout_constraintTop_toBottomOf="@id/tv_user_name" />
+
+    <TextView
+        android:id="@+id/tv_jz"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_3"
+        android:text="价值"
+        android:textColor="@color/color_ffe400"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@id/tv_cz"
+        app:layout_constraintStart_toEndOf="@id/tv_cz"
+        app:layout_constraintTop_toTopOf="@id/tv_cz" />
+
+    <TextView
+        android:id="@+id/tv_gift_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/dp_3"
+        android:text="18888"
+        android:textColor="@color/color_ffe400"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@id/tv_cz"
+        app:layout_constraintStart_toEndOf="@id/tv_jz"
+        app:layout_constraintTop_toTopOf="@id/tv_cz" />
+
+    <TextView
+        android:id="@+id/tv_gift_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_6"
+        android:text="独角兽"
+        android:textColor="@color/color_00f6ff"
+        android:textSize="@dimen/sp_12"
+        app:layout_constraintBottom_toBottomOf="@id/tv_gift_price"
+        app:layout_constraintStart_toEndOf="@id/tv_gift_price"
+        app:layout_constraintTop_toTopOf="@id/tv_gift_price" />
+
+    <ImageView
+        android:id="@+id/iv_gift"
+        android:layout_width="@dimen/dp_54"
+        android:layout_height="@dimen/dp_54"
+        android:src="@mipmap/icon_logo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/tv_gift_num"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:minWidth="@dimen/dp_25"
+        android:id="@+id/tv_gift_num"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/dp_40"
+        android:text=""
+        android:textColor="@color/color_fff715"
+        android:textSize="@dimen/sp_19"
+        app:layout_constraintBottom_toBottomOf="@id/iv_gift"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/iv_gift" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

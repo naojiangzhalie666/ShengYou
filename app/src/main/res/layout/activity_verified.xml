@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context=".mvp.ui.activity.mine.VerifiedAct">
+
+    <com.xiaoshanghai.nancang.mvp.ui.view.TitleBarView
+        android:id="@+id/title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:bgColor="@color/white"
+        app:title="实名认证"
+        app:titleColor="@color/color_010101" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/title_bar">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:scaleType="fitCenter"
+                android:src="@drawable/img_verified" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_180"
+                android:layout_marginLeft="@dimen/dp_17"
+                android:layout_marginTop="135dp"
+                android:layout_marginRight="@dimen/dp_17"
+                android:layout_marginBottom="@dimen/dp_10"
+                app:cardCornerRadius="@dimen/dp_10">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dp_17"
+                        android:layout_marginTop="@dimen/dp_25"
+                        android:text="真实姓名"
+                        android:textColor="@color/color_black"
+                        android:textSize="@dimen/sp_16" />
+
+                    <EditText
+                        android:id="@+id/et_name"
+                        android:maxLines="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dp_30"
+                        android:layout_marginLeft="@dimen/dp_17"
+                        android:layout_marginRight="@dimen/dp_17"
+                        android:background="@null"
+                        android:gravity="center_vertical"
+                        android:hint="请输入您的真实姓名"
+                        android:textColorHint="@color/color_a7a7a7"
+                        android:textSize="@dimen/sp_12" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dp_1"
+                        android:layout_marginLeft="@dimen/dp_17"
+                        android:layout_marginTop="-1dp"
+                        android:layout_marginRight="@dimen/dp_17"
+                        android:background="@color/color_a7a7a7" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dp_17"
+                        android:layout_marginTop="@dimen/dp_17"
+                        android:text="身份证号"
+                        android:textColor="@color/color_black"
+                        android:textSize="@dimen/sp_16" />
+
+                    <EditText
+                        android:id="@+id/et_car_num"
+                        android:maxLines="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dp_30"
+                        android:layout_marginLeft="@dimen/dp_17"
+                        android:layout_marginRight="@dimen/dp_17"
+                        android:background="@null"
+                        android:gravity="center_vertical"
+                        android:hint="请输入您的真实身份证号"
+                        android:singleLine="true"
+                        android:textColorHint="@color/color_a7a7a7"
+                        android:textSize="@dimen/sp_12" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dp_1"
+                        android:layout_marginLeft="@dimen/dp_17"
+                        android:layout_marginTop="-1dp"
+                        android:layout_marginRight="@dimen/dp_17"
+                        android:background="@color/color_a7a7a7" />
+
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_33"
+            android:layout_marginTop="@dimen/dp_33"
+            android:text="认证须知"
+            android:textColor="@color/color_black"
+            android:textSize="@dimen/sp_20" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_33"
+            android:layout_marginTop="@dimen/dp_13"
+            android:layout_marginRight="@dimen/dp_33"
+            android:lineSpacingExtra="@dimen/dp_1"
+            android:text="@string/verified_prompt"
+            android:textColor="@color/color_black"
+            android:textSize="@dimen/sp_12" />
+
+        <Button
+            android:id="@+id/bt_verified"
+            android:layout_width="@dimen/dp_300"
+            android:layout_height="@dimen/dp_40"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/dp_20"
+            android:background="@drawable/shape_verified_select"
+            android:enabled="false"
+            android:stateListAnimator="@null"
+            android:text="开始认证"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_16" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_10"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/cb_box"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:background="@null"
+                android:button="@null"
+                android:drawableLeft="@drawable/verified_check_selector"
+                android:drawablePadding="@dimen/dp_10"
+                android:gravity="center_vertical"
+                android:text="我已同意" />
+
+            <TextView
+                android:id="@+id/tv_protocol"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="《直播交友协议》"
+                android:textColor="@color/red"
+                android:textSize="@dimen/sp_12" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+</LinearLayout>

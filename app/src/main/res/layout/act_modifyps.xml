@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.xiaoshanghai.nancang.mvp.ui.view.TitleBarView
+        android:id="@+id/title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:title="修改登录密码"
+        app:titleColor="@color/color_black" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_30"
+        android:layout_marginRight="@dimen/dp_30">
+
+
+        <EditText
+            android:maxLength="19"
+            android:inputType="textPassword"
+            android:id="@+id/et_psw_old"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dp_30"
+            android:layout_weight="1"
+            android:background="@null"
+            android:hint="请输入当前登录密码"
+            android:textColorHint="@color/color_aaaaaa"
+            android:textSize="@dimen/sp_15" />
+
+        <ImageView
+            android:id="@+id/iv_ps_show_old"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@mipmap/ic_hide_ps" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_1"
+        android:layout_marginLeft="@dimen/dp_28"
+        android:layout_marginRight="@dimen/dp_28"
+        android:background="@color/black" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_30"
+        android:layout_marginRight="@dimen/dp_30"
+        android:layout_marginTop="@dimen/dp_40">
+
+
+        <EditText
+            android:maxLength="19"
+            android:inputType="textPassword"
+            android:id="@+id/et_psw_new"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dp_30"
+            android:layout_weight="1"
+            android:background="@null"
+            android:hint="请输入新的登录密码"
+            android:textColorHint="@color/color_aaaaaa"
+
+            android:textSize="@dimen/sp_15" />
+
+        <ImageView
+            android:id="@+id/iv_ps_show_new"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@mipmap/ic_hide_ps" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_1"
+        android:layout_marginLeft="@dimen/dp_28"
+        android:layout_marginRight="@dimen/dp_28"
+        android:background="@color/black" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_30"
+        android:layout_marginRight="@dimen/dp_30"
+        android:layout_marginTop="@dimen/dp_40">
+
+
+        <EditText
+            android:maxLength="19"
+            android:inputType="textPassword"
+            android:id="@+id/et_psw_new_confirm"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dp_30"
+            android:layout_weight="1"
+            android:background="@null"
+            android:hint="再次确认新的登录密码"
+            android:textColorHint="@color/color_aaaaaa"
+            android:textSize="@dimen/sp_15" />
+
+        <ImageView
+            android:id="@+id/iv_ps_show_new_confirm"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@mipmap/ic_hide_ps" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_1"
+        android:layout_marginLeft="@dimen/dp_28"
+        android:layout_marginRight="@dimen/dp_28"
+        android:background="@color/black" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="密码必须使用6-19个字符内的数字和英文字母组合哦！"
+        android:textColor="@color/black"
+        android:layout_marginLeft="@dimen/dp_30"
+        android:layout_marginTop="@dimen/dp_10"
+        android:textSize="12sp"
+        />
+    <TextView
+        android:id="@+id/tv_reset_ps"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="忘记密码？"
+        android:textColorHint="@color/color_aaaaaa"
+        android:textSize="@dimen/sp_16"
+        android:layout_gravity="right"
+        />
+    <TextView
+        android:id="@+id/tv_commit"
+        android:layout_width="@dimen/dp_260"
+        android:layout_height="43dp"
+        android:text="提交"
+        android:textColor="@color/black"
+        android:textSize="@dimen/sp_16"
+        android:gravity="center"
+        android:background="@drawable/shape_stroke_90radius_black"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/dp_30"
+        />
+</LinearLayout>

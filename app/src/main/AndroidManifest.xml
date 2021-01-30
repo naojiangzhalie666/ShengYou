@@ -1,0 +1,610 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.xiaoshanghai.nancang">
+    <uses-sdk tools:overrideLibrary="tv.danmaku.ijk.media.player_arm64, tv.danmaku.ijk.media.player_x86_64" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" /> <!-- 照相机权限 -->
+    <uses-permission android:name="android.permission.CAMERA" /> <!-- for mta statistics, not necessary -->
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.READ_LOGS"
+        tools:ignore="ProtectedPermissions" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.CAPTURE_AUDIO_OUTPUT"
+        tools:ignore="ProtectedPermissions"/>
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.CHANGE_CONFIGURATION"
+        tools:ignore="ProtectedPermissions"/>
+    <uses-permission android:name="android.permission.WRITE_SETTINGS"
+        tools:ignore="ProtectedPermissions"/> <!-- <android:uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/> -->
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <!--用于进行网络定位-->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <!--用于访问GPS定位-->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <!--获取运营商信息，用于支持提供运营商信息相关的接口-->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <!--用于访问wifi网络信息，wifi信息会用于进行网络定位-->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <!--这个权限用于获取wifi的获取权限，wifi信息会用来进行网络定位-->
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <!--用于访问网络，网络定位需要上网-->
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <!--用于读取手机当前的状态-->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <!--写入扩展存储，向扩展卡写入数据，用于写入缓存定位数据-->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <!--用于申请调用A-GPS模块-->
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS"/>
+    <!--用于申请获取蓝牙信息进行室内定位-->
+    <uses-permission android:name="android.permission.BLUETOOTH"/>
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+    <application xmlns:tool="http://schemas.android.com/tools"
+        android:name="com.xiaoshanghai.nancang.base.BaseApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/icon_logo"
+        android:label="@string/app_name"
+        android:networkSecurityConfig="@xml/network_config"
+        android:roundIcon="@mipmap/icon_logo"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tool:ignore="LockedOrientationActivity">
+        <activity android:name=".mvp.ui.activity.mine.CashSuccessAct"
+            tool:ignore="Instantiatable"/>
+        <activity android:name=".mvp.ui.activity.mine.BoundPayAct"
+            tool:ignore="Instantiatable"
+            />
+        <activity
+            android:name=".mvp.ui.activity.face.FaceLivenessExpActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name=".mvp.ui.activity.mine.PayResultAct"
+            tool:ignore="Instantiatable"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+        <activity
+            android:name=".mvp.ui.activity.GuideAct"
+            tool:ignore="Instantiatable"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+        <activity
+            android:name=".mvp.ui.activity.mine.NobleSettingAct"
+            android:screenOrientation="portrait"
+            tool:ignore="Instantiatable"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+        <activity
+            android:name=".mvp.ui.activity.mine.ChangePhoneAct"
+            android:screenOrientation="portrait"
+            tool:ignore="Instantiatable"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+        <activity
+            android:name=".mvp.ui.activity.mine.PhoneTestAct"
+            android:screenOrientation="portrait"
+            tool:ignore="Instantiatable"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+        <activity
+            android:name=".mvp.ui.activity.mine.BindPhoneAct"
+            android:screenOrientation="portrait"
+            tool:ignore="Instantiatable"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+        <activity
+            android:name=".mvp.ui.activity.main.SignInAct"
+            android:screenOrientation="portrait"
+            tool:ignore="Instantiatable"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+        <activity
+            android:name=".mvp.ui.activity.main.HomeSeachAct"
+            android:screenOrientation="portrait"
+            tool:ignore="Instantiatable"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+        <activity
+            android:name=".mvp.ui.activity.msg.ChatWithAct"
+            android:screenOrientation="portrait"
+            android:theme="@style/transparent"
+            tool:ignore="Instantiatable"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+        <activity
+            android:name=".mvp.ui.activity.msg.SpeakAct"
+            android:screenOrientation="portrait"
+            android:theme="@style/transparent"
+            tool:ignore="Instantiatable"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+        <activity
+            android:name=".mvp.ui.activity.msg.SystemNoticAct"
+            android:screenOrientation="portrait"
+            tool:ignore="Instantiatable"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+        <activity
+            android:name=".mvp.ui.activity.studio.RoomOnLineAct"
+            android:screenOrientation="portrait"
+            tool:ignore="Instantiatable"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+        <activity
+            android:name=".mvp.ui.activity.msg.PublicChatAct"
+            android:screenOrientation="portrait"
+            tool:ignore="Instantiatable"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+        <activity
+            android:name=".mvp.ui.activity.mine.MyFamilyIncomeAct"
+            android:screenOrientation="portrait"
+            tool:ignore="Instantiatable"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+        <activity
+            android:name=".mvp.ui.activity.mine.FamilyUserAct"
+            android:screenOrientation="portrait"
+            tool:ignore="Instantiatable"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+        <activity
+            android:name=".mvp.ui.activity.mine.FamilyDiamondAct"
+            android:screenOrientation="portrait"
+            tool:ignore="Instantiatable"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+        <activity
+            android:name=".mvp.ui.activity.mine.GradeAct"
+            android:screenOrientation="portrait"
+            tool:ignore="Instantiatable"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+        <activity
+            android:name=".ui.activity.square.TopicNotificAct"
+            android:screenOrientation="portrait"
+            tool:ignore="Instantiatable,MissingClass"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+        <activity
+            android:name=".mvp.ui.activity.msg.ReportAct"
+            android:screenOrientation="portrait"
+            tool:ignore="Instantiatable"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+        <activity
+            tool:ignore="Instantiatable"
+            android:name=".mvp.ui.activity.msg.ChatBlackListAct"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+        <activity
+            tool:ignore="Instantiatable"
+            android:name=".mvp.ui.activity.studio.OnLineAct"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+        <activity
+            tool:ignore="Instantiatable"
+            android:name=".mvp.ui.activity.mine.MyBuddyAct"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+        <activity
+            tool:ignore="Instantiatable"
+            android:name=".mvp.ui.activity.studio.LotterRecordAct"
+            android:screenOrientation="portrait"
+            android:theme="@style/translucent"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+        <activity
+            tool:ignore="Instantiatable"
+            android:name=".mvp.ui.activity.studio.LotteryRuleAct"
+            android:screenOrientation="portrait"
+            android:theme="@style/translucent"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+        <activity
+            tool:ignore="Instantiatable"
+            android:name=".mvp.ui.activity.studio.LotteryAct"
+            android:screenOrientation="portrait"
+            android:theme="@style/translucent"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+        <activity
+            tool:ignore="Instantiatable"
+            android:name=".mvp.ui.activity.studio.LotterySelectionAct"
+            android:screenOrientation="portrait"
+            android:theme="@style/translucent"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+        <activity
+            tool:ignore="Instantiatable"
+            android:name=".mvp.ui.activity.studio.RoomBgAct"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+        <activity
+            tool:ignore="Instantiatable"
+            android:name=".mvp.ui.activity.studio.RoomBackgroundAct"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+        <activity
+            tool:ignore="Instantiatable"
+            android:name=".mvp.ui.activity.studio.BlackListAct"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+        <activity
+            tool:ignore="Instantiatable"
+            android:name=".mvp.ui.activity.studio.RoomManagerAct"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+        <activity
+            tool:ignore="Instantiatable"
+            android:name=".mvp.ui.activity.studio.RoomTypeAct"
+            android:screenOrientation="portrait"
+            android:theme="@style/translucent"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+        <activity
+            tool:ignore="Instantiatable"
+            android:name=".mvp.ui.activity.studio.RoomSettingAct"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+        <activity
+            tool:ignore="Instantiatable"
+            android:name=".mvp.ui.activity.studio.RoomNotiyAct"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+        <activity
+            tool:ignore="Instantiatable"
+            android:name=".mvp.ui.activity.studio.StudioAct"
+            android:configChanges="orientation|keyboardHidden"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@style/ChatTheme"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+        <activity
+            tool:ignore="Instantiatable"
+            android:name=".mvp.ui.activity.studio.VoiceLiveRoomAct"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+        <activity
+            tool:ignore="Instantiatable"
+            android:name=".mvp.ui.activity.msg.ChatGiftAct"
+            android:screenOrientation="portrait"
+            android:theme="@style/dialogstyle"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+        <activity
+            tool:ignore="Instantiatable"
+            android:name=".mvp.ui.activity.mine.SettingAct"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+        <activity
+            tool:ignore="Instantiatable"
+            android:name=".mvp.ui.activity.mine.VerifiedAct"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+        <activity
+            tool:ignore="Instantiatable"
+            android:name="com.xiaoshanghai.nancang.mvp.ui.activity.mine.TeensCloseAct"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+        <activity
+            tool:ignore="Instantiatable"
+            android:name=".mvp.ui.activity.mine.TeensOpenAct"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+        <activity
+            tool:ignore="Instantiatable"
+            android:name=".mvp.ui.activity.mine.TeensAct"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustUnspecified|stateHidden" />
+        <activity
+            tool:ignore="Instantiatable"
+            android:name=".mvp.ui.activity.msg.ChatActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize|stateHidden">
+
+            <!-- 华为离线推送打开应用内页面 -->
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <data
+                    android:host="com.tencent.qcloud"
+                    android:path="/detail"
+                    android:scheme="pushscheme" />
+            </intent-filter>
+
+            <!-- OPPO离线推送的intent action方式必须配置category且不能有data数据 -->
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+
+            <!-- OPPO离线推送的scheme url方式必须配置action和category -->
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data
+                    android:host="com.tencent.qcloud"
+                    android:scheme="pushscheme" />
+            </intent-filter>
+        </activity>
+        <activity
+            tool:ignore="Instantiatable"
+            android:name=".mvp.ui.activity.mine.NobleOrderAct"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+        <activity
+            tool:ignore="Instantiatable"
+            android:name=".mvp.ui.activity.mine.WebActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+        <activity
+            tool:ignore="Instantiatable"
+            android:name=".mvp.ui.activity.mine.NobleWebActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+        <activity
+            tool:ignore="Instantiatable"
+            android:name=".mvp.ui.activity.mine.FriendsSelectionAct"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+        <activity
+            tool:ignore="Instantiatable"
+            android:name=".mvp.ui.activity.mine.OutlayGiftAct"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+        <activity
+            tool:ignore="Instantiatable"
+            android:name=".mvp.ui.activity.mine.GoldCoinGiftAct"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+        <activity
+            tool:ignore="Instantiatable"
+            android:name=".mvp.ui.activity.mine.MyGiftAct"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+        <activity
+            tool:ignore="Instantiatable"
+            android:name=".mvp.ui.activity.mine.MyChiliAct"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+        <activity
+            tool:ignore="Instantiatable"
+            android:name=".mvp.ui.activity.mine.GoldExchangeAct"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+        <activity
+            tool:ignore="Instantiatable"
+            android:name=".mvp.ui.activity.mine.MyGoldAct"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+        <activity
+            tool:ignore="Instantiatable"
+            android:name=".mvp.ui.activity.mine.MyDiamondAct"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+        <activity
+            tool:ignore="Instantiatable"
+            android:name=".mvp.ui.activity.mine.CashRecordAct"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+        <activity
+            tool:ignore="Instantiatable"
+            android:name=".mvp.ui.activity.mine.WithdrawAct"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+        <activity
+            tool:ignore="Instantiatable"
+            android:name=".mvp.ui.activity.mine.RechargeRecordAct"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+        <activity
+            tool:ignore="Instantiatable"
+            android:name=".mvp.ui.activity.mine.GoldRechargeAct"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+        <activity
+            tool:ignore="Instantiatable"
+            android:name=".mvp.ui.activity.mine.MyFansAct"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+        <activity
+            tool:ignore="Instantiatable"
+            android:name=".mvp.ui.activity.mine.AttentionMineAct"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+        <activity
+            tool:ignore="Instantiatable"
+            android:name=".mvp.ui.activity.mine.MyOutfitAct"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+        <activity
+            tool:ignore="Instantiatable"
+            android:name=".mvp.ui.activity.mine.HeadgearAct"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+        <activity
+            tool:ignore="Instantiatable"
+            android:name=".mvp.ui.activity.mine.MyPhotosAct"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+        <activity
+            tool:ignore="Instantiatable"
+            android:name=".mvp.ui.activity.mine.SelfIntroductionAct"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+        <activity
+            tool:ignore="Instantiatable"
+            android:name=".mvp.ui.activity.mine.CompileMateriaAct"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+        <activity
+            tool:ignore="Instantiatable"
+            android:name=".mvp.ui.activity.mine.ModifyNickNameAct"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+        <activity
+            tool:ignore="Instantiatable"
+            android:name=".mvp.ui.activity.square.FamilyApplicationRecordAct"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+        <activity
+            tool:ignore="Instantiatable"
+            android:name=".mvp.ui.activity.mine.HomePageAct"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+        <activity
+            tool:ignore="Instantiatable"
+            android:name=".mvp.ui.activity.square.FamilyCreateAct"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+        <activity
+            tool:ignore="Instantiatable"
+            android:name=".mvp.ui.activity.square.FamilySquareAct"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+        <activity
+            tool:ignore="Instantiatable"
+            android:name=".mvp.ui.activity.square.MessageDetailsAct"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait" />
+        <activity
+            tool:ignore="Instantiatable"
+            android:name=".mvp.ui.activity.square.GraphicReleaseAct"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+        <activity
+            tool:ignore="Instantiatable"
+            android:name=".mvp.ui.activity.login.RegisterActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+        <activity
+            tool:ignore="Instantiatable"
+            android:name=".mvp.ui.activity.mine.BindPayAct"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+        <activity
+            tool:ignore="Instantiatable"
+            android:name=".mvp.ui.activity.SplashActivity"
+            android:theme="@style/SplashTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <meta-data
+            android:name="design_width_in_dp"
+            android:value="414" />
+        <meta-data
+            android:name="design_height_in_dp"
+            android:value="896" />
+
+        <activity
+            tool:ignore="Instantiatable"
+            android:name=".mvp.ui.activity.main.MainActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            tool:ignore="Instantiatable"
+            android:name=".mvp.ui.activity.login.OtherLoginAct"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+        <activity
+            tool:ignore="Instantiatable"
+            android:name=".mvp.ui.activity.login.OneKeyLoginAct"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+        <activity
+            tool:ignore="Instantiatable"
+            android:name=".mvp.ui.activity.login.LoginActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+        <activity
+            tool:ignore="Instantiatable"
+            android:name=".mvp.ui.activity.login.RegisteAndLoginAct"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+        <activity
+            tool:ignore="Instantiatable"
+            android:name=".mvp.ui.activity.login.AccountLoginAct"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+        <activity
+            tool:ignore="Instantiatable"
+            android:name=".mvp.ui.activity.square.FamilyMemberAct"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+        <activity
+            android:name="com.lzy.ninegrid.preview.ImagePreviewActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+        <activity
+            tool:ignore="Instantiatable"
+            android:name=".mvp.ui.activity.mine.AboutUsAct"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+        <activity
+            tool:ignore="Instantiatable"
+            android:name=".mvp.ui.activity.mine.FeedBackAct"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+        <activity
+            tool:ignore="Instantiatable"
+            android:name=".mvp.ui.activity.mine.ChangePswMineAct"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+        <activity
+            tool:ignore="Instantiatable"
+            android:name=".mvp.ui.activity.mine.ResetPsAct"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+        <activity
+            tool:ignore="Instantiatable"
+            android:name=".mvp.ui.activity.mine.BlackListMineAct"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+        <activity
+            android:name="com.yalantis.ucrop.UCropActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            tool:ignore="MissingClass" />
+        <activity
+            tool:ignore="Instantiatable"
+            android:name=".mvp.ui.activity.mine.BindBlackAct"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            tool:ignore="Instantiatable"
+            android:name=".mvp.ui.activity.mine.BindAliAct"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            tool:ignore="Instantiatable"
+            android:name=".mvp.ui.activity.mine.BindWeChatAct"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name="com.xiaoshanghai.nancang.wxapi.WXEntryActivity"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:launchMode="singleTask"
+            android:taskAffinity="com.hyqc.shengyou"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
+        <activity
+            tool:ignore="Instantiatable"
+            android:name="com.xiaoshanghai.nancang.wxapi.WXPayEntryActivity"
+            android:exported="true"
+            android:launchMode="singleTop"/>
+        <receiver
+            android:name="com.xiaoshanghai.nancang.broadcast.AppRegister"
+            android:permission="com.tencent.mm.plugin.permission.SEND">
+            <intent-filter>
+                <action android:name="com.tencent.mm.plugin.openapi.Intent.ACTION_REFRESH_WXAPP" />
+            </intent-filter>
+        </receiver>
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true"
+            tool:ignore="MissingClass">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/filepath" />
+        </provider>
+                    <!-- 高德地图 start -->
+        <meta-data android:name="com.amap.api.v2.apikey" android:value="708e25a867ce213168466a236d92a084"/>
+        <service android:name="com.amap.api.location.APSService"
+            tool:ignore="MissingClass,WrongManifestParent"/>
+                       <!-- 高德地图 end -->
+    </application>
+
+</manifest>

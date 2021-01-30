@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cons_bg"
+    android:paddingEnd="@dimen/dp_40"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/shape_in_room_noble_0">
+
+    <TextView
+        android:id="@+id/tv_user_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_10"
+        android:layout_marginTop="@dimen/dp_10"
+        android:text="这我的名字"
+        android:textColor="@color/color_bcbcbc"
+        android:textSize="@dimen/sp_12"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+
+        android:id="@+id/tv_dk"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_4"
+        android:text="打开"
+        android:textColor="@color/color_00fffc"
+        android:textSize="@dimen/sp_12"
+        app:layout_constraintBottom_toBottomOf="@id/tv_user_name"
+        app:layout_constraintEnd_toStartOf="@id/tv_bx_name"
+        app:layout_constraintStart_toEndOf="@id/tv_user_name"
+        app:layout_constraintTop_toTopOf="@id/tv_user_name" />
+
+    <TextView
+        android:id="@+id/tv_bx_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_4"
+        android:text="白银宝箱"
+        android:textColor="@color/color_e3f5ff"
+        android:textSize="@dimen/sp_12"
+        app:layout_constraintBottom_toBottomOf="@id/tv_dk"
+        app:layout_constraintStart_toEndOf="@id/tv_dk"
+        app:layout_constraintTop_toTopOf="@id/tv_dk" />
+
+    <TextView
+        android:id="@+id/tv_hd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_4"
+        android:text="获得"
+        android:textColor="@color/color_00fffc"
+        android:textSize="@dimen/sp_12"
+        app:layout_constraintBottom_toBottomOf="@id/tv_bx_name"
+        app:layout_constraintStart_toEndOf="@id/tv_bx_name"
+        app:layout_constraintTop_toTopOf="@id/tv_bx_name" />
+
+    <TextView
+        android:id="@+id/tv_result"
+        android:layout_marginTop="@dimen/dp_6"
+        android:layout_marginBottom="@dimen/dp_10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="蓝天白云 (599金币) ×5"
+        android:textColor="@color/color_e3f4ff"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@id/tv_dk"
+        app:layout_constraintTop_toBottomOf="@id/tv_dk" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

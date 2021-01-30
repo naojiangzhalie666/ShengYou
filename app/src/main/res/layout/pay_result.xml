@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".mvp.ui.activity.mine.PayResultAct">
+<!--        android:src="@drawable/shape_pay_result"-->
+
+    <ImageView
+        android:src="@mipmap/img_pay_result"
+        android:id="@+id/title_bg"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:adjustViewBounds="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:visibility="gone"
+        android:id="@+id/tv_error"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/title_bg"
+        app:layout_constraintBottom_toBottomOf="@id/title_bg"
+        android:textColor="@color/white"
+        android:text="支付失败"
+        android:textSize="@dimen/sp_30"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <com.xiaoshanghai.nancang.mvp.ui.view.TitleBarView
+        android:id="@+id/title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_0"
+        app:blackImg="@mipmap/icon_my_home_dynamic_back"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="订单详情"
+        app:titleColor="@color/white" />
+
+    <ImageView
+        android:id="@+id/iv_result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_140"
+        android:adjustViewBounds="true"
+        android:src="@mipmap/img_pay_bg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title_bar" />
+
+    <TextView
+        android:id="@+id/tv_money_type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="￥"
+        android:textColor="@color/color_2e2e2e"
+        android:textSize="@dimen/sp_16"
+        app:layout_constraintBaseline_toBaselineOf="@+id/tv_money"
+        app:layout_constraintEnd_toStartOf="@id/tv_money"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_money"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_32"
+        android:text="0"
+        android:textColor="@color/color_2e2e2e"
+        android:textSize="@dimen/sp_30"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tv_money_type"
+        app:layout_constraintTop_toTopOf="@id/iv_result" />
+
+    <TextView
+        android:id="@+id/tv_order_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_45"
+        android:layout_marginTop="@dimen/dp_20"
+        android:text="下单时间："
+        android:textColor="@color/color_757575"
+        android:textSize="@dimen/sp_14"
+        app:layout_constraintStart_toStartOf="@id/iv_result"
+        app:layout_constraintTop_toBottomOf="@id/tv_money" />
+
+    <TextView
+        android:id="@+id/tv_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textColor="@color/color_2d2c2c"
+        android:textSize="@dimen/sp_14"
+        app:layout_constraintBaseline_toBaselineOf="@id/tv_order_time"
+        app:layout_constraintStart_toEndOf="@id/tv_order_time" />
+
+    <TextView
+        android:id="@+id/tv_pay_type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_15"
+        android:text="支付方式："
+        android:textColor="@color/color_757575"
+        android:textSize="@dimen/sp_14"
+        app:layout_constraintStart_toStartOf="@id/tv_order_time"
+        app:layout_constraintTop_toBottomOf="@id/tv_order_time" />
+
+    <TextView
+        android:id="@+id/tv_wx_type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="微信"
+        android:textColor="@color/color_2d2c2c"
+        android:textSize="@dimen/sp_14"
+        app:layout_constraintBaseline_toBaselineOf="@id/tv_pay_type"
+        app:layout_constraintStart_toEndOf="@id/tv_pay_type" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/group_1"
+        android:visibility="visible"
+        app:constraint_referenced_ids="tv_wx_type,tv_pay_type,tv_time,tv_order_time,tv_money,tv_money_type,iv_result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".mvp.ui.activity.mine.TeensAct">
+
+    <com.xiaoshanghai.nancang.mvp.ui.view.TitleBarView
+        android:id="@+id/title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:bgColor="@color/white"
+        app:title="请少年模式"
+        app:titleColor="@color/color_black" />
+
+    <RelativeLayout
+        android:id="@+id/rl_teenagers"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/title_bar"
+        android:layout_marginTop="@dimen/dp_75"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/iv_teens"
+            android:layout_width="@dimen/dp_57"
+            android:layout_height="@dimen/dp_60"
+            android:layout_marginLeft="@dimen/dp_74"
+            android:src="@mipmap/icon_teens_off" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_toRightOf="@id/iv_teens"
+            android:text="开启青少年模式\n将会获得以下服务"
+            android:textColor="@color/color_black"
+            android:textSize="@dimen/sp_20" />
+
+        <TextView
+            android:id="@+id/tv_status_open"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/iv_teens"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_toRightOf="@id/iv_teens"
+            android:text="青少年模式未开启"
+            android:textColor="@color/color_484848"
+            android:textSize="@dimen/sp_12" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/rl_prompt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rl_teenagers"
+        android:layout_marginTop="@dimen/dp_50"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_74"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <View
+                android:layout_width="@dimen/dp_10"
+                android:layout_height="@dimen/dp_10"
+                android:background="@drawable/shape_hollow_circle" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:text="针对青少年推送精选优化的内容"
+                android:textColor="@color/color_black"
+                android:textSize="@dimen/sp_16" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_74"
+            android:layout_marginTop="@dimen/dp_35"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <View
+                android:layout_width="@dimen/dp_10"
+                android:layout_height="@dimen/dp_10"
+                android:background="@drawable/shape_hollow_circle" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:text="其他用户无法通过搜索找到该账号"
+                android:textColor="@color/color_black"
+                android:textSize="@dimen/sp_16" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_74"
+            android:layout_marginTop="@dimen/dp_35"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <View
+                android:layout_width="@dimen/dp_10"
+                android:layout_height="@dimen/dp_10"
+                android:background="@drawable/shape_hollow_circle" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:text="限制使用金币充值功能"
+                android:textColor="@color/color_black"
+                android:textSize="@dimen/sp_16" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_74"
+            android:layout_marginTop="@dimen/dp_35"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <View
+                android:layout_width="@dimen/dp_10"
+                android:layout_height="@dimen/dp_10"
+                android:background="@drawable/shape_hollow_circle" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:text="每天限玩保护"
+                android:textColor="@color/color_black"
+                android:textSize="@dimen/sp_16" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/rl_start"
+        android:layout_width="@dimen/dp_266"
+        android:layout_height="@dimen/dp_40"
+        android:layout_below="@id/rl_prompt"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/dp_110"
+        android:background="@drawable/shape_teens_start">
+
+        <TextView
+            android:id="@+id/tv_start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="开启青少年模式"
+            android:textColor="@color/color_black"
+            android:textSize="@dimen/sp_16" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_marginTop="@dimen/dp_7"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rl_start"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="查看"
+            android:textColor="@color/color_black"
+            android:textSize="@dimen/sp_12" />
+
+        <TextView
+            android:id="@+id/tv_aegis"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="护苗计划"
+            android:textColor="@color/red"
+            android:textSize="@dimen/sp_12" />
+
+    </LinearLayout>
+
+
+</RelativeLayout>

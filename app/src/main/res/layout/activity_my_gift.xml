@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".mvp.ui.activity.mine.MyGiftAct">
+
+    <com.xiaoshanghai.nancang.mvp.ui.view.TitleBarView
+        app:bgColor="@color/white"
+        app:titleColor="@color/color_black"
+        app:title="礼物收支"
+        android:id="@+id/title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_160"
+        android:layout_below="@id/title_bar"
+        android:layout_marginTop="@dimen/dp_25"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="@dimen/dp_120"
+            android:layout_height="@dimen/dp_120"
+            android:layout_marginRight="@dimen/dp_20"
+            android:elevation="@dimen/dp_0"
+            app:cardCornerRadius="@dimen/dp_10"
+            app:cardMaxElevation="@dimen/dp_0">
+
+            <RelativeLayout
+                android:id="@+id/rl_income"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/iv_income"
+                    android:layout_width="@dimen/dp_40"
+                    android:layout_height="@dimen/dp_40"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/dp_20"
+                    android:src="@mipmap/icon_my_gift_income" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/iv_income"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/dp_27"
+                    android:text="礼物收入记录"
+                    android:textColor="@color/color_black"
+                    android:textSize="@dimen/sp_16" />
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="@dimen/dp_120"
+            android:layout_height="@dimen/dp_120"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:elevation="@dimen/dp_0"
+            app:cardCornerRadius="@dimen/dp_10"
+            app:cardMaxElevation="@dimen/dp_0">
+
+            <RelativeLayout
+                android:id="@+id/rl_give_away"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+                <ImageView
+                    android:id="@+id/iv_give"
+                    android:layout_width="@dimen/dp_40"
+                    android:layout_height="@dimen/dp_40"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/dp_20"
+                    android:src="@mipmap/icon_gift_give" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/iv_give"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/dp_27"
+                    android:text="礼物赠送记录"
+                    android:textColor="@color/color_black"
+                    android:textSize="@dimen/sp_16" />
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+
+    </LinearLayout>
+
+</RelativeLayout>

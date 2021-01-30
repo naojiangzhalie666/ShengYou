@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/ll_rank_button"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_30"
+        android:layout_marginStart="@dimen/dp_20"
+        android:layout_marginTop="@dimen/dp_10"
+        android:layout_marginEnd="@dimen/dp_20"
+        android:background="@drawable/shape_room_rank_title"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/tv_gxb"
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/dp_1"
+            android:layout_weight="1"
+            android:background="@drawable/shape_rounded_white_r13"
+            android:gravity="center"
+            android:text="贡献榜"
+            android:textColor="@color/color_b16dfe"
+            android:textSize="@dimen/sp_12" />
+
+        <TextView
+            android:id="@+id/tv_mlb"
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/dp_1"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="魅力榜"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_12" />
+
+    </LinearLayout>
+
+    <TextView
+        android:paddingEnd="@dimen/dp_4"
+        android:paddingBottom="@dimen/dp_15"
+        android:paddingStart="@dimen/dp_20"
+        android:paddingTop="@dimen/dp_12"
+        android:id="@+id/tv_rb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="日榜"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp_12"
+        app:layout_constraintEnd_toStartOf="@id/tv_zb"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ll_rank_button" />
+
+
+    <TextView
+        android:paddingTop="@dimen/dp_12"
+        android:paddingBottom="@dimen/dp_15"
+        android:paddingStart="@dimen/dp_4"
+        android:paddingRight="@dimen/dp_20"
+        android:id="@+id/tv_zb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_8"
+        android:text="周榜"
+        android:textColor="@color/color_80ffffff"
+        android:textSize="@dimen/sp_12"
+        app:layout_constraintStart_toEndOf="@id/tv_rb"
+        app:layout_constraintTop_toTopOf="@id/tv_rb" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rcy_rank"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/white"
+        app:layout_constraintTop_toBottomOf="@id/tv_rb"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

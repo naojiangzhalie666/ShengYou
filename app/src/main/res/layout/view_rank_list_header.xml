@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/iv_rank_bg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"
+        android:src="@mipmap/img_rank_list_bg"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.xiaoshanghai.nancang.view.CircleImageView
+        android:id="@+id/iv_top_1_avatar"
+        android:layout_width="@dimen/dp_61"
+        android:layout_height="@dimen/dp_61"
+        android:layout_marginTop="@dimen/dp_15"
+        android:src="@mipmap/icon_rank_empty_1"
+        app:layout_constraintBottom_toBottomOf="@id/iv_top_1_bg"
+        app:layout_constraintEnd_toEndOf="@id/iv_top_1_bg"
+        app:layout_constraintStart_toStartOf="@id/iv_top_1_bg"
+        app:layout_constraintTop_toTopOf="@id/iv_top_1_bg"
+        app:radius="@dimen/dp_45" />
+
+
+    <ImageView
+        android:id="@+id/iv_top_1_bg"
+        android:layout_width="@dimen/dp_82"
+        android:layout_height="@dimen/dp_94"
+        android:layout_marginTop="@dimen/dp_6"
+        android:src="@mipmap/icon_rank_top1"
+        app:layout_constraintEnd_toEndOf="@id/iv_rank_bg"
+        app:layout_constraintStart_toStartOf="@id/iv_rank_bg"
+        app:layout_constraintTop_toTopOf="@id/iv_rank_bg" />
+
+    <com.xiaoshanghai.nancang.view.CircleImageView
+        android:id="@+id/iv_top_2_avatar"
+        android:layout_width="@dimen/dp_62"
+        android:layout_height="@dimen/dp_62"
+        android:layout_marginTop="@dimen/dp_16"
+        android:layout_marginEnd="1dp"
+        android:src="@mipmap/icon_rank_empty_2"
+        app:layout_constraintBottom_toBottomOf="@id/iv_top_2_bg"
+        app:layout_constraintEnd_toEndOf="@id/iv_top_2_bg"
+        app:layout_constraintStart_toStartOf="@id/iv_top_2_bg"
+        app:layout_constraintTop_toTopOf="@id/iv_top_2_bg"
+        app:radius="@dimen/dp_45" />
+
+    <ImageView
+        android:id="@+id/iv_top_2_bg"
+        android:layout_width="@dimen/dp_82"
+        android:layout_height="@dimen/dp_94"
+        android:layout_marginStart="@dimen/dp_40"
+        android:layout_marginTop="@dimen/dp_6"
+        android:src="@mipmap/icon_rank_top2"
+        app:layout_constraintBottom_toBottomOf="@id/iv_top_1_bg"
+        app:layout_constraintStart_toEndOf="@id/iv_top_1_bg"
+        app:layout_constraintTop_toBottomOf="@id/iv_top_1_bg" />
+
+    <com.xiaoshanghai.nancang.view.CircleImageView
+        android:id="@+id/iv_top_3_avatar"
+        android:layout_width="@dimen/dp_62"
+        android:layout_height="@dimen/dp_62"
+        android:layout_marginTop="@dimen/dp_16"
+        android:src="@mipmap/icon_rank_empty_3"
+        app:layout_constraintBottom_toBottomOf="@id/iv_top_3_bg"
+        app:layout_constraintEnd_toEndOf="@id/iv_top_3_bg"
+        app:layout_constraintStart_toStartOf="@id/iv_top_3_bg"
+        app:layout_constraintTop_toTopOf="@id/iv_top_3_bg"
+        app:radius="@dimen/dp_45" />
+
+    <ImageView
+        android:id="@+id/iv_top_3_bg"
+        android:layout_width="@dimen/dp_82"
+        android:layout_height="@dimen/dp_94"
+        android:layout_marginTop="@dimen/dp_6"
+        android:layout_marginEnd="@dimen/dp_40"
+        android:src="@mipmap/icon_rank_top3"
+        app:layout_constraintBottom_toBottomOf="@id/iv_top_1_bg"
+        app:layout_constraintEnd_toStartOf="@id/iv_top_1_bg"
+        app:layout_constraintTop_toBottomOf="@id/iv_top_1_bg" />
+
+    <TextView
+        android:id="@+id/tv_top3_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_10"
+        android:ellipsize="end"
+        android:maxLength="6"
+        android:text="太阳井部落"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp_12"
+        app:layout_constraintEnd_toStartOf="@id/iv_top3_sex"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="@id/iv_top_3_bg"
+        app:layout_constraintTop_toBottomOf="@id/iv_top_3_bg" />
+
+    <ImageView
+        android:id="@+id/iv_top3_sex"
+        android:layout_width="@dimen/dp_14"
+        android:layout_height="@dimen/dp_14"
+        android:layout_marginStart="@dimen/dp_5"
+        android:src="@mipmap/icon_gender_female"
+        app:layout_constraintBottom_toBottomOf="@id/tv_top3_name"
+        app:layout_constraintEnd_toEndOf="@id/iv_top_3_bg"
+        app:layout_constraintStart_toEndOf="@id/tv_top3_name"
+        app:layout_constraintTop_toTopOf="@id/tv_top3_name" />
+
+    <TextView
+        android:id="@+id/tv_id_type3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ID: "
+        android:textColor="@color/color_dedede"
+        android:textSize="@dimen/dp_10"
+        app:layout_constraintEnd_toStartOf="@id/tv_top3_id"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="@id/iv_top_3_bg"
+        app:layout_constraintTop_toBottomOf="@id/tv_top3_name" />
+
+    <TextView
+        android:id="@+id/tv_top3_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="429006"
+        android:textColor="@color/color_dedede"
+        android:textSize="@dimen/dp_10"
+        app:layout_constraintEnd_toEndOf="@id/iv_top_3_bg"
+        app:layout_constraintStart_toEndOf="@id/tv_id_type3"
+        app:layout_constraintTop_toTopOf="@id/tv_id_type3" />
+
+    <TextView
+        android:id="@+id/tv_juli3_gold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_5"
+        android:text="1000000"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp_12"
+        app:layout_constraintEnd_toEndOf="@id/iv_top_3_bg"
+        app:layout_constraintStart_toStartOf="@id/iv_top_3_bg"
+        app:layout_constraintTop_toBottomOf="@id/tv_id_type3" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/group_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="visible"
+        app:constraint_referenced_ids="tv_top3_name,tv_id_type3,tv_top3_id,tv_juli3_gold,iv_top3_sex" />
+
+    <TextView
+        android:id="@+id/tv_top1_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_10"
+        android:ellipsize="end"
+        android:maxLength="6"
+        android:text="风暴城堡部落"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp_12"
+        app:layout_constraintEnd_toStartOf="@id/iv_top1_sex"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="@id/iv_top_1_bg"
+        app:layout_constraintTop_toBottomOf="@id/iv_top_1_bg" />
+
+    <ImageView
+        android:id="@+id/iv_top1_sex"
+        android:layout_width="@dimen/dp_14"
+        android:layout_height="@dimen/dp_14"
+        android:layout_marginStart="@dimen/dp_5"
+        android:src="@mipmap/icon_gender_female"
+        app:layout_constraintBottom_toBottomOf="@id/tv_top1_name"
+        app:layout_constraintEnd_toEndOf="@id/iv_top_1_bg"
+        app:layout_constraintStart_toEndOf="@id/tv_top1_name"
+        app:layout_constraintTop_toTopOf="@id/tv_top1_name" />
+
+    <TextView
+        android:id="@+id/tv_id_type1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ID: "
+        android:textColor="@color/color_dedede"
+        android:textSize="@dimen/dp_10"
+        app:layout_constraintEnd_toStartOf="@id/tv_top1_id"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="@id/iv_top_1_bg"
+        app:layout_constraintTop_toBottomOf="@id/tv_top1_name" />
+
+    <TextView
+        android:id="@+id/tv_top1_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="4677825"
+        android:textColor="@color/color_dedede"
+        android:textSize="@dimen/dp_10"
+        app:layout_constraintEnd_toEndOf="@id/iv_top_1_bg"
+        app:layout_constraintStart_toEndOf="@id/tv_id_type1"
+        app:layout_constraintTop_toTopOf="@id/tv_id_type1" />
+
+    <TextView
+        android:id="@+id/tv_juli1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_5"
+        android:text="162.53万"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp_12"
+        app:layout_constraintEnd_toEndOf="@id/iv_top_1_bg"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="@id/iv_top_1_bg"
+        app:layout_constraintTop_toBottomOf="@id/tv_id_type1" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/group_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="visible"
+        app:constraint_referenced_ids="tv_top1_name,tv_id_type1,tv_top1_id,tv_juli1,iv_top1_sex" />
+
+    <TextView
+        android:id="@+id/tv_top2_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_10"
+        android:ellipsize="end"
+        android:maxLength="6"
+        android:text="黑暗圣殿部落"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp_12"
+        app:layout_constraintEnd_toStartOf="@id/iv_top2_sex"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="@id/iv_top_2_bg"
+        app:layout_constraintTop_toBottomOf="@id/iv_top_2_bg" />
+
+    <ImageView
+        android:id="@+id/iv_top2_sex"
+        android:layout_width="@dimen/dp_14"
+        android:layout_height="@dimen/dp_14"
+        android:layout_marginStart="@dimen/dp_5"
+        android:src="@mipmap/icon_gender_female"
+        app:layout_constraintBottom_toBottomOf="@id/tv_top2_name"
+        app:layout_constraintEnd_toEndOf="@id/iv_top_2_bg"
+        app:layout_constraintStart_toEndOf="@id/tv_top2_name"
+        app:layout_constraintTop_toTopOf="@id/tv_top2_name" />
+
+    <TextView
+        android:id="@+id/tv_id_type2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ID:"
+        android:textColor="@color/color_dedede"
+        android:textSize="@dimen/dp_10"
+        app:layout_constraintEnd_toStartOf="@id/tv_top2_id"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="@id/iv_top_2_bg"
+        app:layout_constraintTop_toBottomOf="@id/tv_top2_name" />
+
+    <TextView
+        android:id="@+id/tv_top2_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="886475"
+        android:textColor="@color/color_dedede"
+        android:textSize="@dimen/dp_10"
+        app:layout_constraintEnd_toEndOf="@id/iv_top_2_bg"
+        app:layout_constraintStart_toEndOf="@id/tv_id_type2"
+        app:layout_constraintTop_toTopOf="@id/tv_id_type2" />
+
+    <TextView
+        android:layout_marginTop="@dimen/dp_5"
+        android:id="@+id/tv_juli2_gold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="138.65万"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp_12"
+        app:layout_constraintEnd_toEndOf="@id/iv_top_2_bg"
+        app:layout_constraintStart_toStartOf="@id/iv_top_2_bg"
+        app:layout_constraintTop_toBottomOf="@id/tv_id_type2" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/group_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="visible"
+        app:constraint_referenced_ids="tv_top2_name,tv_id_type2,tv_top2_id,tv_juli2_gold,iv_top2_sex" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

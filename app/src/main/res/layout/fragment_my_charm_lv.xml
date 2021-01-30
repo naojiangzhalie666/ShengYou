@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_white">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/iv_avatar"
+                android:layout_width="@dimen/dp_80"
+                android:layout_height="@dimen/dp_80"
+                android:layout_marginTop="@dimen/dp_25"
+                android:scaleType="centerCrop"
+                android:src="@mipmap/icon_logo"
+                app:layout_constraintEnd_toEndOf="@id/iv_title_bg"
+                app:layout_constraintStart_toStartOf="@id/iv_title_bg"
+                app:layout_constraintTop_toTopOf="@id/iv_title_bg" />
+
+            <ImageView
+                android:id="@+id/iv_title_bg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:src="@mipmap/img_my_grade_title_2_bg"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_lv_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Lv.180"
+                android:textColor="@color/color_white"
+                android:textSize="@dimen/dp_16"
+                app:layout_constraintBottom_toBottomOf="@id/iv_avatar"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/iv_title_bg" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv_experience"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_80"
+                android:layout_margin="@dimen/dp_17"
+                app:cardCornerRadius="@dimen/dp_10"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/iv_title_bg">
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+
+                    <ProgressBar
+                        android:id="@+id/pb_lv"
+                        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                        android:layout_width="@dimen/dp_288"
+                        android:layout_height="@dimen/dp_7"
+                        android:layout_marginTop="@dimen/dp_20"
+                        android:progress="0"
+                        android:progressDrawable="@drawable/grade_progress_2_bar"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_dqjy"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="当前经验值： "
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/sp_16"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/tv_experience"
+                        app:layout_constraintStart_toStartOf="@id/pb_lv"
+                        app:layout_constraintTop_toBottomOf="@id/pb_lv" />
+
+                    <TextView
+                        android:id="@+id/tv_experience"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0"
+                        android:textColor="@color/color_ff1b50"
+                        android:textSize="@dimen/sp_16"
+                        app:layout_constraintBottom_toBottomOf="@id/tv_dqjy"
+                        app:layout_constraintStart_toEndOf="@id/tv_dqjy"
+                        app:layout_constraintTop_toTopOf="@id/tv_dqjy" />
+
+                    <TextView
+                        android:id="@+id/tv_cha"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=" 差 "
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/sp_16"
+                        app:layout_constraintBottom_toBottomOf="@id/tv_dqjy"
+                        app:layout_constraintStart_toEndOf="@id/tv_experience"
+                        app:layout_constraintTop_toTopOf="@id/tv_dqjy" />
+
+                    <TextView
+                        android:id="@+id/tv_distance"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0"
+                        android:textColor="@color/color_ff1b50"
+                        android:textSize="@dimen/sp_16"
+                        app:layout_constraintBottom_toBottomOf="@id/tv_dqjy"
+                        app:layout_constraintStart_toEndOf="@id/tv_cha"
+                        app:layout_constraintTop_toTopOf="@id/tv_dqjy" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=" 升级"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/sp_16"
+                        app:layout_constraintBottom_toBottomOf="@id/tv_dqjy"
+                        app:layout_constraintStart_toEndOf="@id/tv_distance"
+                        app:layout_constraintTop_toTopOf="@id/tv_dqjy" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+            <ImageView
+                android:id="@+id/iv_bg"
+                android:layout_width="@dimen/dp_0"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_20"
+                android:adjustViewBounds="true"
+                android:scaleType="fitXY"
+                android:src="@mipmap/img_grade_2_bg"
+                app:layout_constraintEnd_toEndOf="@id/cv_experience"
+                app:layout_constraintStart_toStartOf="@id/cv_experience"
+                app:layout_constraintTop_toBottomOf="@id/cv_experience" />
+
+            <TextView
+                android:id="@+id/tv_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_25"
+                android:drawableLeft="@mipmap/icon_grade_explain_2"
+                android:drawablePadding="@dimen/dp_10"
+                android:gravity="center_vertical"
+                android:text="等级说明"
+                android:textColor="@color/color_ff1b50"
+                android:textSize="@dimen/sp_12"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/iv_bg" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

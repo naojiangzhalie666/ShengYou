@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dp_52"
+    android:paddingLeft="@dimen/dp_32">
+
+    <TextView
+        android:id="@+id/tv_gift_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_5"
+        android:text="抽奖进账"
+        android:textColor="@color/color_black"
+        android:textSize="@dimen/sp_16" />
+
+    <TextView
+        android:id="@+id/tv_gift_type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_gift_name"
+        android:layout_marginBottom="@dimen/dp_5"
+        android:text="2020-08-11"
+        android:textColor="@color/color_515151"
+        android:textSize="@dimen/sp_12" />
+
+    <TextView
+        android:id="@+id/tv_income_num"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="@dimen/dp_5"
+        android:layout_marginRight="@dimen/dp_17"
+        android:textColor="@color/color_ff5f85"
+        android:textSize="@dimen/sp_20" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_income_num"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="@dimen/dp_17"
+        android:layout_marginBottom="@dimen/dp_5"
+        android:text="金币"
+        android:textColor="@color/color_515151"
+        android:textSize="@dimen/sp_12" />
+
+</RelativeLayout>

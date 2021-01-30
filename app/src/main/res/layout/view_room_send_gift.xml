@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rl_bg"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:paddingLeft="@dimen/dp_10"
+    android:paddingTop="@dimen/dp_10"
+    android:paddingRight="@dimen/dp_10">
+
+    <TextView
+        android:id="@+id/tv_user_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:maxLength="7"
+        android:textColor="@color/black"
+        android:textSize="@dimen/sp_12" />
+
+    <TextView
+        android:id="@+id/tv_sg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:layout_marginRight="@dimen/dp_10"
+        android:layout_toRightOf="@id/tv_user_name"
+        android:text="送给"
+        android:textColor="@color/color_ff6086"
+        android:textSize="@dimen/sp_12" />
+
+    <TextView
+        android:id="@+id/tv_receive"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/tv_sg"
+        android:maxLength="7"
+        android:textColor="@color/black"
+        android:textSize="@dimen/sp_12" />
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_sg"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/dp_7"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:scaleType="centerCrop"
+            android:id="@+id/iv_gift"
+            android:layout_width="@dimen/dp_34"
+            android:layout_height="@dimen/dp_34" />
+
+        <TextView
+            android:id="@+id/tv_gift_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/color_00fffc"
+            android:textSize="@dimen/sp_12" />
+
+    </LinearLayout>
+
+
+</RelativeLayout>

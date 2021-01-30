@@ -1,0 +1,482 @@
+* {
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  background-color: #f5f5f5;
+  color: #333333;
+  font-size: 0.75rem;
+}
+
+ul,
+li,
+ol {
+  list-style: none;
+}
+
+img,
+div,
+button {
+  border: none;
+  outline: none;
+  resize: none;
+}
+
+#app {
+  height: 100%;
+  font-size: 0.75rem;
+}
+
+.w  {
+    width: 100%;
+    height: 100%;
+    background: url('../images/beijing2@3x.png') no-repeat;
+    background-attachment: fixed;
+    background-size: 100%;
+}
+
+.w_2  {
+    width: 100%;
+    height: 100%;
+    background: url('../images/beijing1@3x.png') no-repeat;
+    background-attachment: fixed;
+    background-size: 100%;
+}
+
+.bg {
+    width: 100%;
+    height: 100%;
+}
+
+.nav_box {
+    width: 100%;
+    height: 62.5rem;
+    position: relative;
+}
+
+.date_box {
+    width: 100%;
+    height: 1.25rem;
+    margin-top: 3.125rem;
+    padding-top: 0.3125rem;
+}
+
+.top_three {
+    margin-top: 5rem;
+    width: 100%;
+    height: 100%;
+    padding: 0 1.25rem;
+}
+
+.list {
+    background-color: #fff;
+    width: 100%;
+    height: 100%;
+}
+
+.list_max {
+    background-color: #fff;
+    width: 100%;
+    height: 100%;
+}
+
+.list_no {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 12.5rem;
+    height: 11.25rem;
+    font-size: 0.75rem;
+    text-align: center;
+    line-height: 11.25rem;
+    color: #999999;
+    font-weight: 500;
+}
+
+.top_box {
+  width: 100%;
+  display: flex;
+  height: 12.5rem;
+  border-radius: 0.625rem 0.625rem 0 0;
+  display: flex;
+}
+
+.top_1 {
+  flex: 38%;
+  height: 13.75rem;
+  background-color: #fff;
+  position: relative;
+  top: -1.25rem;
+  border-radius: 0.625rem 0.625rem 0 0;
+}
+
+.top_2 {
+  flex: 31%;
+  background-color: #fff;
+  border-radius: 0 0.625rem 0 0;
+  padding: 0 0.0625rem;
+}
+
+.top_3 {
+  flex: 31%;
+  background-color: #fff;
+  border-radius: 0.625rem 0 0 0;
+}
+
+.img_k_3 {
+    width: 5rem;
+    height: 5rem;
+    background: url('../images/No.3@3x.png') no-repeat;
+    background-size: 100%;
+    position: relative;
+    top: 1.875rem;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.await_t_3 {
+    position: relative;
+    width: 5rem;
+    top: 2.5rem;
+    left: 50%;
+    text-align: center;
+    transform: translateX(-50%);
+    color: #FCAE6E;   
+    font-size: 0.8125rem;
+    font-weight: 500;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.await_t_2 {
+    position: relative;
+    width: 5rem;
+    top: 2.5rem;
+    left: 50%;
+    text-align: center;
+    transform: translateX(-50%);
+    color: #C1C9CD;   
+    font-size: 0.8125rem;
+    font-weight: 500;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.await_t_1 {
+    position: relative;
+    width: 5rem;
+    top: 1.25rem;
+    left: 50%;
+    text-align: center;
+    transform: translateX(-50%);
+    color: #FBC40A;   
+    font-size: 0.8125rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.img_tx {
+    width: 3.375rem;
+    height: 3.375rem;
+    border-radius: 50%;
+    position: relative;
+    top: 24%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.img_tx_2 {
+    width: 3.375rem;
+    height: 3.375rem;
+    border-radius: 50%;
+    position: relative;
+    top: 25%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.img_k_1 {
+    width: 5rem;
+    height: 5rem;
+    background: url('../images/No.1@3x.png') no-repeat;
+    background-size: 100%;
+    position: relative;
+    top: 0.625rem;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.img_k_2 {
+    width: 5rem;
+    height: 5rem;
+    background: url('../images/No.2@3x.png') no-repeat;
+    background-size: 100%;
+    position: relative;
+    top: 1.875rem;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.id_liang {
+    position: relative;
+    top: 3.125rem;
+    width: 100%;
+    text-align: center;
+}
+
+.Id_liang_ju {
+    width: 100%;
+    text-align: center;
+    color: #C1C9CD;
+    font-size: 0.625rem; 
+}
+
+.Id_liang_No {
+    width: 5rem;
+    text-align: center;
+    position: relative;
+    top: 0.625rem;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #FAC200;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.item_icon {
+    display: inline-block;
+    margin-left: 0.1875rem;
+    margin-right: -0.625rem;
+    width: 1.0625rem;
+    height: 0.75rem;
+  }
+
+  .item_icon_1 {
+    display: inline-block;
+    width: 1.0625rem;
+    height: 0.75rem;
+  }
+
+  .Id_liang_text_1 {
+    display: inline-block;
+    font-weight: 400;
+    color: #C1C9CD;
+    font-size: 0.75rem;
+  }
+
+  .Id_liang_text_3 {
+    display: inline-block;
+    font-weight: 400;
+    margin-left: 0.625rem;
+    color: #C1C9CD;
+    font-size: 0.625rem;
+  }
+
+
+.day_btn {
+    float: left;
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: bold;
+    margin-left: 0.9375rem;
+}
+
+.week_btn {
+    float: left;
+    color: #f89588;
+    font-size: 0.75rem;
+    font-weight: bold;
+    margin-left: 0.9375rem;
+}
+
+.list_item {
+    position: relative;
+    width: 100%;
+    height: 3.75rem;
+    display: flex;
+}
+
+.item_index {
+    position: relative;
+    top: 50%;
+    left: 0.3125rem;
+    transform: translateY(-50%);
+    height: 1.25rem;
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: #afafaf;
+}
+
+.item_maxImg {
+    width: 3.125rem;
+    height: 3.125rem;
+    position: relative;
+    top: 50%;
+    left: 0.625rem;
+    transform: translateY(-50%);
+}
+
+.item_img {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .item_name {
+    display: block;
+    height: 3.75rem;
+    line-height: 1.25rem;
+    margin-left: 0.625rem;
+    padding-top: 0.3125rem;
+  }
+
+  .item_name_user {
+    font-size: 0.75rem;
+    color: #222222;
+    display: inline-block;
+  }
+
+  .item_id {
+    font-size: 0.625rem;
+    height: 1.375rem;
+    color: #999999;
+  }
+
+  .iten_grade {
+    width: 5rem;
+    height: 3.75rem;
+    line-height: 1.5625rem;
+    position: absolute;
+    right: 0;
+    padding-right: 0.625rem;
+  }
+
+  .iten_grade_num {
+    margin-top: 0.625rem;
+    position: absolute;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #f53533;
+  }
+
+  .iten_grade_btm {
+    position: absolute;
+    top: 1.875rem;
+    font-size: 0.75rem;
+    color: #999999;
+  }
+
+.fixed_box {
+    width: 100%;
+    height: 3.125rem;
+    position: fixed;
+    background-color: #fe0b43;
+    /* display: none; */
+    top: 0;
+    left: 0;
+    z-index: 100;
+    padding: 0.625rem 1.25rem;
+}
+
+.fixed_box_1 {
+    width: 100%;
+    height: 3.125rem;
+    position: fixed;
+    background-color: #f13111;
+    /* display: none; */
+    top: 0;
+    left: 0;
+    z-index: 100;
+    padding: 0.625rem 1.25rem;
+}
+
+.fixed_box_btn {
+    width: 100%;
+    height: 1.875rem;
+    display: flex;
+    background-color: #f89588;
+    padding: 0 0.0625rem;
+    border-radius: 0.9375rem;
+}
+
+.rick_btn {
+    flex: 33%;
+    height: 1.75rem;
+    line-height: 1.75rem;
+    position: relative;
+    border-radius: 0.875rem;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+    color: #fff;
+    font-size: 0.75rem;
+}
+
+.star_btn {
+    flex: 33%;
+    height: 1.75rem;
+    line-height: 1.75rem;
+    position: relative;
+    border-radius: 0.875rem;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+    color: #fff;
+    font-size: 0.75rem;
+    background-color: #fff;
+    font-weight: bold;
+    color: #F12711;
+}
+
+.noRank {
+  width: 100%;
+  height: 3.75rem;
+  background-color: #EEEEEE;
+}
+
+.lt-no {
+  display: inline-block;
+  height: 3.75rem;
+  line-height: 3.75rem;
+  margin: 0 0.625rem;
+  color: #C1C9CD;
+}
+
+.no-img {
+  vertical-align: middle;
+  display: inline-block;
+  width: 3.125rem;
+  height: 3.125rem;
+  border-radius: 50%;
+  margin-right: 0.625rem;
+}
+
+.no-name {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.tex-c {
+  display: inline-block;
+  margin-left: 0.625rem; 
+  color: #C1C9CD;
+}

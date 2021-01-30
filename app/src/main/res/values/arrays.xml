@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="face_filter">
+        <item>亲亲</item>
+        <item>听音乐</item>
+        <item>呕吐</item>
+        <item>坏笑</item>
+        <item>大笑</item>
+        <item>奸笑</item>
+        <item>害羞</item>
+        <item>抱抱</item>
+        <item>拜拜</item>
+        <item>挖鼻孔</item>
+        <item>捂脸</item>
+        <item>无言</item>
+        <item>晕</item>
+        <item>沮丧</item>
+        <item>流汗</item>
+        <item>流泪</item>
+        <item>生气</item>
+        <item>笑嘻嘻</item>
+        <item>色眯眯</item>
+        <item>鄙视</item>
+    </string-array>
+
+    <string-array name="new_face_filter_zh">
+        <item>拜拜</item>
+        <item>财迷</item>
+        <item>爆灯</item>
+        <item>发呆</item>
+        <item>翻白眼</item>
+        <item>愤怒</item>
+        <item>鼓掌</item>
+        <item>汗</item>
+        <item>坏笑</item>
+        <item>困</item>
+        <item>呕吼</item>
+        <item>呕吐</item>
+        <item>亲亲</item>
+        <item>色眯眯</item>
+        <item>爽</item>
+        <item>吐血</item>
+        <item>疑问</item>
+        <item>晕</item>
+        <item>皱眉</item>
+        <item>住嘴</item>
+        <item>装傻</item>
+    </string-array>
+
+    <string-array name="new_face_filter_en">
+        <item>byebye</item>
+        <item>miser</item>
+        <item>likes</item>
+        <item>daze</item>
+        <item>despise</item>
+        <item>angry</item>
+        <item>applause</item>
+        <item>speechless</item>
+        <item>smirked</item>
+        <item>sleepy</item>
+        <item>dogHead</item>
+        <item>vomit</item>
+        <item>kiss</item>
+        <item>flirting</item>
+        <item>well</item>
+        <item>hematemesis</item>
+        <item>doubt</item>
+        <item>vertigo</item>
+        <item>frown</item>
+        <item>shutUp</item>
+        <item>actDumb</item>
+    </string-array>
+
+    <string-array name="vip_face_filter">
+        <item>牛哔了</item>
+        <item>滚刀</item>
+        <item>嗨起来</item>
+        <item>老铁没毛病</item>
+        <item>么么哒</item>
+        <item>无敌</item>
+        <item>666</item>
+    </string-array>
+
+</resources>

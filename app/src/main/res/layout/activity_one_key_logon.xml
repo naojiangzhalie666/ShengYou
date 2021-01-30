@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/img_login_bg">
+
+    <ImageView
+        android:id="@+id/centtag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/dp_134"
+        android:background="@mipmap/icon_logo" />
+
+    <TextView
+        android:id="@+id/come"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/centtag"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/dp_20"
+        android:text="@string/Welcome"
+        android:textColor="@color/color_fe8ba6"
+        android:textSize="@dimen/sp_18"
+        android:textStyle="bold" />
+
+    <TextView
+        android:textSize="@dimen/sp_27"
+        android:id="@+id/tv_phone_num"
+        android:layout_marginTop="@dimen/dp_162"
+        android:gravity="center_horizontal"
+        android:textColor="@color/color_white"
+        android:layout_below="@id/come"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+
+    <Button
+        android:id="@+id/singin"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_48"
+        android:layout_below="@+id/tv_phone_num"
+        android:layout_marginLeft="@dimen/dp_60"
+        android:layout_marginTop="@dimen/dp_27"
+        android:layout_marginRight="@dimen/dp_60"
+        android:background="@drawable/shape_rounded_reg_btn1"
+        android:text="@string/sing_in"
+        android:textColor="@color/color_white"
+        android:textSize="@dimen/sp_20"
+        android:textStyle="bold" />
+
+
+
+
+    <RelativeLayout
+        android:layout_alignParentBottom="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="47dp">
+
+        <TextView
+            android:id="@+id/t1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="登录即代表同意"
+            android:textColor="@color/color_white" />
+
+        <TextView
+            android:id="@+id/yinshi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/t1"
+            android:text="《隐私政策》"
+            android:textColor="@color/color_ff2d2d" />
+
+        <TextView
+            android:id="@+id/t2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/yinshi"
+            android:text="与"
+            android:textColor="@color/color_white" />
+
+        <TextView
+            android:id="@+id/yhxieyi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/t2"
+            android:text="《用户协议》"
+            android:textColor="@color/color_ff2d2d" />
+    </RelativeLayout>
+
+
+
+</RelativeLayout>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@drawable/shape_my_car_bg"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dp_150">
+
+    <ImageView
+        android:id="@+id/iv_car"
+        android:layout_centerHorizontal="true"
+        android:layout_width="@dimen/dp_117"
+        android:layout_height="@dimen/dp_117"/>
+
+    <ImageView
+        android:id="@+id/iv_flag"
+        android:layout_marginTop="@dimen/dp_13"
+        android:src="@drawable/img_my_car_expire"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:visibility="gone"
+        android:id="@+id/tv_stint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@id/iv_car"
+        android:layout_alignTop="@id/iv_car"
+        android:background="@drawable/shape_yellow"
+        android:gravity="center"
+        android:text="限"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp_10" />
+
+    <TextView
+        android:gravity="center"
+        android:textColor="@color/color_black"
+        android:textSize="@dimen/sp_12"
+        android:layout_below="@id/iv_car"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/tv_car_name"/>
+
+
+</RelativeLayout>

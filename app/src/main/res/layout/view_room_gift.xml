@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dp_420"
+    android:background="@drawable/shape_top">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rcy_seat"
+        android:layout_width="@dimen/dp_0"
+        android:layout_height="@dimen/dp_60"
+        android:layout_marginLeft="@dimen/dp_12"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_gift"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_12"
+        android:paddingTop="@dimen/dp_7"
+        android:paddingBottom="@dimen/dp_7"
+        android:text="礼物"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp_16"
+        app:layout_constraintEnd_toStartOf="@id/tv_noble"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/rcy_seat" />
+
+    <TextView
+        android:visibility="visible"
+        android:id="@+id/tv_noble"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_34"
+        android:paddingTop="@dimen/dp_7"
+        android:paddingBottom="@dimen/dp_7"
+        android:text="贵族"
+        android:textColor="@color/color_b3b3b3"
+        android:textSize="@dimen/sp_16"
+        app:layout_constraintEnd_toStartOf="@id/tv_magic"
+        app:layout_constraintStart_toEndOf="@id/tv_gift"
+        app:layout_constraintTop_toBottomOf="@id/rcy_seat" />
+
+    <TextView
+        android:id="@+id/tv_magic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_34"
+        android:paddingTop="@dimen/dp_7"
+        android:paddingBottom="@dimen/dp_7"
+        android:text="魔法"
+        android:textColor="@color/color_b3b3b3"
+        android:textSize="@dimen/sp_16"
+        app:layout_constraintEnd_toStartOf="@id/tv_backpack"
+        app:layout_constraintStart_toEndOf="@id/tv_noble"
+        app:layout_constraintTop_toBottomOf="@id/rcy_seat" />
+
+    <TextView
+        android:id="@+id/tv_backpack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_34"
+        android:paddingTop="@dimen/dp_7"
+        android:paddingBottom="@dimen/dp_7"
+        android:text="背包"
+        android:textColor="@color/color_b3b3b3"
+        android:textSize="@dimen/sp_16"
+        app:layout_constraintStart_toEndOf="@id/tv_magic"
+        app:layout_constraintTop_toBottomOf="@id/rcy_seat" />
+
+
+    <ImageView
+        android:id="@+id/iv_cwgz"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/icon_cwgz"
+        app:layout_constraintBottom_toBottomOf="@id/tv_backpack"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tv_backpack" />
+
+    <TextView
+        android:id="@+id/tv_noble_name"
+        android:layout_marginRight="@dimen/dp_10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="成为贵族"
+        android:textColor="#6e3400"
+        android:textSize="13sp"
+        app:layout_constraintBottom_toBottomOf="@id/iv_cwgz"
+        app:layout_constraintEnd_toEndOf="@id/iv_cwgz"
+        app:layout_constraintTop_toTopOf="@id/iv_cwgz" />
+
+    <View
+        android:id="@+id/line"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_gift" />
+
+    <com.xiaoshanghai.nancang.view.NoScrollViewPager
+        android:id="@+id/viewpager"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp_0"
+        android:layout_marginTop="@dimen/dp_5"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/line" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

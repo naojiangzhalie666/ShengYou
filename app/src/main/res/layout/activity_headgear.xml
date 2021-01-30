@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".mvp.ui.activity.mine.HeadgearAct">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:id="@+id/rl_title"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_250"
+                android:background="@drawable/shape_headgear_header">
+
+                <com.xiaoshanghai.nancang.mvp.ui.view.TitleBarView
+                    android:id="@+id/title_bar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:blackImg="@mipmap/logon_back"
+                    app:right1Color="@color/white"
+                    app:right1Text="我的装扮"
+                    app:title="头饰座驾"
+                    app:titleColor="@color/white" />
+
+                <com.xiaoshanghai.nancang.mvp.ui.view.AvatarView
+                    android:id="@+id/av_avatar"
+                    android:layout_width="@dimen/dp_100"
+                    android:layout_height="@dimen/dp_100"
+                    android:layout_below="@id/title_bar"
+                    android:layout_centerHorizontal="true"
+                    app:avatar_radius="@dimen/dp_45"
+                    app:headwearPadding="@dimen/dp_23" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_45"
+                    android:layout_alignParentBottom="true"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tv_headgear"
+                        android:layout_width="@dimen/dp_0"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="头饰"
+                        android:textColor="@drawable/shape_headgear_text_color"
+                        android:textSize="@dimen/dp_16" />
+
+                    <View
+                        android:layout_width="@dimen/dp_1"
+                        android:layout_height="@dimen/dp_10"
+                        android:layout_gravity="center_vertical"
+                        android:background="@color/white" />
+
+                    <TextView
+                        android:id="@+id/tv_car"
+                        android:layout_width="@dimen/dp_0"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="座驾"
+                        android:textColor="@drawable/shape_headgear_text_color"
+                        android:textSize="@dimen/dp_16" />
+
+                </LinearLayout>
+
+
+            </RelativeLayout>
+
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/viewpager"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/rl_title" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:clickable="true"
+            android:focusable="true"
+            android:id="@+id/rl_svag"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#80000000"
+            android:visibility="gone">
+
+            <com.opensource.svgaplayer.SVGAImageView
+                android:id="@+id/svga"
+                app:clearsAfterStop="true"
+                app:loopCount="0"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <ImageView
+                android:id="@+id/iv_stop"
+                android:layout_width="@dimen/dp_45"
+                android:layout_height="@dimen/dp_45"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="@dimen/dp_90"
+                android:src="@mipmap/icon_delete" />
+
+        </RelativeLayout>
+
+    </FrameLayout>
+
+
+</RelativeLayout>

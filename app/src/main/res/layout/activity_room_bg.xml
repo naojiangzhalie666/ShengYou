@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".mvp.ui.activity.studio.RoomBgAct">
+
+    <ImageView
+        android:id="@+id/iv_room_bg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop" />
+
+
+    <com.github.mmin18.widget.RealtimeBlurView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:realtimeBlurRadius="@dimen/dp_6"
+        app:realtimeOverlayColor="#8000" />
+
+    <com.xiaoshanghai.nancang.mvp.ui.view.TitleBarView
+        android:id="@+id/title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:blackImg="@mipmap/icon_my_home_dynamic_back"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="背景预览"
+        app:titleColor="@color/white" />
+
+    <com.xiaoshanghai.nancang.view.CircleImageView
+        android:id="@+id/civ_room_bg"
+        android:layout_width="215dp"
+        android:layout_height="380dp"
+        android:layout_marginTop="@dimen/dp_20"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title_bar"
+        app:radius="@dimen/dp_10" />
+
+    <ImageView
+        android:layout_marginTop="@dimen/dp_10"
+        android:visibility="gone"
+        android:id="@+id/iv_noble"
+        android:layout_width="@dimen/dp_46"
+        android:layout_height="@dimen/dp_46"
+        android:scaleType="centerInside"
+        app:layout_constraintEnd_toStartOf="@id/tv_bg_name"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/civ_room_bg" />
+
+    <TextView
+        app:layout_goneMarginTop="@dimen/dp_40"
+        android:id="@+id/tv_bg_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="夕阳"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp_16"
+        app:layout_constraintBottom_toBottomOf="@id/iv_noble"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/iv_noble"
+        app:layout_constraintTop_toTopOf="@id/iv_noble" />
+
+    <TextView
+        android:enabled="true"
+        android:id="@+id/tv_confirm"
+        android:layout_width="@dimen/dp_300"
+        android:layout_height="@dimen/dp_45"
+        android:layout_marginTop="@dimen/dp_20"
+        android:background="@drawable/shape_select_g_r22_bg"
+        android:gravity="center"
+        android:text="立即设置"
+        android:textColor="@color/black"
+        android:textSize="@dimen/sp_16"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_bg_name" />
+
+    <TextView
+        android:id="@+id/tv_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_20"
+        android:text=""
+        android:textColor="@color/white"
+        android:textSize="@dimen/dp_16"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_confirm" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

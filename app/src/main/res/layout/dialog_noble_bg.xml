@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center">
+
+
+    <ImageView
+        android:id="@+id/iv_noble_bg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/img_noble_bg"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_title_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_30"
+        android:text="-需开通皇帝-"
+        android:textColor="#e3c594"
+        android:textSize="@dimen/dp_24"
+        app:layout_constraintEnd_toEndOf="@id/iv_noble_bg"
+        app:layout_constraintStart_toStartOf="@id/iv_noble_bg"
+        app:layout_constraintTop_toTopOf="@id/iv_noble_bg" />
+
+    <TextView
+        android:id="@+id/tv_title_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="才可使用该礼物"
+        android:textColor="#e3c594"
+        android:textSize="@dimen/sp_12"
+        app:layout_constraintEnd_toEndOf="@id/iv_noble_bg"
+        app:layout_constraintStart_toStartOf="@id/iv_noble_bg"
+        app:layout_constraintTop_toBottomOf="@id/tv_title_1" />
+
+    <ImageView
+        android:id="@+id/iv_noble"
+        android:layout_width="@dimen/dp_86"
+        android:layout_height="@dimen/dp_86"
+        android:scaleType="centerCrop"
+        android:src="@mipmap/img_emperor"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_self_noble"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="·当前为平民·"
+        android:textColor="#e4c694"
+        android:textSize="@dimen/sp_15"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv_noble" />
+
+    <TextView
+        android:id="@+id/tv_noble_start"
+        android:background="@drawable/shape_dialog_noble"
+        android:layout_width="@dimen/dp_100"
+        android:layout_height="@dimen/dp_30"
+        android:layout_marginBottom="@dimen/dp_25"
+        android:gravity="center"
+        android:text="立即开通"
+        android:textColor="#644624"
+        android:textSize="@dimen/sp_15"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

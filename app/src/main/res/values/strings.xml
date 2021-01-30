@@ -1,0 +1,134 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <string name="app_name" tools:ignore="MissingTranslation">声温</string>
+    <string name="reg_tishi2" tools:ignore="MissingTranslation">身份验证</string>
+    <string name="reg_tishi3" tools:ignore="MissingTranslation">验证码已发送</string>
+    <string name="setting" tools:ignore="MissingTranslation">设置</string>
+    <string name="home" tools:ignore="MissingTranslation">首页</string>
+    <string name="msg" tools:ignore="MissingTranslation">消息</string>
+    <string name="guangcang" tools:ignore="MissingTranslation">广场</string>
+    <string name="mine" tools:ignore="MissingTranslation">我的</string>
+    <string name="Welcome" tools:ignore="MissingTranslation">用最美的声音传递最真挚的情感</string>
+    <string name="sing_in" tools:ignore="MissingTranslation">本机一键登录</string>
+    <string name="code_login" tools:ignore="MissingTranslation">验证码登录</string>
+    <string name="account_login" tools:ignore="MissingTranslation">账号登录</string>
+    <string name="input_tel_num" tools:ignore="MissingTranslation">请输入你的手机号</string>
+    <string name="input_code_num" tools:ignore="MissingTranslation">请输入验证码</string>
+    <string name="input_psd" tools:ignore="MissingTranslation">请输入你的密码</string>
+    <string name="psd_logon" tools:ignore="MissingTranslation">密码登录</string>
+    <string name="get_code_num" tools:ignore="MissingTranslation">获取验证码</string>
+    <string name="logon" tools:ignore="MissingTranslation">登录</string>
+    <string name="regisger" tools:ignore="MissingTranslation">立即注册</string>
+    <string name="privacy_policy" tools:ignore="MissingTranslation">《隐私政策》</string>
+    <string name="user_agreement" tools:ignore="MissingTranslation">《用户协议》</string>
+    <string name="input_phone" tools:ignore="MissingTranslation">请输入正确的手机号码</string>
+    <string name="send_sms_success" tools:ignore="MissingTranslation">短信发送成功</string>
+    <string name="send_sms_error" tools:ignore="MissingTranslation">短信发送失败</string>
+    <string name="register_ok" tools:ignore="MissingTranslation">注册即代表同意</string>
+    <string name="register_and_login" tools:ignore="MissingTranslation">注册并登陆</string>
+    <string name="register" tools:ignore="MissingTranslation">注册</string>
+    <string name="login_error" tools:ignore="MissingTranslation">登录失败</string>
+    <string name="code_out_time" tools:ignore="MissingTranslation">验证码超时,请重新获取</string>
+    <string name="code_error" tools:ignore="MissingTranslation">验证码错误</string>
+    <string name="user_not" tools:ignore="MissingTranslation">用户不存在</string>
+    <string name="psd_error" tools:ignore="MissingTranslation">用户名或密码错误</string>
+    <string name="freeze" tools:ignore="MissingTranslation">用户被冻结</string>
+    <string name="complete_material" tools:ignore="MissingTranslation">完善资料</string>
+    <string name="click_photo" tools:ignore="MissingTranslation">点击上传头像</string>
+    <string name="fill_in_the_information" tools:ignore="MissingTranslation">好的资料会提升70%的关注度哦！</string>
+    <string name="fill_in_the_nickname" tools:ignore="MissingTranslation">请填写昵称</string>
+    <string name="fill_in_the_birthday" tools:ignore="MissingTranslation">请选择你的生日</string>
+    <string name="carry_out" tools:ignore="MissingTranslation">完成</string>
+    <string name="select_avatar" tools:ignore="MissingTranslation">请上传头像</string>
+    <string name="select_nickname" tools:ignore="MissingTranslation">请填写昵称</string>
+    <string name="select_birthday" tools:ignore="MissingTranslation">请选择生日</string>
+    <string name="register_success" tools:ignore="MissingTranslation">注册成功</string>
+    <string name="register_error" tools:ignore="MissingTranslation">注册失败</string>
+    <string name="register_repeat" tools:ignore="MissingTranslation">用户已注册</string>
+    <string name="exit_tip" tools:ignore="MissingTranslation">再按一次退出程序</string>
+    <string name="string_sq" tools:ignore="MissingTranslation">收起</string>
+    <string name="string_zk" tools:ignore="MissingTranslation">展开</string>
+    <string name="famliy_square" tools:ignore="MissingTranslation">家族广场</string>
+    <string name="famliy_find" tools:ignore="MissingTranslation">来这里找到自己的家族</string>
+    <string name="create_famliy" tools:ignore="MissingTranslation">创建家族</string>
+    <string name="immediately_create_famliy" tools:ignore="MissingTranslation">立马创建属于自己的家族</string>
+    <string name="my_famliy" tools:ignore="MissingTranslation">我的家族</string>
+    <string name="famliy_id" tools:ignore="MissingTranslation">家族ID：</string>
+    <string name="famliy_member" tools:ignore="MissingTranslation">成员：</string>
+    <string name="family_zhou_bang" tools:ignore="MissingTranslation">家族魅力周榜</string>
+    <string name="from_the_previous" tools:ignore="MissingTranslation">距上一名</string>
+    <string name="family_join" tools:ignore="MissingTranslation">申请加入</string>
+    <string name="family_patriarch" tools:ignore="MissingTranslation">族长</string>
+    <string name="family_name" tools:ignore="MissingTranslation">家族名称</string>
+    <string name="family_create" tools:ignore="MissingTranslation">创建家族</string>
+    <string name="family_record" tools:ignore="MissingTranslation">申请记录</string>
+    <string name="family_prompt" tools:ignore="MissingTranslation">家族名不可超过十个字</string>
+    <string name="family_avater" tools:ignore="MissingTranslation">家族头像</string>
+    <string name="family_up_one_photo" tools:ignore="MissingTranslation">上传一张图片</string>
+    <string name="remarks" tools:ignore="MissingTranslation">备注</string>
+    <string name="family_input_prompt" tools:ignore="MissingTranslation">请输入申请理由(会缩短审核时间哦！)</string>
+    <string name="family_apply" tools:ignore="MissingTranslation">申请人</string>
+    <string name="cancel" tools:ignore="MissingTranslation">取消</string>
+    <string name="submit_application" tools:ignore="MissingTranslation">提交申请</string>
+    <string name="confirm" tools:ignore="MissingTranslation">确定</string>
+    <string name="application_submitted" tools:ignore="MissingTranslation">申请已提交</string>
+    <string name="moderated" tools:ignore="MissingTranslation">请等待管理员审核</string>
+    <string name="family_under_review" tools:ignore="MissingTranslation">审核中</string>
+    <string name="family_please_wait" tools:ignore="MissingTranslation">请等待审核完成</string>
+    <string name="subimt_time" tools:ignore="MissingTranslation">提交时间：</string>
+    <string name="apply_time" tools:ignore="MissingTranslation">审核时间：</string>
+    <string name="applicant" tools:ignore="MissingTranslation">申请人：</string>
+    <string name="apply_fail" tools:ignore="MissingTranslation">申请失败</string>
+    <string name="apply_success" tools:ignore="MissingTranslation">申请成功</string>
+    <string name="attention" tools:ignore="MissingTranslation">关注</string>
+    <string name="fans" tools:ignore="MissingTranslation">粉丝</string>
+    <string name="find_ta" tools:ignore="MissingTranslation">找到TA</string>
+    <string name="ta_room" tools:ignore="MissingTranslation">TA的房间</string>
+    <string name="chat_dress" tools:ignore="MissingTranslation">装扮</string>
+    <string name="gift" tools:ignore="MissingTranslation">礼物</string>
+    <string name="not_introduction" tools:ignore="MissingTranslation">这个人比较神秘，什么也没留下</string>
+    <string name="verified_prompt" tools:ignore="MissingTranslation">1.该认证仅支持中国内地(不含港澳台地区)的用户。\n2.请确保填写的身份证信息真实并与本人一致。\n3.您提供的身份信息仅用于身份验证，未经您本人的许可\n不会被用于其他用途。\n4.为保护用户权益，开启实名认证后我们将不提供解除恢\n复的功能，请谅解。\n5.一个身份证最多用于5个用户账号的实名认证。\n6.若人脸识别遇到问题，请点击这里</string>
+
+    <string name="test_custom_action" tools:ignore="MissingTranslation">自定义消息</string>
+    <string name="test_custom_message" tools:ignore="MissingTranslation">查看详情>></string>
+
+    <!--
+
+    1.  开启宝箱仅限于绑定手机的用户。
+    2.  开启宝箱仅会获得宝箱奖池所展示的物品。
+    3.  在点击“开启”按钮前可选择开启次数：1次、10次、		  100次。点击开启后会扣除相应金币数量。
+    4.  金币不足时无法抽奖。
+    5.  每次抽奖消耗10金币。
+    6.  抽奖次数无限限制。
+    7.  凡参与本抽奖者，即视为接受所有规则。
+    8.  抽奖概率：
+            价值 9999金币 ~ 中奖概率 0.01%
+            价值 5200金币 ~ 中奖概率 0.02%
+            价值 3344金币 ~ 中奖概率 0.05%
+            价值 1314金币 ~ 中奖概率 0.1%
+            价值 	499金币 ~ 中奖概率 1%
+            价值 131.4金币 ~ 中奖概率 5%
+            价值 	  52金币 ~ 中奖概率 10%
+            价值 	  10金币 ~ 中奖概率 25%
+    9.  为保障用户在本平台使用抽奖活动的合法权益，维护	     直播正常运营秩序，根据《用户协议》等规定，特制	     定本规范。
+    10. 其他未在本规范或者遗漏的，官方拥有唯一解释权。
+                                -->
+
+    <string name="rule_one" tools:ignore="MissingTranslation">1.开启宝箱仅限于绑定手机的用户。\n</string>
+    <string name="rule_two" tools:ignore="MissingTranslation">2.开启宝箱仅会获得宝箱奖池所展示的物品。\n</string>
+    <string name="rule_three" tools:ignore="MissingTranslation">3.在点击“开启”按钮前可选择开启次数：1次、10次、\n &#160;&#160;&#160;&#160;100次。点击开启后会扣除相应金币数量。\n</string>
+    <string name="rule_four" tools:ignore="MissingTranslation">4.金币不足时无法抽奖。\n</string>
+    <string name="rule_fives" tools:ignore="MissingTranslation">5.每次抽奖消耗%1$s金币。\n</string>
+    <string name="rule_six" tools:ignore="MissingTranslation">6.抽奖次数无限限制。\n</string>
+    <string name="rule_seven" tools:ignore="MissingTranslation">7.凡参与本抽奖者，即视为接受所有规则。\n</string>
+    <string name="rule_eight" tools:ignore="MissingTranslation">8.抽奖概率：\n</string>
+    <string name="rule_eight_1" tools:ignore="MissingTranslation">&#160;&#160;&#160;&#160;价值 %1$s金币 ~ 中奖概率 %2$s\n</string>
+    <string name="rule_nine" tools:ignore="MissingTranslation">9.为保障用户在本平台使用抽奖活动的合法权益，维护\n &#160;&#160;&#160;&#160;直播正常运营秩序，根据《用户协议》等规定，特制\n &#160;&#160;&#160;&#160;定本规范。\n</string>
+    <string name="rule_ten" tools:ignore="MissingTranslation">10.其他未在本规范或者遗漏的，官方拥有唯一解释权。</string>
+    // 云通信
+    <string name="chat_top" tools:ignore="MissingTranslation">置顶聊天</string>
+    <string name="chat_delete" tools:ignore="MissingTranslation">删除聊天</string>
+    <string name="quit_chat_top" tools:ignore="MissingTranslation">取消置顶</string>
+
+
+</resources>

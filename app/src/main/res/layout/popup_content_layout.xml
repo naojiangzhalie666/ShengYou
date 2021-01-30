@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/shape_rounded_white"
+    android:orientation="vertical"
+    android:padding="1dp">
+
+    <LinearLayout
+        android:id="@+id/ll_out_family"
+        android:gravity="center"
+        android:layout_width="@dimen/dp_140"
+        android:layout_height="@dimen/dp_50"
+        android:orientation="vertical">
+
+        <TextView
+            android:drawablePadding="@dimen/dp_15"
+            android:drawableLeft="@mipmap/icon_family_myfamily_quit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="退出家族"
+            android:textColor="#ffff1e1e"
+            android:textSize="16sp"
+            />
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/white"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".mvp.ui.activity.mine.GoldExchangeAct">
+
+    <com.xiaoshanghai.nancang.mvp.ui.view.TitleBarView
+        android:id="@+id/title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:bgColor="@color/white"
+        app:title="金币兑换"
+        app:titleColor="@color/color_black" />
+
+
+    <RelativeLayout
+        android:id="@+id/rl_diamond"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_67"
+        android:layout_below="@id/title_bar"
+        android:layout_marginLeft="@dimen/dp_12"
+        android:layout_marginTop="@dimen/dp_15"
+        android:layout_marginRight="@dimen/dp_12"
+        android:background="@drawable/shape_diamond">
+
+        <ImageView
+            android:id="@+id/iv_diamond"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:layout_marginRight="@dimen/dp_20"
+            android:src="@mipmap/icon_my_diamond" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/iv_diamond"
+            android:text="钻石总额"
+            android:textColor="@color/color_ff003d"
+            android:textSize="@dimen/sp_16" />
+
+        <TextView
+            android:id="@+id/tv_diamond_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/dp_20"
+            android:text="0.0"
+            android:textColor="@color/color_ff003d"
+            android:textSize="@dimen/sp_33" />
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/rl_gold"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_67"
+        android:layout_below="@id/rl_diamond"
+        android:layout_marginLeft="@dimen/dp_12"
+        android:layout_marginTop="@dimen/dp_10"
+        android:layout_marginRight="@dimen/dp_12"
+        android:background="@drawable/shape_gold">
+
+        <ImageView
+            android:id="@+id/iv_gold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:layout_marginRight="@dimen/dp_20"
+            android:src="@mipmap/icon_my_gold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/iv_gold"
+            android:text="金币总额"
+            android:textColor="@color/color_ffd200"
+            android:textSize="@dimen/sp_16" />
+
+        <TextView
+            android:id="@+id/tv_gold_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/dp_20"
+            android:text="0.0"
+            android:textColor="@color/color_ffd200"
+            android:textSize="@dimen/sp_33" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tv_prompt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rl_gold"
+        android:layout_marginLeft="@dimen/dp_17"
+        android:layout_marginTop="@dimen/dp_25"
+        android:layout_marginRight="@dimen/dp_17"
+        android:text="请输入兑换的钻石数量(最多可兑换0)"
+        android:textColor="@color/color_484848"
+        android:textSize="@dimen/sp_12" />
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_exchange"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_101"
+        android:layout_below="@id/tv_prompt"
+        android:layout_marginLeft="@dimen/dp_17"
+        android:layout_marginTop="@dimen/dp_12"
+        android:layout_marginRight="@dimen/dp_17"
+        android:elevation="@dimen/dp_0"
+        app:cardCornerRadius="@dimen/dp_17"
+        app:cardMaxElevation="@dimen/dp_0">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_101"
+            android:orientation="vertical">
+
+            <EditText
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:id="@+id/et_diamond"
+                android:inputType="number"
+                android:textColor="@color/color_bababa"
+                android:background="@color/transparent"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_0"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:hint="0钻石"
+                android:paddingLeft="@dimen/dp_17"
+                android:textColorHint="@color/color_bababa"
+                android:textSize="16sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_1"
+                android:layout_marginLeft="@dimen/dp_17"
+                android:layout_marginRight="@dimen/dp_17"
+                android:background="@color/color_e6e6e6" />
+
+            <TextView
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:id="@+id/et_gold"
+                android:textColor="@color/color_black"
+                android:background="@color/transparent"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_0"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:hint="0金币"
+                android:paddingLeft="@dimen/dp_17"
+                android:textColorHint="@color/color_bababa"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/dp_100">
+
+        <Button
+            android:id="@+id/bt_exchange"
+            android:layout_width="@dimen/dp_260"
+            android:layout_height="@dimen/dp_44"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/dp_15"
+            android:background="@drawable/shape_recharge_select"
+            android:enabled="false"
+            android:stateListAnimator="@null"
+            android:text="确认兑换"
+            android:textColor="@color/white" />
+
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/bt_exchange"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/dp_20"
+            android:text="钻石可以兑换金币，兑换比率：1钻石=1.0金币；"
+            android:textColor="@color/color_787878"
+            android:textSize="@dimen/dp_10" />
+    </RelativeLayout>
+
+</RelativeLayout>

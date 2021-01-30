@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_date_info"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_40"
+        android:layout_marginLeft="@dimen/dp_12"
+        android:layout_marginTop="@dimen/dp_12"
+        android:layout_marginRight="@dimen/dp_12"
+        android:elevation="@dimen/dp_0"
+        app:cardCornerRadius="@dimen/dp_10"
+        app:cardMaxElevation="@dimen/dp_0">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/tv_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/dp_17"
+                android:textColor="@color/color_515151"
+                android:textSize="@dimen/sp_16" />
+
+            <ImageView
+                android:id="@+id/iv_calendar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/dp_14"
+                android:src="@mipmap/icon_calendar_red" />
+
+            <ImageView
+                android:id="@+id/iv_now_day"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/dp_14"
+                android:layout_toLeftOf="@id/iv_calendar"
+                android:src="@mipmap/icon_now_day_red" />
+
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        android:id="@+id/refresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/cv_date_info"
+        android:layout_marginTop="@dimen/dp_5"
+        app:srlEnableAutoLoadMore="false">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/ryc_record"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+
+</RelativeLayout>
+

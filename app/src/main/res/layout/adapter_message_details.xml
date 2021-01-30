@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <com.xiaoshanghai.nancang.view.CircleImageView
+            android:id="@+id/civ_avatar"
+            android:layout_width="@dimen/dp_46"
+            android:layout_height="@dimen/dp_46"
+            android:layout_marginLeft="@dimen/dp_18"
+            android:layout_marginTop="@dimen/dp_14"
+            android:layout_marginRight="@dimen/dp_10"
+            android:src="@mipmap/icon_logo"
+            app:radius="@dimen/dp_45" />
+
+        <LinearLayout
+            android:id="@+id/ll_one_comment"
+            android:layout_alignTop="@id/civ_avatar"
+            android:layout_toEndOf="@id/civ_avatar"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_marginBottom="@dimen/dp_17"
+                android:id="@+id/ll_comment_user"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_46"
+                android:gravity="center_vertical"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_nick_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="奶糖"
+                    android:textColor="@color/color_black"
+                    android:textSize="@dimen/sp_16" />
+
+                <TextView
+                    android:id="@+id/tv_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="06-31"
+                    android:textColor="@color/color_777777"
+                    android:textSize="12sp" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_comment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/ll_comment_user"
+                android:layout_marginBottom="@dimen/dp_13"
+                android:layout_toEndOf="@id/civ_avatar"
+                android:text=""
+                android:textColor="@color/color_black"
+                android:textSize="@dimen/sp_14" />
+
+        </LinearLayout>
+
+
+
+        <View
+            android:id="@+id/view_1"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_0_3"
+            android:layout_below="@id/ll_one_comment"
+            android:layout_toEndOf="@id/civ_avatar"
+            android:background="@color/color_ededed" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rc_comment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/view_1"
+            android:layout_toRightOf="@id/civ_avatar" />
+
+        <View
+            android:id="@+id/view_2"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_0_3"
+            android:layout_below="@id/rc_comment"
+            android:layout_toEndOf="@id/civ_avatar"
+            android:background="@color/color_ededed" />
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

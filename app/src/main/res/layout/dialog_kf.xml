@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="@dimen/dp_300"
+        android:layout_height="@dimen/dp_150"
+        android:background="@drawable/shape_rounded_white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/tv_kfdh"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_30"
+            android:layout_marginTop="@dimen/dp_20"
+            android:text="客服电话："
+            android:textColor="@color/color_484848"
+            android:textSize="@dimen/sp_16"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_kf_phone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_7"
+            android:text="027-12345678"
+            android:textColor="@color/color_484848"
+            android:textSize="@dimen/sp_20"
+            app:layout_constraintStart_toStartOf="@id/tv_kfdh"
+            app:layout_constraintTop_toBottomOf="@id/tv_kfdh" />
+
+        <ImageView
+            android:id="@+id/iv_copy_phone"
+            android:layout_width="@dimen/dp_54"
+            android:layout_height="@dimen/dp_24"
+            android:layout_marginEnd="@dimen/dp_14"
+            android:scaleType="centerInside"
+            android:src="@mipmap/iocn_kf_copy"
+            app:layout_constraintBottom_toBottomOf="@id/tv_kf_phone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tv_kf_phone" />
+
+
+        <TextView
+            android:id="@+id/tv_kf_wx"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_10"
+            android:text="微信号码："
+            android:textColor="@color/color_484848"
+            android:textSize="@dimen/sp_16"
+            app:layout_constraintStart_toStartOf="@id/tv_kf_phone"
+            app:layout_constraintTop_toBottomOf="@id/tv_kf_phone" />
+
+        <TextView
+            android:id="@+id/tv_kf_wx_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="shengyoukefu"
+            android:textColor="@color/color_484848"
+            android:textSize="@dimen/sp_20"
+            app:layout_constraintStart_toStartOf="@id/tv_kf_wx"
+            app:layout_constraintTop_toBottomOf="@id/tv_kf_wx" />
+
+        <ImageView
+            android:id="@+id/iv_copy_wx"
+            android:layout_width="@dimen/dp_54"
+            android:layout_height="@dimen/dp_24"
+            android:layout_marginEnd="@dimen/dp_14"
+            android:scaleType="centerInside"
+            android:src="@mipmap/iocn_kf_copy"
+            app:layout_constraintBottom_toBottomOf="@id/tv_kf_wx_num"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tv_kf_wx_num" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@drawable/shape_car_bg"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dp_150">
+
+
+    <RelativeLayout
+        android:id="@+id/rl_car"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/iv_car"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            android:adjustViewBounds="true"
+            android:scaleType="center" />
+
+        <ImageView
+            android:id="@+id/iv_flag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_7"
+            android:src="@drawable/img_my_car_expire"
+            android:visibility="gone" />
+
+    </RelativeLayout>
+
+<!--    <TextView-->
+<!--        android:id="@+id/tv_car_name"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:layout_below="@id/rl_car"-->
+<!--        android:layout_centerHorizontal="true"-->
+<!--        android:gravity="center"-->
+<!--        android:textColor="@color/color_black"-->
+<!--        android:textSize="@dimen/sp_12" />-->
+
+
+</RelativeLayout>

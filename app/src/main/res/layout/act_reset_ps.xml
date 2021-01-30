@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff"
+    android:orientation="vertical">
+
+    <com.xiaoshanghai.nancang.mvp.ui.view.TitleBarView
+        android:id="@+id/title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:title="重置密码"
+        app:titleColor="@color/color_black" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_30"
+        android:layout_marginRight="@dimen/dp_30">
+
+
+        <EditText
+            android:id="@+id/et_phone_num"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dp_30"
+            android:layout_weight="1"
+            android:background="@null"
+            android:hint="请输入手机号码"
+            android:inputType="number"
+            android:maxLength="11"
+            android:textColorHint="@color/color_aaaaaa"
+            android:textSize="@dimen/sp_15" />
+
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_1"
+        android:layout_marginLeft="@dimen/dp_28"
+        android:layout_marginRight="@dimen/dp_28"
+        android:background="@color/black"
+        />
+
+    <LinearLayout
+        android:id="@+id/ll_captcha"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ll_phone_num"
+        android:layout_marginTop="@dimen/dp_27"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_40"
+            android:layout_marginLeft="@dimen/dp_30"
+            android:layout_marginRight="@dimen/dp_17"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/dp_40"
+                android:layout_marginRight="@dimen/dp_10"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <EditText
+                    android:textColorHint="@color/color_aaaaaa"
+                    android:hint="请输入验证码"
+                    android:inputType="number"
+                    android:id="@+id/et_captcha"
+                    android:textSize="@dimen/sp_15"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_38"
+                    android:background="@null" />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_2"
+                    android:background="@color/black" />
+
+            </LinearLayout>
+
+            <TextView
+                android:enabled="false"
+                android:id="@+id/tv_get_code"
+                android:layout_width="@dimen/dp_74"
+                android:layout_height="@dimen/dp_24"
+                android:layout_gravity="bottom"
+                android:background="@drawable/shape_button_select"
+                android:gravity="center"
+                android:text="@string/get_code_num"
+                android:textColor="@color/color_white"
+                android:textSize="@dimen/sp_12" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_30"
+        android:layout_marginTop="@dimen/dp_40"
+        android:layout_marginRight="@dimen/dp_30">
+
+
+        <EditText
+            android:id="@+id/et_psw_new"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dp_30"
+            android:layout_weight="1"
+            android:background="@null"
+            android:hint="请输入你的密码"
+            android:textColorHint="@color/color_aaaaaa"
+
+            android:textSize="@dimen/sp_15" />
+
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_1"
+        android:layout_marginLeft="@dimen/dp_28"
+        android:layout_marginRight="@dimen/dp_28"
+        android:background="@color/black" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_30"
+        android:layout_marginTop="@dimen/dp_40"
+        android:layout_marginRight="@dimen/dp_30">
+
+
+        <EditText
+            android:id="@+id/et_psw_new_confirm"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dp_30"
+            android:layout_weight="1"
+            android:background="@null"
+            android:hint="请确认你的密码"
+            android:textColorHint="@color/color_aaaaaa"
+            android:textSize="@dimen/sp_15" />
+
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_1"
+        android:layout_marginLeft="@dimen/dp_28"
+        android:layout_marginRight="@dimen/dp_28"
+        android:background="@color/black" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_30"
+        android:layout_marginTop="@dimen/dp_10"
+        android:text="密码必须使用6-19个字符内的数字和英文字母组合哦！"
+        android:textColor="@color/black"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/tv_commit"
+        android:layout_width="@dimen/dp_260"
+        android:layout_height="43dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/dp_30"
+        android:background="@drawable/shape_stroke_90radius_black"
+        android:gravity="center"
+        android:text="立即重置"
+        android:textColor="@color/black"
+        android:textSize="@dimen/sp_16" />
+</LinearLayout>

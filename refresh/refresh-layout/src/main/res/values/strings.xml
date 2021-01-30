@@ -1,0 +1,21 @@
+<resources>
+    <string name="srl_header_pulling">Pembaruan pull-down</string>
+    <string name="srl_header_refreshing">Menyegarkan...</string>
+    <string name="srl_header_loading">Tunggu penguduhan sampai  selesai…</string>
+    <string name="srl_header_release">Lepaskan penyegaran segera</string>
+    <string name="srl_header_finish">Segarkan selesai</string>
+    <string name="srl_header_failed">Segarkan gagal</string>
+    <string name="srl_header_update">\'Terakhir diperbarui\' M-d HH:mm</string>
+    <string name="srl_header_secondary">Lepaskan ke lantai 2</string>
+
+    <string name="srl_footer_pulling">Tarik memuat lebih banyak</string>
+    <string name="srl_footer_release">Lepaskan segera memuat</string>
+    <string name="srl_footer_loading">Sedang memuat…</string>
+    <string name="srl_footer_refreshing">Menunggu halaman di refresh…</string>
+    <string name="srl_footer_finish">Berhasil memuat</string>
+    <string name="srl_footer_failed">Gagal memuat</string>
+    <string name="srl_footer_nothing">Tidak ada data lagi</string>
+
+    <string name="srl_content_empty">SmartRefreshLayout中没有找到内容视图。您是否忘记在xml布局文件中添加？</string>
+    <string name="srl_component_falsify" formatted="false">%s 虚假区域\n代表运行时拖动的高度【%.1fdp】 \n而不会显示任何东西</string>
+</resources>

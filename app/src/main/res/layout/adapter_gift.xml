@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_centerInParent="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <com.xiaoshanghai.nancang.view.CircleImageView
+            android:id="@+id/iv_gift"
+            android:layout_width="@dimen/dp_60"
+            android:layout_height="@dimen/dp_66"
+            android:layout_centerHorizontal="true"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter" />
+
+        <TextView
+            android:id="@+id/tv_gift_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/iv_gift"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/dp_7"
+            android:textColor="@color/color_black"
+            android:textSize="@dimen/sp_12" />
+
+        <TextView
+            android:id="@+id/tv_gift_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_gift_name"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/dp_3"
+            android:text="x3"
+            android:textColor="@color/color_787878"
+            android:textSize="@dimen/sp_10" />
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

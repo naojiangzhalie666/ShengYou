@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".mvp.ui.activity.mine.NobleSettingAct">
+
+    <com.xiaoshanghai.nancang.mvp.ui.view.TitleBarView
+        android:id="@+id/title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:bgColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="贵族设置"
+        app:titleColor="@color/black" />
+
+    <TextView
+        android:id="@+id/tv_gzys"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_34"
+        android:layout_marginTop="@dimen/dp_40"
+        android:text="贵族隐身"
+        android:textColor="@color/black"
+        android:textSize="@dimen/sp_16"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title_bar" />
+
+    <TextView
+        android:id="@+id/tv_yssm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_6"
+        android:text="开启后，贵族进入房间将不再展示特效"
+        android:textColor="@color/color_787878"
+        android:textSize="@dimen/sp_10"
+        app:layout_constraintStart_toStartOf="@id/tv_gzys"
+        app:layout_constraintTop_toBottomOf="@id/tv_gzys" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_1"
+        android:layout_marginStart="@dimen/dp_33"
+        android:layout_marginTop="@dimen/sp_8"
+        android:layout_marginEnd="@dimen/dp_33"
+        android:background="#0D000000"
+        app:layout_constraintTop_toBottomOf="@id/tv_yssm" />
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/switch_noble_enter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/dp_12"
+        android:checked="false"
+        android:longClickable="false"
+        android:theme="@style/SwitchStyle"
+        app:layout_constraintBottom_toTopOf="@id/view"
+        app:layout_constraintEnd_toEndOf="@id/view"
+        app:switchMinWidth="@dimen/dp_50"
+        app:thumbTextPadding="@dimen/dp_40"
+        app:thumbTint="@color/white" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_6"
+        android:text="仅对国王即以上贵族有效"
+        android:textColor="@color/color_787878"
+        android:textSize="10sp"
+        app:layout_constraintStart_toStartOf="@id/tv_gzys"
+        app:layout_constraintTop_toBottomOf="@id/view" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

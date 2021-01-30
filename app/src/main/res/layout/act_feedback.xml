@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:toggle="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.xiaoshanghai.nancang.mvp.ui.view.TitleBarView
+        android:id="@+id/title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:title="反馈"
+        app:titleColor="@color/color_black" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_16"
+        android:drawableLeft="@mipmap/ic_wtms_label"
+        android:drawablePadding="5dp"
+        android:text="问题描述"
+        android:textColor="#ff222222"
+        android:textSize="@dimen/sp_16" />
+
+    <EditText
+        android:id="@+id/et_message"
+        android:layout_width="match_parent"
+        android:layout_height="146dp"
+        android:layout_margin="@dimen/dp_16"
+        android:background="@drawable/gray_btn_bg"
+        android:gravity="left"
+        android:hint="请输入反馈内容(必填)"
+        android:padding="@dimen/dp_10"
+        android:textColorHint="#787878"
+        android:textSize="@dimen/sp_14"
+
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_16">
+
+
+        <TextView
+            android:id="@+id/tv_qq"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="QQ"
+            android:textColor="#ffff5f85"
+            android:textSize="@dimen/sp_20" />
+
+        <Switch
+            android:id="@+id/btn_switch"
+            android:layout_width="63dp"
+            android:layout_height="@dimen/dp_33"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:thumb="@mipmap/ic_switch_red"
+            android:track="@mipmap/ic_switch_gray_bg"
+            />
+
+        <TextView
+            android:id="@+id/tv_wx"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="微信"
+            android:textColor="#ff787878"
+            android:textSize="@dimen/sp_16" />
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/et_num"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_35"
+        android:layout_margin="@dimen/dp_16"
+        android:background="@drawable/gray_btn_bg"
+        android:gravity="center_vertical"
+        android:hint="请输入您的号码"
+        android:inputType="text"
+        android:paddingLeft="@dimen/dp_5"
+        android:textColorHint="#787878"
+        android:textSize="@dimen/sp_13" />
+
+    <TextView
+        android:id="@+id/tv_feedback"
+        android:layout_width="@dimen/dp_260"
+        android:layout_height="@dimen/dp_44"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/dp_30"
+        android:background="@drawable/shape_use_bg"
+        android:gravity="center"
+        android:text="提交反馈"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp_16" />
+</LinearLayout>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_marginStart="@dimen/dp_12"
+    android:layout_marginTop="@dimen/dp_5"
+    android:layout_marginBottom="@dimen/dp_5"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/shape_in_room_noble_0"
+    android:paddingStart="@dimen/dp_12"
+    android:paddingTop="@dimen/sp_5"
+    android:paddingEnd="@dimen/dp_12"
+    android:paddingBottom="@dimen/sp_5">
+
+    <TextView
+        android:id="@+id/tv_msg_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="消息:"
+        android:textColor="@color/color_afa9aa"
+        android:textSize="@dimen/sp_12"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/tv_msg_2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_msg_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="管理员已关闭聊天公屏"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp_12"
+        app:layout_constraintBottom_toBottomOf="@id/tv_msg_1"
+        app:layout_constraintStart_toEndOf="@id/tv_msg_1"
+        app:layout_constraintTop_toTopOf="@id/tv_msg_1" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

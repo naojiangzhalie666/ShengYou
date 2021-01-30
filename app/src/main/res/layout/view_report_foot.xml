@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tv_up_photo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_18"
+        android:layout_marginTop="@dimen/dp_16"
+        android:text="上传截图"
+        android:textColor="@color/black"
+        android:textSize="@dimen/sp_16"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="*"
+        android:textColor="@color/red"
+        android:textSize="@dimen/sp_12"
+        app:layout_constraintStart_toEndOf="@id/tv_up_photo"
+        app:layout_constraintTop_toTopOf="@id/tv_up_photo" />
+
+    <TextView
+        android:id="@+id/tv_tis"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_5"
+        android:text="图片不能超过1M"
+        android:textColor="@color/color_999999"
+        android:textSize="@dimen/sp_12"
+        app:layout_constraintBaseline_toBaselineOf="@id/tv_up_photo"
+        app:layout_constraintStart_toEndOf="@id/tv_start" />
+
+    <cn.bingoogolapple.photopicker.widget.BGASortableNinePhotoLayout
+        android:id="@+id/snpl_moment_add_photos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="12dp"
+        app:bga_snpl_deleteDrawable="@mipmap/bga_pp_ic_delete"
+        app:bga_snpl_deleteDrawableOverlapQuarter="false"
+        app:bga_snpl_editable="true"
+        app:bga_snpl_itemCornerRadius="10dp"
+        app:bga_snpl_itemSpanCount="4"
+        app:bga_snpl_itemWhiteSpacing="15dp"
+        app:bga_snpl_itemWidth="@dimen/dp_80"
+        app:bga_snpl_maxItemCount="4"
+        app:bga_snpl_otherWhiteSpacing="@dimen/dp_80"
+        app:bga_snpl_placeholderDrawable="@mipmap/bga_pp_ic_holder_light"
+        app:bga_snpl_plusDrawable="@mipmap/square_release_increase"
+        app:bga_snpl_plusEnable="true"
+        app:bga_snpl_sortable="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_tis" />
+
+    <TextView
+        android:id="@+id/tv_tis_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_18"
+        android:layout_marginTop="@dimen/dp_8"
+        android:text="至少需要上传一张相关截图证明，以提高举报的准确度"
+        android:textColor="#ff999999"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/snpl_moment_add_photos" />
+
+    <TextView
+        android:id="@+id/tv_wz"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_18"
+        android:layout_marginTop="@dimen/dp_16"
+        android:text="文字说明"
+        android:textColor="@color/black"
+        android:textSize="@dimen/sp_16"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_tis_2" />
+
+    <TextView
+        android:id="@+id/tv_start_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="*"
+        android:textColor="@color/red"
+        android:textSize="@dimen/sp_12"
+        app:layout_constraintStart_toEndOf="@id/tv_wz"
+        app:layout_constraintTop_toTopOf="@id/tv_wz" />
+
+    <com.xiaoshanghai.nancang.mvp.ui.view.EditTextView
+        android:maxLength="140"
+        android:layout_marginTop="@dimen/dp_10"
+        android:layout_marginStart="@dimen/dp_18"
+        android:layout_marginEnd="@dimen/dp_18"
+        app:layout_constraintTop_toBottomOf="@id/tv_start_2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:paddingBottom="@dimen/dp_10"
+        android:id="@+id/et_report"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_120"
+        android:background="@drawable/shape_r5_g_bg"
+        android:gravity="left"
+        android:hint="请输入相关描述"
+        android:paddingLeft="@dimen/dp_13"
+        android:paddingTop="@dimen/dp_10"
+        android:textColor="@color/color_black"
+        android:textColorHint="@color/color_cccccc"
+        android:textSize="@dimen/sp_16" />
+
+    <TextView
+        android:id="@+id/tv_text_num"
+        android:padding="@dimen/dp_10"
+        app:layout_constraintEnd_toEndOf="@id/et_report"
+        app:layout_constraintBottom_toBottomOf="@id/et_report"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:text="0/140"
+        android:textColor="@color/color_cccccc"
+        android:textSize="@dimen/sp_12" />
+    
+    <Button
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="@dimen/dp_40"
+        android:id="@+id/bt_commit"
+        android:textColor="@color/color_white"
+        android:text="提交"
+        android:textSize="@dimen/sp_16"
+        android:gravity="center"
+        android:layout_marginTop="@dimen/dp_16"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_text_num"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@drawable/shape_p_r20_bg"
+        android:layout_width="@dimen/dp_260"
+        android:layout_height="@dimen/dp_45"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

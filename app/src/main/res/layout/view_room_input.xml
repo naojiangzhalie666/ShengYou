@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="@dimen/dp_300"
+    android:layout_height="@dimen/dp_200"
+    android:layout_gravity="center"
+    android:background="@drawable/shape_rounded_white">
+
+    <TextView
+        android:id="@+id/tv_dialog_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_30"
+        android:text="房间密码"
+        android:textColor="@color/color_222222"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:maxLength="15"
+        android:id="@+id/et_input"
+        android:layout_width="@dimen/dp_254"
+        android:layout_height="@dimen/dp_40"
+        android:layout_marginTop="@dimen/dp_20"
+        android:background="@drawable/shape_edit_r20_bg"
+        android:hint="请输入房间密码"
+        android:paddingStart="@dimen/dp_10"
+        android:paddingRight="@dimen/dp_10"
+        android:textColor="@color/color_bbbbbb"
+        android:textSize="@dimen/sp_12"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_dialog_title" />
+
+    <TextView
+        android:layout_marginEnd="@dimen/dp_10"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        android:layout_marginTop="@dimen/dp_30"
+        android:id="@+id/tv_cancel"
+        android:layout_width="@dimen/dp_90"
+        android:layout_height="@dimen/dp_30"
+        android:background="@drawable/shape_button_r15_bg"
+        android:gravity="center"
+        android:text="取消"
+        android:textColor="@color/color_222222"
+        android:textSize="@dimen/sp_12"
+        app:layout_constraintEnd_toStartOf="@id/tv_confirm"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/et_input" />
+
+    <TextView
+        android:layout_marginStart="@dimen/dp_10"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:id="@+id/tv_confirm"
+        android:layout_width="@dimen/dp_90"
+        android:layout_height="@dimen/dp_30"
+        android:background="@drawable/shape_button_r15_p_bg"
+        android:gravity="center"
+        android:text="确定"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp_12"
+        app:layout_constraintBottom_toBottomOf="@id/tv_cancel"
+        app:layout_constraintStart_toEndOf="@id/tv_cancel"
+        app:layout_constraintTop_toTopOf="@id/tv_cancel" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

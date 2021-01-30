@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="@dimen/dp_300"
+    android:layout_height="@dimen/dp_200"
+    android:layout_gravity="center"
+    android:background="@drawable/shape_rounded_white">
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_20"
+        android:text="移除提示"
+        android:textColor="@color/black"
+        android:textSize="@dimen/sp_16"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:layout_marginTop="@dimen/dp_30"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/tv_name"
+        app:layout_constraintTop_toBottomOf="@id/tv_title"
+        android:id="@+id/tv_flag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="是否移除"
+        android:textColor="@color/black"
+        android:textSize="@dimen/sp_16" />
+
+    <TextView
+        android:maxLength="8"
+        android:ellipsize="end"
+        app:layout_constraintStart_toEndOf="@id/tv_flag"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tv_flag"
+        app:layout_constraintBottom_toBottomOf="@id/tv_flag"
+        android:id="@+id/tv_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textColor="@color/black"
+        android:textSize="@dimen/sp_16" />
+
+    <TextView
+        android:layout_marginEnd="@dimen/dp_10"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        android:layout_marginTop="@dimen/dp_30"
+        android:id="@+id/tv_cancel"
+        android:layout_width="@dimen/dp_90"
+        android:layout_height="@dimen/dp_30"
+        android:background="@drawable/shape_button_r15_bg"
+        android:gravity="center"
+        android:text="取消"
+        android:textColor="@color/color_222222"
+        android:textSize="@dimen/sp_12"
+        app:layout_constraintEnd_toStartOf="@id/tv_confirm"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_flag" />
+
+    <TextView
+        android:layout_marginStart="@dimen/dp_10"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:id="@+id/tv_confirm"
+        android:layout_width="@dimen/dp_90"
+        android:layout_height="@dimen/dp_30"
+        android:background="@drawable/shape_button_r15_p_bg"
+        android:gravity="center"
+        android:text="确定"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp_12"
+        app:layout_constraintBottom_toBottomOf="@id/tv_cancel"
+        app:layout_constraintStart_toEndOf="@id/tv_cancel"
+        app:layout_constraintTop_toTopOf="@id/tv_cancel" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

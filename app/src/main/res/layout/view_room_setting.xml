@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dp_150"
+    android:background="@drawable/shape_top">
+
+    <ImageView
+        android:id="@+id/iv_tx"
+        android:layout_width="@dimen/dp_45"
+        android:layout_height="@dimen/dp_45"
+        android:layout_marginTop="@dimen/dp_25"
+        android:src="@mipmap/icon_open_tx"
+        app:layout_constraintEnd_toStartOf="@id/iv_gp"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_tx"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_5"
+        android:text="打开我的特效"
+        android:textColor="@color/color_787878"
+        android:textSize="@dimen/sp_12"
+        app:layout_constraintEnd_toEndOf="@id/iv_tx"
+        app:layout_constraintStart_toStartOf="@id/iv_tx"
+        app:layout_constraintTop_toBottomOf="@id/iv_tx" />
+
+    <ImageView
+        android:visibility="invisible"
+        android:id="@+id/iv_gp"
+        android:layout_width="@dimen/dp_45"
+        android:layout_height="@dimen/dp_45"
+        android:layout_marginTop="@dimen/dp_25"
+        android:src="@mipmap/icon_open_gp"
+        app:layout_constraintEnd_toStartOf="@id/iv_lwz"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@id/iv_tx"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:visibility="invisible"
+        android:id="@+id/tv_gp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_5"
+        android:text="打开公屏"
+        android:textColor="@color/color_787878"
+        android:textSize="@dimen/sp_12"
+        app:layout_constraintEnd_toEndOf="@id/iv_gp"
+        app:layout_constraintStart_toStartOf="@id/iv_gp"
+        app:layout_constraintTop_toBottomOf="@id/iv_gp" />
+
+    <ImageView
+        android:visibility="invisible"
+        android:id="@+id/iv_lwz"
+        android:layout_width="@dimen/dp_45"
+        android:layout_height="@dimen/dp_45"
+        android:layout_marginTop="@dimen/dp_25"
+        android:src="@mipmap/icon_open_lw"
+        app:layout_constraintEnd_toStartOf="@id/iv_room_setting"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@id/iv_gp"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:visibility="invisible"
+        android:id="@+id/tv_lwz"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_5"
+        android:text="打开礼物值"
+        android:textColor="@color/color_787878"
+        android:textSize="@dimen/sp_12"
+        app:layout_constraintEnd_toEndOf="@id/iv_lwz"
+        app:layout_constraintStart_toStartOf="@id/iv_lwz"
+        app:layout_constraintTop_toBottomOf="@id/iv_lwz" />
+
+    <ImageView
+        android:visibility="visible"
+        android:id="@+id/iv_room_setting"
+        android:layout_width="@dimen/dp_45"
+        android:layout_height="@dimen/dp_45"
+        android:layout_marginTop="@dimen/dp_25"
+        android:src="@mipmap/icon_room_setting"
+        app:layout_constraintEnd_toStartOf="@id/iv_empty"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@id/iv_lwz"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+
+        android:visibility="visible"
+        android:id="@+id/tv_room_setting"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_5"
+        android:text="房间设置"
+        android:textColor="@color/color_787878"
+        android:textSize="@dimen/sp_12"
+        app:layout_constraintEnd_toEndOf="@id/iv_room_setting"
+        app:layout_constraintStart_toStartOf="@id/iv_room_setting"
+        app:layout_constraintTop_toBottomOf="@id/iv_room_setting" />
+
+    <ImageView
+        android:visibility="invisible"
+        android:id="@+id/iv_empty"
+        android:layout_width="@dimen/dp_45"
+        android:layout_height="@dimen/dp_45"
+        android:layout_marginTop="@dimen/dp_25"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@id/iv_room_setting"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
