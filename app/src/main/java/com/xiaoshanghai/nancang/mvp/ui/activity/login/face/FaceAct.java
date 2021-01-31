@@ -200,9 +200,12 @@ public class FaceAct extends BaseActivity  implements View.OnClickListener {
         }
     }
 
+    /**
+     * male:男性 female:女性
+     */
     public void startCollect() {
             Intent intent = new Intent(mContext, FaceLivenessExpActivity.class);
-            startActivity(intent);
+            startActivityForResult(intent,100);
     }
 
     private void showToast(String msg) {
@@ -210,5 +213,12 @@ public class FaceAct extends BaseActivity  implements View.OnClickListener {
                 Toast.LENGTH_SHORT);
         toast.setText(msg);
         toast.show();
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        setResult(100,data);
+        finish();
     }
 }

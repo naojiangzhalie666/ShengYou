@@ -1,5 +1,7 @@
 package com.xiaoshanghai.nancang.net;
 
+import com.xiaoshanghai.nancang.bean.GetAppMinetBaseDataBean;
+import com.xiaoshanghai.nancang.bean.GetfaceModleBean;
 import com.xiaoshanghai.nancang.bean.getBaiDUTokenBean;
 import com.xiaoshanghai.nancang.net.bean.AvatarResult;
 import com.xiaoshanghai.nancang.net.bean.AwardsEntity;
@@ -20,6 +22,7 @@ import com.xiaoshanghai.nancang.net.bean.Decks;
 import com.xiaoshanghai.nancang.net.bean.FamilyMemberResult;
 import com.xiaoshanghai.nancang.net.bean.FamilyRankResult;
 import com.xiaoshanghai.nancang.net.bean.FriendsCircleResult;
+import com.xiaoshanghai.nancang.net.bean.GetAppPayBuyTicketBean;
 import com.xiaoshanghai.nancang.net.bean.GiftAllResult;
 import com.xiaoshanghai.nancang.net.bean.GiftRecordResult;
 import com.xiaoshanghai.nancang.net.bean.GoldGiftResult;
@@ -67,6 +70,7 @@ import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
+import retrofit2.http.Header;
 import retrofit2.http.Multipart;
 import retrofit2.http.POST;
 import retrofit2.http.Part;
@@ -1738,7 +1742,24 @@ public interface Api {
      */
     @POST("https://aip.baidubce.com/oauth/2.0/token")
     @FormUrlEncoded
-    HttpObservable<getBaiDUTokenBean> getBaiDUToken(@Field("grant_type") String grant_type, @Field("client_id") String client_id, @Field("client_secret") String client_secret)
-    ;
+    HttpObservable<getBaiDUTokenBean> getBaiDUToken(@Field("grant_type") String grant_type, @Field("client_id") String client_id, @Field("client_secret") String client_secret);
+    /**
+     * 告诉服务器是女的登录了
+     */
+    @POST("app_auth/update_authentication")
+    @FormUrlEncoded
+    HttpObservable<BaseResponse> getUpdateAuthentication(@Field("phone") String phone);
+    /**
+     * 登录支付
+     */
+    @POST("app_pay/buy_ticket")
+    @FormUrlEncoded
+    HttpObservable<GetAppPayBuyTicketBean> getAppPayBuyTicket(@Field("payType") String payType, @Field("payTargetId") String payTargetId);
+    /**
+     * APP启动检查用户是否认证，是否购买门票
+     */
+    @POST("app_mine/base_data")
+    @FormUrlEncoded
+    HttpObservable<GetAppMinetBaseDataBean> getAppMinetBaseData(@Field("userId") String userId);
 }
 

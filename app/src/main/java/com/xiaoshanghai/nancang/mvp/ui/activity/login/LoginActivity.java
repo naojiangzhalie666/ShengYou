@@ -1,5 +1,4 @@
 package com.xiaoshanghai.nancang.mvp.ui.activity.login;
-
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.LinearGradient;
@@ -10,23 +9,18 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import com.xiaoshanghai.nancang.R;
 import com.xiaoshanghai.nancang.base.BaseMvpActivity;
 import com.xiaoshanghai.nancang.constant.Constant;
 import com.xiaoshanghai.nancang.constant.EventConstant;
 import com.xiaoshanghai.nancang.mvp.contract.LoginContract;
 import com.xiaoshanghai.nancang.mvp.presenter.LoginPresenter;
-import com.xiaoshanghai.nancang.mvp.ui.activity.login.face.FaceAct;
 import com.xiaoshanghai.nancang.net.bean.Event;
 import com.xiaoshanghai.nancang.utils.ActStartUtils;
 import com.xiaoshanghai.nancang.utils.AppActivityStatusUtil;
 import com.xiaoshanghai.nancang.utils.ToastUtils;
-
 import butterknife.BindView;
 import butterknife.OnClick;
-
-
 public class LoginActivity extends BaseMvpActivity<LoginPresenter> implements LoginContract.View {
 
     @BindView(R.id.come)
@@ -95,12 +89,6 @@ public class LoginActivity extends BaseMvpActivity<LoginPresenter> implements Lo
      */
     @Override
     public void oneKeyLogon(String phoneNumber) {
-
-//        Intent intent = new Intent(this, OneKeyLoginAct.class);
-//        String num = phoneNumber.replace("+86", "");
-//        intent.putExtra("phoneNumber",num);
-//        startActivity(intent);
-
         Intent intent = new Intent(this, RegisteAndLoginAct.class);
         startActivity(intent);
     }
@@ -110,17 +98,7 @@ public class LoginActivity extends BaseMvpActivity<LoginPresenter> implements Lo
      */
     @Override
     public void otherLogon() {
-//        startActivity(new Intent(this, AccountLoginAct.class));
-
-//        Intent intent = new Intent(this, OtherLoginAct.class);
-//        startActivity(intent);
-
-        Intent intent = new Intent(this, FaceAct.class);
-        startActivityForResult(intent, 100);
-
-
-
-
+        startActivity(new Intent(this, AccountLoginAct.class));
     }
 
     private void setGradient(TextView textView) {
@@ -175,4 +153,5 @@ public class LoginActivity extends BaseMvpActivity<LoginPresenter> implements Lo
         }
         return super.onKeyDown(keyCode, event);
     }
+
 }

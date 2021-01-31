@@ -1,5 +1,4 @@
 package com.xiaoshanghai.nancang.mvp.ui.activity;
-
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageInfo;
@@ -9,29 +8,38 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.text.TextUtils;
 import android.util.Log;
-
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
+
+import com.google.gson.Gson;
+import com.tencent.qcloud.tim.uikit.utils.ToastUtil;
 import com.xiaoshanghai.nancang.R;
 import com.xiaoshanghai.nancang.base.BaseApplication;
 import com.xiaoshanghai.nancang.base.BaseMvpActivity;
+import com.xiaoshanghai.nancang.bean.GetAppMinetBaseDataBean;
 import com.xiaoshanghai.nancang.constant.Constant;
 import com.xiaoshanghai.nancang.constant.SpConstant;
 import com.xiaoshanghai.nancang.mvp.contract.SplashContract;
 import com.xiaoshanghai.nancang.mvp.presenter.SplashPresenter;
 import com.xiaoshanghai.nancang.mvp.ui.activity.login.LoginActivity;
+import com.xiaoshanghai.nancang.mvp.ui.activity.login.face.FaceAct;
+import com.xiaoshanghai.nancang.mvp.ui.activity.login.face.LoginPayAct;
 import com.xiaoshanghai.nancang.mvp.ui.activity.main.MainActivity;
+import com.xiaoshanghai.nancang.net.HttpClient;
+import com.xiaoshanghai.nancang.net.bean.BaseResponse;
+import com.xiaoshanghai.nancang.net.bean.LogonResult;
 import com.xiaoshanghai.nancang.utils.AMapLocationTools;
 import com.xiaoshanghai.nancang.utils.ActStartUtils;
 import com.xiaoshanghai.nancang.utils.AppUtils;
 import com.xiaoshanghai.nancang.utils.SPUtils;
+import com.xiaoshanghai.nancang.utils.ToastUtils;
 
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
-import java.util.Locale;
-
+import io.reactivex.Observer;
+import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.annotations.NonNull;
 import io.reactivex.annotations.Nullable;
+import io.reactivex.disposables.Disposable;
+import io.reactivex.schedulers.Schedulers;
 
 public class SplashActivity extends BaseMvpActivity<SplashPresenter> implements SplashContract.View {
 
@@ -82,10 +90,9 @@ public class SplashActivity extends BaseMvpActivity<SplashPresenter> implements 
 
                 if (TextUtils.isEmpty(token) || SPUtils.getInstance().getUserInfo() == null) {
                     startActivity(new Intent(SplashActivity.this, LoginActivity.class));
-
                 } else {
-                    startActivity(new Intent(SplashActivity.this, MainActivity.class));
-
+                    getAppMinetBaseData();
+//                    startActivity(new Intent(SplashActivity.this, MainActivity.class));
                 }
             }
             finish();
@@ -157,6 +164,77 @@ public class SplashActivity extends BaseMvpActivity<SplashPresenter> implements 
                 checkPermission();
 
             }
+        }
+    }
+    private GetAppMinetBaseDataBean mygetBean;
+    /**
+     * 检测是否买了门票或者认证
+     */
+    public void  getAppMinetBaseData(){
+        HttpClient.getApi().getAppMinetBaseData(SPUtils.getInstance().getUserInfo().getId())
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Observer<GetAppMinetBaseDataBean>() {
+                    @Override
+                    public void onSubscribe(@NonNull Disposable d) {
+
+                    }
+                    @Override
+                    public void onNext(@NonNull GetAppMinetBaseDataBean payBean) {
+                        mygetBean=payBean;
+                        startLogin(payBean);
+                    }
+                    @Override
+                    public void onError(@NonNull Throwable e) {
+                        ToastUtils.showLong("请稍后再重试！系统出错啦！");
+                    }
+                    @Override
+                    public void onComplete() {
+
+                    }
+                });
+    }
+    /**
+     * 登录检测
+     */
+    public void startLogin(GetAppMinetBaseDataBean bean){
+        if(bean.getData().isAuthentication()==0){//只有为女性的时候出现判断未认证
+            startActivityForResult(new Intent(this, FaceAct.class), 100);
+            return;
+        }
+        if(bean.getData().isPayTicket()==0){//是否支付
+            startActivityForResult(new Intent(this, LoginPayAct.class),50);
+            return;
+        }
+        startActivity(new Intent (this,MainActivity.class));
+
+    }
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @androidx.annotation.Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(requestCode==100&&resultCode==100){//性别处理
+            if(data.getStringExtra("gender")==null){
+                ToastUtil.toastLongMessage("验证失败请重试！");
+                startActivityForResult(new Intent(this, FaceAct.class), 100);
+                return;
+            }
+            //走支付  male:男性 female:女性
+            //判断注册的性别与扫描后反馈的性别判断
+            if(mygetBean.getData().getUserSex()==0&&data.getStringExtra("gender").equals("female")){
+                startActivityForResult(new Intent(this, LoginPayAct.class),50);
+            }else {
+                ToastUtils.showShort("您的性别与注册的性别不一致请重试！");
+                startActivityForResult(new Intent(this, LoginPayAct.class),50);
+            }
+        }
+        if(requestCode==50&&resultCode==50){//支付成功回来处理
+            if(data.getStringExtra("payStatus").equals("fail")){
+                ToastUtils.showShort("支付失败请重试！");
+                startActivityForResult(new Intent(this, LoginPayAct.class),50);
+                return;
+            }
+            ToastUtils.showShort("恭喜您支付成功！");
+            startActivity(new Intent (this,MainActivity.class));
         }
     }
 }

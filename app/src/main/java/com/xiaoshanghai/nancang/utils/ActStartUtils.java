@@ -10,6 +10,7 @@ import com.xiaoshanghai.nancang.constant.Constant;
 import com.xiaoshanghai.nancang.constant.LoginStatus;
 import com.xiaoshanghai.nancang.constant.URLConstant;
 import com.xiaoshanghai.nancang.mvp.ui.activity.login.RegisterActivity;
+import com.xiaoshanghai.nancang.mvp.ui.activity.login.face.LoginPayAct;
 import com.xiaoshanghai.nancang.mvp.ui.activity.main.MainActivity;
 import com.xiaoshanghai.nancang.mvp.ui.activity.mine.WebActivity;
 import com.xiaoshanghai.nancang.net.bean.LogonResult;
@@ -85,6 +86,8 @@ public class ActStartUtils {
                 } else {
                     startAct(activity, MainActivity.class, bundle);
                 }
+                //测试用
+//                activity.startActivityForResult(new Intent(activity, LoginPayAct.class),50);
                 break;
             case FREEZE:    //冻结
                 ToastUtils.showShort(activity.getResources().getString(R.string.freeze));

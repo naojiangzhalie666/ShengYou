@@ -121,7 +121,6 @@ class NobleOrderPresenter : BasePresenter<NobleOrderContract.View>(), NobleOrder
 
     override fun aliPay(handler: Handler, orderString: String, what: Int) {
         if (TextUtils.isEmpty(orderString)) return
-
         val payRunnable = Runnable {
             val alipay = PayTask(view as NobleOrderAct)
             val result = alipay.payV2(orderString, true)
@@ -131,13 +130,10 @@ class NobleOrderPresenter : BasePresenter<NobleOrderContract.View>(), NobleOrder
             msg.obj = result
             handler.sendMessage(msg)
         }
-
         // 必须异步调用
-
         // 必须异步调用
         val payThread = Thread(payRunnable)
         payThread.start()
-
     }
 
     override fun weCharPay(api: IWXAPI, result: BuyGoldResult) {

@@ -512,6 +512,11 @@
             android:windowSoftInputMode="adjustPan|stateHidden" />
         <activity
             tool:ignore="Instantiatable"
+            android:name=".mvp.ui.activity.login.face.LoginPayAct"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+        <activity
+            tool:ignore="Instantiatable"
             android:name=".mvp.ui.activity.login.AccountLoginAct"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan|stateHidden" />
@@ -583,7 +588,6 @@
             android:name="com.xiaoshanghai.nancang.wxapi.WXPayEntryActivity"
             android:exported="true"
             android:launchMode="singleTop"/>
-
         <!-- 活体图像采集界面 -->
         <activity
             android:name=".mvp.ui.activity.login.face.FaceLivenessExpActivity"
@@ -605,19 +609,16 @@
                 <action android:name="com.tencent.mm.plugin.openapi.Intent.ACTION_REFRESH_WXAPP" />
             </intent-filter>
         </receiver>
-
-<!--        <provider-->
-<!--            android:name="androidx.core.content.FileProvider"-->
-<!--            android:authorities="${applicationId}.fileprovider"-->
-<!--            android:exported="false"-->
-<!--            android:grantUriPermissions="true"-->
-<!--            tool:ignore="MissingClass">-->
-<!--            <meta-data-->
-<!--                android:name="android.support.FILE_PROVIDER_PATHS"-->
-<!--                android:resource="@xml/filepath" />-->
-<!--        </provider>-->
-
-
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true"
+            tool:ignore="MissingClass">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/filepath" />
+        </provider>
         <!-- 高德地图 start -->
         <meta-data android:name="com.amap.api.v2.apikey"
             android:value="708e25a867ce213168466a236d92a084"/>

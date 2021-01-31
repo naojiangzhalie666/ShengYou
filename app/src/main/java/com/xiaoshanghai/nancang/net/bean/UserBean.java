@@ -43,6 +43,24 @@ public  class UserBean extends BaseResult{
     private int isClanElder;
     private int openTeenager;
 
+    public int getIsAuthentication() {
+        return isAuthentication;
+    }
+
+    public void setIsAuthentication(int isAuthentication) {
+        this.isAuthentication = isAuthentication;
+    }
+
+    public int getIsPayTicket() {
+        return isPayTicket;
+    }
+
+    public void setIsPayTicket(int isPayTicket) {
+        this.isPayTicket = isPayTicket;
+    }
+
+    private int isAuthentication;
+    private int isPayTicket;
     public int getIsInvisible() {
         return isInvisible;
     }
