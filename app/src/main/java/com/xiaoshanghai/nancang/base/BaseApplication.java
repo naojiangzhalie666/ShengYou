@@ -1,16 +1,15 @@
 package com.xiaoshanghai.nancang.base;
 
+import android.app.Activity;
 import android.app.Application;
 import android.content.Context;
 import android.net.http.HttpResponseCache;
 import android.text.TextUtils;
 
-import com.baidu.idl.face.platform.FaceConfig;
-import com.baidu.idl.face.platform.FaceEnvironment;
-import com.baidu.idl.face.platform.FaceSDKManager;
 import com.baidu.idl.face.platform.LivenessTypeEnum;
 import com.xiaoshanghai.nancang.BuildConfig;
 import com.xiaoshanghai.nancang.R;
+import com.xiaoshanghai.nancang.constant.Const;
 import com.xiaoshanghai.nancang.constant.Constant;
 import com.xiaoshanghai.nancang.constant.SpConstant;
 import com.xiaoshanghai.nancang.helper.ConfigHelper;
@@ -36,11 +35,16 @@ import com.tencent.qcloud.tim.uikit.TUIKit;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 
 public class BaseApplication extends Application {
-
+    public static String city="北京市";
+    public static String  latitude="30.49347";
+    public static String longitude="114.410726";
     public static String HTTP_BASE_URL = BuildConfig.APP_BASE_URL;
 
     private static Context application;
@@ -57,7 +61,6 @@ public class BaseApplication extends Application {
         NineGridView.setImageLoader(new GlideImageLoader());
         EasyFloat.init(this, false);
         initRoomFace();
-        setFaceConfig();
     }
 
     private void initSVAG() {
@@ -120,39 +123,33 @@ public class BaseApplication extends Application {
     public static IWXAPI getApi() {
         return api;
     }
+
+    public static List<LivenessTypeEnum> livenessList = new ArrayList<>();
+    // 活体随机开关
+    public static boolean isLivenessRandom = true;
+    // 语音播报开关
+    public static boolean isOpenSound = true;
+    // 活体检测开关
+    public static boolean isActionLive = true;
+    // 质量等级（0：正常、1：宽松、2：严格、3：自定义）
+    public static int qualityLevel = Const.QUALITY_NORMAL;
+
+    private static Map<String, Activity> destroyMap = new HashMap<>();
     /**
-     * 为了android和ios 区分授权，appId=appname_face_android ,其中appname为申请sdk时的应用名
-     * 申请License取得的APPID
-     * assets目录下License文件名
-     * 百度人脸识别初始化
+     * 添加到销毁队列
+     * @param activity 要销毁的activity
      */
-    private void setFaceConfig() {
-        FaceSDKManager.getInstance().initialize(this, "xiaoshanghai-face-android", "idl-license.face-android");
-        FaceConfig config = FaceSDKManager.getInstance().getFaceConfig();
-        // SDK初始化已经设置完默认参数（推荐参数），您也根据实际需求进行数值调整
-        List<LivenessTypeEnum> livenessList = new ArrayList<LivenessTypeEnum>();
-        // 根据需求添加活体动作
-        livenessList.add(LivenessTypeEnum.Eye);
-       /* livenessList.add(LivenessTypeEnum.Mouth);
-        livenessList.add(LivenessTypeEnum.HeadUp);
-        livenessList.add(LivenessTypeEnum.HeadDown);
-        livenessList.add(LivenessTypeEnum.HeadLeft);
-        livenessList.add(LivenessTypeEnum.HeadRight);
-        livenessList.add(LivenessTypeEnum.HeadLeftOrRight);*/
-        config.setLivenessTypeList(livenessList);
-        config.setBlurnessValue(FaceEnvironment.VALUE_BLURNESS);
-        config.setBrightnessValue(FaceEnvironment.VALUE_BRIGHTNESS);
-        config.setCropFaceValue(FaceEnvironment.VALUE_CROP_FACE_SIZE);
-        config.setHeadPitchValue(FaceEnvironment.VALUE_HEAD_PITCH);
-        config.setHeadRollValue(FaceEnvironment.VALUE_HEAD_ROLL);
-        config.setHeadYawValue(FaceEnvironment.VALUE_HEAD_YAW);
-        config.setMinFaceSize(FaceEnvironment.VALUE_MIN_FACE_SIZE);
-        config.setNotFaceValue(FaceEnvironment.VALUE_NOT_FACE_THRESHOLD);
-        config.setOcclusionValue(FaceEnvironment.VALUE_OCCLUSION);
-        config.setCheckFaceQuality(true);
-        config.setFaceDecodeNumberOfThreads(2);
-        FaceSDKManager.getInstance().setFaceConfig(config);
+    public static void addDestroyActivity(Activity activity, String activityName) {
+        destroyMap.put(activityName, activity);
     }
 
-
+    /**
+     * 销毁指定Activity
+     */
+    public static void destroyActivity(String activityName) {
+        Set<String> keySet = destroyMap.keySet();
+        for (String key : keySet) {
+            destroyMap.get(key).finish();
+        }
+    }
 }

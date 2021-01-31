@@ -17,6 +17,7 @@ import com.xiaoshanghai.nancang.constant.Constant;
 import com.xiaoshanghai.nancang.constant.EventConstant;
 import com.xiaoshanghai.nancang.mvp.contract.LoginContract;
 import com.xiaoshanghai.nancang.mvp.presenter.LoginPresenter;
+import com.xiaoshanghai.nancang.mvp.ui.activity.login.face.FaceAct;
 import com.xiaoshanghai.nancang.net.bean.Event;
 import com.xiaoshanghai.nancang.utils.ActStartUtils;
 import com.xiaoshanghai.nancang.utils.AppActivityStatusUtil;
@@ -61,6 +62,9 @@ public class LoginActivity extends BaseMvpActivity<LoginPresenter> implements Lo
 
     @OnClick({R.id.singin, R.id.loginbytel, R.id.yinshi, R.id.yhxieyi, R.id.byweixin})
     public void onViewClicked(View view) {
+
+
+
         switch (view.getId()) {
             case R.id.singin:
                 mPresenter.oneKeyLogon();
@@ -106,13 +110,13 @@ public class LoginActivity extends BaseMvpActivity<LoginPresenter> implements Lo
      */
     @Override
     public void otherLogon() {
-        startActivity(new Intent(this, AccountLoginAct.class));
+//        startActivity(new Intent(this, AccountLoginAct.class));
 
 //        Intent intent = new Intent(this, OtherLoginAct.class);
 //        startActivity(intent);
 
-//        Intent intent = new Intent(this, FaceLivenessExpActivity.class);
-//        startActivityForResult(intent, 100);
+        Intent intent = new Intent(this, FaceAct.class);
+        startActivityForResult(intent, 100);
 
 
 

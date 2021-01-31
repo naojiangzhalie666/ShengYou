@@ -1,5 +1,6 @@
 package com.xiaoshanghai.nancang.net;
 
+import com.xiaoshanghai.nancang.bean.getBaiDUTokenBean;
 import com.xiaoshanghai.nancang.net.bean.AvatarResult;
 import com.xiaoshanghai.nancang.net.bean.AwardsEntity;
 import com.xiaoshanghai.nancang.net.bean.BannerResult;
@@ -123,7 +124,7 @@ public interface Api {
      */
     @POST("app_auth/login_pw")
     @FormUrlEncoded
-    HttpObservable<BaseResponse<LogonResult>> loginPsd(@Field("phone") String phone, @Field("password") String password);
+    HttpObservable<BaseResponse<LogonResult>> loginPsd(@Field("phone") String phone, @Field("password") String password, @Field("city") String city, @Field("latitude") String latitude, @Field("longitude") String longitude);
 
     /**
      * 注册 - 校验手机号与验证码
@@ -154,7 +155,9 @@ public interface Api {
                                                        @Part("userPhone") String userPhone,
                                                        @Part("userBirthday") String userBirthday,
                                                        @Part("userSex") String userSex,
-                                                       @Part("wechatOpenid") String wechatOpenid);
+                                                       @Part("wechatOpenid") String wechatOpenid
+    , @Part("city") String city, @Part("latitude") String latitude, @Part("longitude") String longitude)
+    ;
 
     /**
      * 首页banner图
@@ -1729,5 +1732,13 @@ public interface Api {
      */
     @POST("/app_draw/open_draw")
     HttpObservable<BaseResponse<Map<String,String>>> getRoomConfig();
+
+    /**
+     * 获取百度token
+     */
+    @POST("https://aip.baidubce.com/oauth/2.0/token")
+    @FormUrlEncoded
+    HttpObservable<getBaiDUTokenBean> getBaiDUToken(@Field("grant_type") String grant_type, @Field("client_id") String client_id, @Field("client_secret") String client_secret)
+    ;
 }
 

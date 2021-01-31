@@ -3,6 +3,7 @@ package com.xiaoshanghai.nancang.mvp.presenter;
 import android.content.Context;
 
 import com.xiaoshanghai.nancang.R;
+import com.xiaoshanghai.nancang.base.BaseApplication;
 import com.xiaoshanghai.nancang.base.BasePresenter;
 import com.xiaoshanghai.nancang.constant.Constant;
 import com.xiaoshanghai.nancang.constant.SpConstant;
@@ -50,7 +51,7 @@ public class OtherPresenter extends BasePresenter<OtherContract.View> implements
     @Override
     public void login(String phoneNum, String code) {
         getView().showLoading();
-        model.loginCode(phoneNum, code,"北京市","30.49347","114.410726")
+        model.loginCode(phoneNum, code, BaseApplication.city,BaseApplication.latitude,BaseApplication.longitude)
                 .execOnThread(getView().getActLifeRecycle(), new HttpObserver<LogonResult>() {
 
                     @Override

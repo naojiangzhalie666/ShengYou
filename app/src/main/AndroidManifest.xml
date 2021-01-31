@@ -41,6 +41,10 @@
     <!--用于申请获取蓝牙信息进行室内定位-->
     <uses-permission android:name="android.permission.BLUETOOTH"/>
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"
+        tools:ignore="ProtectedPermissions" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS"
+        tools:ignore="ProtectedPermissions" />
     <application xmlns:tool="http://schemas.android.com/tools"
         android:name="com.xiaoshanghai.nancang.base.BaseApplication"
         android:allowBackup="true"
@@ -56,10 +60,6 @@
         <activity android:name=".mvp.ui.activity.mine.BoundPayAct"
             tool:ignore="Instantiatable"
             />
-        <activity
-            android:name=".mvp.ui.activity.face.FaceLivenessExpActivity"
-            android:screenOrientation="portrait"
-            tools:ignore="LockedOrientationActivity" />
         <activity
             android:name=".mvp.ui.activity.mine.PayResultAct"
             tool:ignore="Instantiatable"
@@ -523,7 +523,8 @@
         <activity
             android:name="com.lzy.ninegrid.preview.ImagePreviewActivity"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustPan|stateHidden" />
+            android:windowSoftInputMode="adjustPan|stateHidden"
+            tool:ignore="MissingClass" />
         <activity
             tool:ignore="Instantiatable"
             android:name=".mvp.ui.activity.mine.AboutUsAct"
@@ -574,7 +575,7 @@
             android:exported="true"
             android:label="@string/app_name"
             android:launchMode="singleTask"
-            android:taskAffinity="com.hyqc.shengyou"
+            android:taskAffinity="com.xiaoshanghai.nancang"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
 
         <activity
@@ -582,6 +583,21 @@
             android:name="com.xiaoshanghai.nancang.wxapi.WXPayEntryActivity"
             android:exported="true"
             android:launchMode="singleTop"/>
+
+        <!-- 活体图像采集界面 -->
+        <activity
+            android:name=".mvp.ui.activity.login.face.FaceLivenessExpActivity"
+            android:hardwareAccelerated="true"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"/>
+        <!--刷人脸主界面-->
+        <activity android:name=".mvp.ui.activity.login.face.FaceAct"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+        <!--协议页面-->
+        <activity android:name=".mvp.ui.activity.login.FaceHomeAgreementActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
         <receiver
             android:name="com.xiaoshanghai.nancang.broadcast.AppRegister"
             android:permission="com.tencent.mm.plugin.permission.SEND">
@@ -590,21 +606,39 @@
             </intent-filter>
         </receiver>
 
-        <provider
-            android:name="androidx.core.content.FileProvider"
-            android:authorities="${applicationId}.fileprovider"
-            android:exported="false"
-            android:grantUriPermissions="true"
-            tool:ignore="MissingClass">
-            <meta-data
-                android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/filepath" />
-        </provider>
-                    <!-- 高德地图 start -->
-        <meta-data android:name="com.amap.api.v2.apikey" android:value="708e25a867ce213168466a236d92a084"/>
+<!--        <provider-->
+<!--            android:name="androidx.core.content.FileProvider"-->
+<!--            android:authorities="${applicationId}.fileprovider"-->
+<!--            android:exported="false"-->
+<!--            android:grantUriPermissions="true"-->
+<!--            tool:ignore="MissingClass">-->
+<!--            <meta-data-->
+<!--                android:name="android.support.FILE_PROVIDER_PATHS"-->
+<!--                android:resource="@xml/filepath" />-->
+<!--        </provider>-->
+
+
+        <!-- 高德地图 start -->
+        <meta-data android:name="com.amap.api.v2.apikey"
+            android:value="708e25a867ce213168466a236d92a084"/>
         <service android:name="com.amap.api.location.APSService"
             tool:ignore="MissingClass,WrongManifestParent"/>
                        <!-- 高德地图 end -->
+        <!--将com.baidu.idl.face.demo替换成您工程的包名-->
+        <provider android:authorities="com.xiaoshanghai.nancang.liantian.ac.provider"
+            android:name="com.baidu.liantian.LiantianProvider"
+            android:exported="true"/>
+        <service
+            android:name="com.baidu.liantian.LiantianService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.baidu.action.Liantian.VIEW" />
+                <category android:name="com.baidu.category.liantian"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </service>
+        <meta-data android:name="seckey_avscan" android:value= "660346260f8a841a04ec2a56815b421b"/>
+        <meta-data android:name="appkey_avscan" android:value= "100034"/>
     </application>
 
 </manifest>

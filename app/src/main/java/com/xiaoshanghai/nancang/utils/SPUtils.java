@@ -37,7 +37,7 @@ public class SPUtils {
      * @return {@link SPUtils}
      */
     public static SPUtils getInstance(String spName) {
-        if (StringUtils.isSpace(spName)) spName = "shengyou";
+        if (StringUtils.isSpace(spName)) spName = "nancang";
         SPUtils sp = sSPMap.get(spName);
         if (sp == null) {
             sp = new SPUtils(spName);

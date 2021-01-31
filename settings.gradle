@@ -1,6 +1,6 @@
+include ':faceplatform-release'
 include ':faceplatform-ui'
-include ':faceplatform'
-rootProject.name='ShengYou'
+rootProject.name='NanCang'
 include ':app'
 include ':refresh:refresh-header'
 include ':refresh:refresh-layout'

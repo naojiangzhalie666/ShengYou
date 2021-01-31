@@ -2,7 +2,7 @@ ext {
     android = [compileSdkVersion: 28,
                buildToolsVersion: "27.1.1",
                supportSdkVersion: "26.0.1",
-               applicationId:"com.xiaoshanghai.shengyou",
+               applicationId:"com.xiaoshanghai.nancang",
                minSdkVersion    : 19,
                targetSdkVersion : 28,
                isModule         : false, //isModule 是否是独立模块开发

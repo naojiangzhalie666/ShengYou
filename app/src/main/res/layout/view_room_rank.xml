@@ -34,12 +34,6 @@
         app:layout_constraintStart_toEndOf="@id/tv_half"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <!--    <xiaoshanghaishanghai.shengyou.view.NoScrollViewPager-->
-    <!--        android:id="@+id/nso_viewpager"-->
-    <!--        app:layout_constraintBottom_toBottomOf="parent"-->
-    <!--        app:layout_constraintTop_toBottomOf="@id/tv_room"-->
-    <!--        android:layout_width="match_parent"-->
-    <!--        android:layout_height="@dimen/dp_0"/>-->
 
     <RelativeLayout
         android:id="@+id/flContainer"

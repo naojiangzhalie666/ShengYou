@@ -3,11 +3,11 @@ package com.xiaoshanghai.nancang.utils;
 import android.app.Activity;
 import android.text.TextUtils;
 
+import com.tencent.imsdk.v2.V2TIMManager;
+import com.tencent.liteav.trtcvoiceroom.model.TRTCVoiceRoom;
 import com.xiaoshanghai.nancang.R;
 import com.xiaoshanghai.nancang.mvp.ui.activity.login.LoginActivity;
 import com.xiaoshanghai.nancang.view.TipsDialog;
-import com.tencent.imsdk.v2.V2TIMManager;
-import com.tencent.liteav.trtcvoiceroom.model.TRTCVoiceRoom;
 
 import java.util.ArrayList;
 

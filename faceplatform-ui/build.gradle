@@ -1,14 +1,14 @@
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion 29
-    buildToolsVersion "28.0.3"
+    compileSdkVersion 25
+    buildToolsVersion "25.0.3"
 
     defaultConfig {
-        minSdkVersion 18
-        targetSdkVersion 29
-        versionCode 1000
-        versionName "3.2.1.0"
+        minSdkVersion 15
+        targetSdkVersion 25
+        versionCode 1001
+        versionName "4.1"
     }
     buildTypes {
         release {
@@ -19,6 +19,6 @@ android {
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation project(path: ':faceplatform')
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile project(path: ':faceplatform-release')
 }

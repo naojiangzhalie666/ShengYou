@@ -6,12 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".mvp.ui.activity.mine.WebActivity">
 
-<!--    <xiaoshanghaishanghai.shengyou.mvp.ui.view.TitleBarView-->
-<!--        android:id="@+id/title_bar"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        app:bgColor="@color/white"-->
-<!--        app:titleColor="@color/color_black" />-->
 
     <RelativeLayout
         android:id="@+id/title_bar"
