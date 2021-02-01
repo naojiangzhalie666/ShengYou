@@ -113,7 +113,6 @@ public class AccountLoginAct extends BaseMvpActivity<AccountPresenter> implement
             SPUtils.getInstance().put(SpConstant.APP_TOKEN, mLogonResult.getToken());
             mPresenter.getUserSig(bean);
         } else {
-            startLogin();
             tvLogon.setEnabled(true);
         }
     }
@@ -159,7 +158,7 @@ public class AccountLoginAct extends BaseMvpActivity<AccountPresenter> implement
     public void startLogin(){
         String strUser = new Gson().toJson(mLogonResult.getUser());
         SPUtils.getInstance().put(SpConstant.USER_INFO, strUser);
-        if(mLogonResult.getUser().getIsAuthentication()==0){//只有为女性的时候出现判断未认证
+        if(mLogonResult.getUser().getIsAuthentication()==0&&mLogonResult.getUser().getUserSex()==0){//只有为女性的时候出现判断未认证
             startActivityForResult(new Intent(this, FaceAct.class), 100);
             return;
         }

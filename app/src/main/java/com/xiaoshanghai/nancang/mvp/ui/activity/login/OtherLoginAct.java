@@ -253,7 +253,7 @@ public class OtherLoginAct extends BaseMvpActivity<OtherPresenter> implements Ot
     public void startLogin(){
         String strUser = new Gson().toJson(mLogonResult.getUser());
         SPUtils.getInstance().put(SpConstant.USER_INFO, strUser);
-        if(mLogonResult.getUser().getIsAuthentication()==0){//只有为女性的时候出现判断未认证
+        if(mLogonResult.getUser().getIsAuthentication()==0&&mLogonResult.getUser().getUserSex()==0){//只有为女性的时候出现判断未认证
             startActivityForResult(new Intent(this, FaceAct.class), 100);
             return;
         }

@@ -87,7 +87,6 @@ public class SplashActivity extends BaseMvpActivity<SplashPresenter> implements 
             if (TextUtils.isEmpty(version) || !version.equals(appVersionName)) {
                 ActStartUtils.startAct(SplashActivity.this, GuideAct.class);
             } else {
-
                 if (TextUtils.isEmpty(token) || SPUtils.getInstance().getUserInfo() == null) {
                     startActivity(new Intent(SplashActivity.this, LoginActivity.class));
                 } else {
@@ -95,7 +94,6 @@ public class SplashActivity extends BaseMvpActivity<SplashPresenter> implements 
 //                    startActivity(new Intent(SplashActivity.this, MainActivity.class));
                 }
             }
-            finish();
         }, 1500);
 
     }
