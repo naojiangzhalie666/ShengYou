@@ -1,10 +1,13 @@
 package com.xiaoshanghai.nancang.mvp.presenter;
 
 
+import android.os.Bundle;
+
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.viewpager.widget.ViewPager;
 
+import com.xiaoshanghai.nancang.base.BaseApplication;
 import com.xiaoshanghai.nancang.base.BasePresenter;
 import com.xiaoshanghai.nancang.callback.HomeSortCallback;
 import com.xiaoshanghai.nancang.mvp.contract.Squarev1Constract;
@@ -26,11 +29,9 @@ public class Squarev1Presenter extends BasePresenter<Squarev1Constract.View> imp
     public void initFragment(MagicIndicator index, ViewPager viewPager) {
         RecommendFragment recommendFragment = new RecommendFragment();
 //        AttentionFragment attentionFragment = new AttentionFragment();
-
         List<Fragment> fragments = new ArrayList<>();
         fragments.add(recommendFragment);
 //        fragments.add(attentionFragment);
-
         FragmentManager supportFragmentManager = ((SquareV1Fragment) getView()).getChildFragmentManager();
 
         HomeRadioPageAdapter adapter = new HomeRadioPageAdapter(supportFragmentManager, fragments);

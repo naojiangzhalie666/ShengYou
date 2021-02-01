@@ -58,15 +58,8 @@ public class OtherPresenter extends BasePresenter<OtherContract.View> implements
                     protected void success(LogonResult bean, BaseResponse<LogonResult> response) {
                         getView().hideLoading();
                         LogonResult data = response.getData();
-
                         if (data != null) {
-//                            if (LoginStatus.getValue(data.getStatus()).equals(LoginStatus.SUCCESS)) {
-//                                String strUser = new Gson().toJson(data.getUser());
-//                                SPUtils.getInstance().put(SpConstant.USER_INFO, strUser);
-//                                SPUtils.getInstance().put(SpConstant.APP_TOKEN, data.getToken());
-//                            }
                             getView().loginSuccess(data);
-
                         } else {
                             getView().loginError(((Context) getView()).getResources().getString(R.string.login_error));
                         }

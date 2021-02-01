@@ -59,7 +59,7 @@ public interface RecommendContract {
          *
          * @param refreshLayout
          */
-        void getFriendsCircle(RefreshLayout refreshLayout);
+        void getFriendsCircle(RefreshLayout refreshLayout,String city);
 
         /**
          * 获取关注朋友圈数据数据
@@ -90,8 +90,9 @@ public interface RecommendContract {
          * @param size
          * @return
          */
-        HttpObservable<BaseResponse<HomeRoomResult<List<FriendsCircleResult>>>> getFriendsCircle(String current, String size,String userId);
+        HttpObservable<BaseResponse<HomeRoomResult<List<FriendsCircleResult>>>> getFriendsCircle(String current, String size,String userId,String city);
 
+        HttpObservable<BaseResponse<HomeRoomResult<List<FriendsCircleResult>>>> getFriendsCircle(String current, String size,String userId);
         /**
          * 获取关注朋友圈
          * @param current

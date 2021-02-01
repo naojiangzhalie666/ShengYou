@@ -1,5 +1,7 @@
 package com.xiaoshanghai.nancang.mvp.presenter;
 
+import android.text.TextUtils;
+
 import com.xiaoshanghai.nancang.base.BasePresenter;
 import com.xiaoshanghai.nancang.mvp.contract.RecommendContract;
 import com.xiaoshanghai.nancang.mvp.model.RecommendModel;
@@ -24,28 +26,52 @@ public class RecommendPresenter extends BasePresenter<RecommendContract.View> im
     }
 
     @Override
-    public void getFriendsCircle(RefreshLayout refreshLayout) {
-        model.getFriendsCircle(mPage + "", size + "","")
-                .execOnThread(getView().getActLifeRecycle(), new HttpObserver<HomeRoomResult<List<FriendsCircleResult>>>() {
-                    @Override
-                    protected void success(HomeRoomResult<List<FriendsCircleResult>> bean, BaseResponse<HomeRoomResult<List<FriendsCircleResult>>> response) {
-                        List<FriendsCircleResult> records = bean.getRecords();
-                        if (records != null) {
-                            if (mPage == initPage) {
-                                getView().refresh(refreshLayout, records);
-                            } else {
-                                getView().loadMore(refreshLayout, records);
+    public void getFriendsCircle(RefreshLayout refreshLayout,String city) {
+        if(TextUtils.isEmpty(city)) {
+            model.getFriendsCircle(mPage + "", size + "", "")
+                    .execOnThread(getView().getActLifeRecycle(), new HttpObserver<HomeRoomResult<List<FriendsCircleResult>>>() {
+                        @Override
+                        protected void success(HomeRoomResult<List<FriendsCircleResult>> bean, BaseResponse<HomeRoomResult<List<FriendsCircleResult>>> response) {
+                            List<FriendsCircleResult> records = bean.getRecords();
+                            if (records != null) {
+                                if (mPage == initPage) {
+                                    getView().refresh(refreshLayout, records);
+                                } else {
+                                    getView().loadMore(refreshLayout, records);
+                                }
+                                if (records.size() > 0)
+                                    mPage++;
                             }
-                            if (records.size() > 0)
-                                mPage++;
                         }
-                    }
 
-                    @Override
-                    protected void error(String msg) {
-                        getView().onError(refreshLayout, msg);
-                    }
-                });
+                        @Override
+                        protected void error(String msg) {
+                            getView().onError(refreshLayout, msg);
+                        }
+                    });
+        }else {
+            model.getFriendsCircle(mPage + "", size + "", "",city)
+                    .execOnThread(getView().getActLifeRecycle(), new HttpObserver<HomeRoomResult<List<FriendsCircleResult>>>() {
+                        @Override
+                        protected void success(HomeRoomResult<List<FriendsCircleResult>> bean, BaseResponse<HomeRoomResult<List<FriendsCircleResult>>> response) {
+                            List<FriendsCircleResult> records = bean.getRecords();
+                            if (records != null) {
+                                if (mPage == initPage) {
+                                    getView().refresh(refreshLayout, records);
+                                } else {
+                                    getView().loadMore(refreshLayout, records);
+                                }
+                                if (records.size() > 0)
+                                    mPage++;
+                            }
+                        }
+
+                        @Override
+                        protected void error(String msg) {
+                            getView().onError(refreshLayout, msg);
+                        }
+                    });
+        }
     }
 
     @Override

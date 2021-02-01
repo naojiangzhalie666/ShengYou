@@ -38,6 +38,15 @@ public class FriendsCircleResult extends BaseResult {
     private int commentNumber;
     private int hasLike;
     private List<String> pictureList;
+    private String city;
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
 
     public String getId() {
         return id;

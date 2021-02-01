@@ -196,6 +196,10 @@ public class SplashActivity extends BaseMvpActivity<SplashPresenter> implements 
      * 登录检测
      */
     public void startLogin(GetAppMinetBaseDataBean bean){
+        if(bean.getData()==null){
+            ToastUtil.toastLongMessage("系统错误！");
+            return;
+        }
         if(bean.getData().isAuthentication()==0&&bean.getData().getUserSex()==0){//只有为女性的时候出现判断未认证
             startActivityForResult(new Intent(this, FaceAct.class), 100);
             return;

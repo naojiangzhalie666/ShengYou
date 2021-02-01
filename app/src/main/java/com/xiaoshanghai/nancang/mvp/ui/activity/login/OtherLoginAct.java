@@ -62,16 +62,10 @@ public class OtherLoginAct extends BaseMvpActivity<OtherPresenter> implements Ot
     TextView tvRegister;
     @BindView(R.id.tv_logon)
     TextView tvLogon;
-
     //倒计时
     private CountDownTimerUtils downTimerUtils;
-
     private boolean isSend;
-
     private LogonResult mLogonResult;
-
-//    private boolean isClickLogin = false;
-
     @Override
     public int setLayoutId() {
         return R.layout.activity_other_login;
@@ -113,13 +107,10 @@ public class OtherLoginAct extends BaseMvpActivity<OtherPresenter> implements Ot
                 mPresenter.resgister();
                 break;
             case R.id.tv_logon:
-//                if (!isClickLogin) {
-//                    isClickLogin = true;
                 String telNum = etPhoneNum.getText().toString().trim();
                 String captcha = etCaptcha.getText().toString().trim();
                 mPresenter.login(telNum, captcha);
                 tvLogon.setEnabled(false);
-//                }
                 break;
             case R.id.yinshi:
                 ActStartUtils.webActStart(this, Constant.PRIVACY);
@@ -157,7 +148,6 @@ public class OtherLoginAct extends BaseMvpActivity<OtherPresenter> implements Ot
             if (!bean.getStatus().equals("1")) {
                 tvLogon.setEnabled(true);
             }
-            startLogin();
         }
     }
 

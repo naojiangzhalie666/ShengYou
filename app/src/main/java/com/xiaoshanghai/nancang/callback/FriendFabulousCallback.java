@@ -39,4 +39,13 @@ public interface FriendFabulousCallback {
      */
     void onClickMore(FriendsCircleResult result, int position);
 
+    /**
+     * 私信聊天
+     */
+    void  onClickChat(FriendsCircleResult result, int position);
+    /**
+     * 视频
+     */
+    void  onClickVideo(FriendsCircleResult result, int position);
+
 }

@@ -1,14 +1,16 @@
 package com.xiaoshanghai.nancang.mvp.ui.fragment.square;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
 import androidx.annotation.NonNull;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.listener.OnItemClickListener;
+import com.tencent.imsdk.v2.V2TIMConversation;
+import com.tencent.qcloud.tim.uikit.modules.chat.base.ChatInfo;
 import com.xiaoshanghai.nancang.R;
 import com.xiaoshanghai.nancang.base.BaseMvpFragment;
 import com.xiaoshanghai.nancang.callback.FriendFabulousCallback;
@@ -17,13 +19,15 @@ import com.xiaoshanghai.nancang.mvp.contract.RecommendContract;
 import com.xiaoshanghai.nancang.mvp.presenter.RecommendPresenter;
 import com.xiaoshanghai.nancang.mvp.ui.activity.mine.HomePageAct;
 import com.xiaoshanghai.nancang.mvp.ui.activity.mine.MyBuddyAct;
+import com.xiaoshanghai.nancang.mvp.ui.activity.msg.ChatActivity;
 import com.xiaoshanghai.nancang.mvp.ui.activity.msg.ReportAct;
 import com.xiaoshanghai.nancang.mvp.ui.activity.square.MessageDetailsAct;
-import com.xiaoshanghai.nancang.mvp.ui.adapter.FriendsCircleAdapter;
+import com.xiaoshanghai.nancang.mvp.ui.adapter.FriendsCircleAdapter1;
 import com.xiaoshanghai.nancang.net.bean.FriendsCircleResult;
 import com.xiaoshanghai.nancang.utils.ActStartUtils;
 import com.xiaoshanghai.nancang.utils.SPUtils;
 import com.xiaoshanghai.nancang.utils.ToastUtils;
+import com.xiaoshanghai.nancang.view.MyLinearLayoutManager;
 import com.xiaoshanghai.nancang.view.TipsDialog;
 import com.lzy.ninegrid.ImageInfo;
 import com.lzy.ninegrid.PhotoCallback;
@@ -46,8 +50,8 @@ public class RecommendFragment extends BaseMvpFragment<RecommendPresenter> imple
     @BindView(R.id.rl_view)
     RecyclerView rlView;
 
-    private FriendsCircleAdapter mAdapter;
-
+    private FriendsCircleAdapter1 mAdapter;
+    private String city="";
     @Override
     public int setLayoutId() {
         return R.layout.fragment_recommend;
@@ -60,21 +64,21 @@ public class RecommendFragment extends BaseMvpFragment<RecommendPresenter> imple
 
     @Override
     public void initView(Bundle savedInstanceState) {
+//        if(getArguments().getString("city")!=null){
+//            city=getArguments().getString("city");
+//        }
         mPresenter.attachView(this);
         refreshLayout.setOnRefreshLoadMoreListener(this);
-
 
     }
 
     @Override
     protected void onLazyLoad() {
-
-        mAdapter = new FriendsCircleAdapter(getActivity(), this);
+        mAdapter = new FriendsCircleAdapter1(getActivity(), this);
         mAdapter.setFabulousCallback(this);
-        rlView.setLayoutManager(new LinearLayoutManager(getActivity()));
+        rlView.setLayoutManager(new MyLinearLayoutManager(getActivity()));
         rlView.setAdapter(mAdapter);
         refreshLayout.autoRefresh();
-
     }
 
     @Override
@@ -122,12 +126,12 @@ public class RecommendFragment extends BaseMvpFragment<RecommendPresenter> imple
     @Override
     public void onRefresh(@NonNull RefreshLayout refreshLayout) {
         mPresenter.mPage = mPresenter.initPage;
-        mPresenter.getFriendsCircle(refreshLayout);
+        mPresenter.getFriendsCircle(refreshLayout,city);
     }
 
     @Override
     public void onLoadMore(@NonNull RefreshLayout refreshLayout) {
-        mPresenter.getFriendsCircle(refreshLayout);
+        mPresenter.getFriendsCircle(refreshLayout,city);
     }
 
 
@@ -213,6 +217,28 @@ public class RecommendFragment extends BaseMvpFragment<RecommendPresenter> imple
     @Override
     public void onClickMore(FriendsCircleResult result, int position) {
         more(result, SPUtils.getInstance().getUserInfo().getId());
+    }
+
+    @Override
+    public void onClickChat(FriendsCircleResult result, int position) {
+                if (result == null ) return;
+
+        ChatInfo chatInfo = new ChatInfo();
+        chatInfo.setType(V2TIMConversation.V2TIM_C2C);
+        chatInfo.setId(result.getId());
+        chatInfo.setChatName(result.getUserName());
+        List<Object> iconUrl = new ArrayList<>();
+        iconUrl.add(result.getUserPictureUrl());
+        chatInfo.setIconUrlList(iconUrl);
+        Intent intent = new Intent(getContext(), ChatActivity.class);
+        intent.putExtra(Constant.CHAT_INFO, chatInfo);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent);
+    }
+
+    @Override
+    public void onClickVideo(FriendsCircleResult result, int position) {
+        ToastUtils.showShort("该功能暂未开放！");
     }
 
 //    private void more(FriendsCircleResult result) {

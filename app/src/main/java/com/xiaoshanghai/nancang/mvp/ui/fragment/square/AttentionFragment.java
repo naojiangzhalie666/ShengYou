@@ -214,6 +214,16 @@ public class AttentionFragment extends BaseMvpFragment<RecommendPresenter> imple
         more(result, SPUtils.getInstance().getUserInfo().getId());
     }
 
+    @Override
+    public void onClickChat(FriendsCircleResult result, int position) {
+
+    }
+
+    @Override
+    public void onClickVideo(FriendsCircleResult result, int position) {
+
+    }
+
     /**
      * 根据myUserId 判断是否为自己发出的朋友圈
      *

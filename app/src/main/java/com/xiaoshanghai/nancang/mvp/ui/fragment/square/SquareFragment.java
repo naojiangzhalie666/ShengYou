@@ -62,7 +62,6 @@ public class SquareFragment extends BaseMvpFragment<SquarePresenter> implements 
         SquareV1Fragment squareV1Fragment2 = new SquareV1Fragment();
         HallFragment hallFragment = new HallFragment();
         FamilyFragment familyFragment = new FamilyFragment();
-
         List<Fragment> fragments = new ArrayList<>();
         fragments.add(squareV1Fragment1);
         fragments.add(squareV1Fragment2);

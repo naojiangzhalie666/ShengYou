@@ -127,12 +127,10 @@ public class MainActivity extends BaseMvpActivity<MainPresenter> implements Main
     public void initView(Bundle savedInstanceState) {
 
         mPresenter.attachView(this);
-
         UserBean userInfo = SPUtils.getInstance().getUserInfo();
         if (userInfo != null) {
             EventBusUtil.sendEvent(new Event(EventConstant.LOGIN_SUCCESS));
         }
-
 //        mHomeFragment = new HomeFragment();
         mSquareFragment = new SquareFragment();
         replace(mSquareFragment);

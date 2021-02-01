@@ -113,6 +113,7 @@ public class AccountLoginAct extends BaseMvpActivity<AccountPresenter> implement
             SPUtils.getInstance().put(SpConstant.APP_TOKEN, mLogonResult.getToken());
             mPresenter.getUserSig(bean);
         } else {
+            ToastUtils.showShort(getString(R.string.login_error));
             tvLogon.setEnabled(true);
         }
     }
