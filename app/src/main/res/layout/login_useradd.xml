@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="@dimen/dp_300"
     android:layout_height="@dimen/dp_200"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_gravity="center"
     android:background="@drawable/shape_rounded_white">
 
@@ -24,7 +25,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/dp_20"
         android:gravity="center"
-        android:text="你需要发表表个帅气的图片~"
+        tools:text="你需要发表个帅气的图片~"
         android:textColor="@color/color_222222"
         android:textSize="@dimen/sp_16"
         app:layout_constraintEnd_toEndOf="parent"

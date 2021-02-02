@@ -14,6 +14,7 @@ import com.xiaoshanghai.nancang.base.BaseMvpFragment;
 import com.xiaoshanghai.nancang.callback.HomeSortCallback;
 import com.xiaoshanghai.nancang.mvp.contract.SquareConstract;
 import com.xiaoshanghai.nancang.mvp.presenter.SquarePresenter;
+import com.xiaoshanghai.nancang.mvp.ui.activity.square.GraphicReleaseAct;
 import com.xiaoshanghai.nancang.mvp.ui.activity.square.TopicNotificAct;
 import com.xiaoshanghai.nancang.mvp.ui.adapter.HomeRadioPageAdapter;
 import com.xiaoshanghai.nancang.mvp.ui.adapter.SquareIndexAdapter;
@@ -22,6 +23,7 @@ import com.xiaoshanghai.nancang.utils.ActStartUtils;
 import com.xiaoshanghai.nancang.utils.SPUtils;
 import com.xiaoshanghai.nancang.utils.ToastUtils;
 import com.xiaoshanghai.nancang.view.ScrollViewPager;
+import com.xiaoshanghai.nancang.view.TipsDialog;
 
 import net.lucode.hackware.magicindicator.MagicIndicator;
 import net.lucode.hackware.magicindicator.ViewPagerHelper;

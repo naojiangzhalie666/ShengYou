@@ -51,15 +51,7 @@ public class RecommendPresenter extends BasePresenter<RecommendContract.View> im
                                 if (records.size() > 0)
                                     mPage++;
                             }
-                            //records字段为零时强弹出
-                            if(bean.getRecords().size()==0){
-                                TipsDialog.createDialog(context, R.layout.login_useradd)
-                                        .setCancelable(true)
-                                        .setCanceledOnTouchOutside(true)
-                                        .bindClick(R.id.tv_cancel, (v, dialog) -> {
-                                            ActStartUtils.startAct(context, GraphicReleaseAct.class);
-                                        }).show();
-                            }
+
                         }
 
                         @Override

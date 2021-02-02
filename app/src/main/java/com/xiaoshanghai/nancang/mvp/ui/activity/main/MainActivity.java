@@ -7,6 +7,7 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.RadioButton;
+import android.widget.TextView;
 
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
@@ -14,18 +15,24 @@ import androidx.fragment.app.FragmentTransaction;
 import com.xiaoshanghai.nancang.R;
 import com.xiaoshanghai.nancang.base.BaseMvpActivity;
 import com.xiaoshanghai.nancang.base.BaseMvpFragment;
+import com.xiaoshanghai.nancang.constant.Constant;
 import com.xiaoshanghai.nancang.constant.EventConstant;
 import com.xiaoshanghai.nancang.helper.EnterRoomHelp;
 import com.xiaoshanghai.nancang.mvp.contract.MainContract;
 import com.xiaoshanghai.nancang.mvp.presenter.MainPresenter;
+import com.xiaoshanghai.nancang.mvp.ui.activity.mine.MyBuddyAct;
 import com.xiaoshanghai.nancang.mvp.ui.activity.mine.TeensAct;
 import com.xiaoshanghai.nancang.mvp.ui.activity.square.GraphicReleaseAct;
 import com.xiaoshanghai.nancang.mvp.ui.fragment.home.HomeFragment;
 import com.xiaoshanghai.nancang.mvp.ui.fragment.mine.MineFragment;
 import com.xiaoshanghai.nancang.mvp.ui.fragment.msg.MsgFragment;
 import com.xiaoshanghai.nancang.mvp.ui.fragment.square.SquareFragment;
+import com.xiaoshanghai.nancang.net.HttpClient;
 import com.xiaoshanghai.nancang.net.bean.BackstageRoom;
+import com.xiaoshanghai.nancang.net.bean.BaseResponse;
 import com.xiaoshanghai.nancang.net.bean.Event;
+import com.xiaoshanghai.nancang.net.bean.FriendsCircleResult;
+import com.xiaoshanghai.nancang.net.bean.HomeRoomResult;
 import com.xiaoshanghai.nancang.net.bean.UserBean;
 import com.xiaoshanghai.nancang.utils.ActStartUtils;
 import com.xiaoshanghai.nancang.utils.EventBusUtil;
@@ -38,8 +45,15 @@ import com.lzf.easyfloat.enums.ShowPattern;
 import com.lzf.easyfloat.enums.SidePattern;
 import com.tencent.liteav.trtcvoiceroom.model.TRTCVoiceRoom;
 
+import java.util.List;
+
 import butterknife.BindView;
 import butterknife.OnClick;
+import io.reactivex.Observer;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.annotations.NonNull;
+import io.reactivex.disposables.Disposable;
+import io.reactivex.schedulers.Schedulers;
 
 //根Activity
 public class MainActivity extends BaseMvpActivity<MainPresenter> implements MainContract.View {
@@ -125,7 +139,6 @@ public class MainActivity extends BaseMvpActivity<MainPresenter> implements Main
 
     @Override
     public void initView(Bundle savedInstanceState) {
-
         mPresenter.attachView(this);
         UserBean userInfo = SPUtils.getInstance().getUserInfo();
         if (userInfo != null) {
@@ -135,8 +148,8 @@ public class MainActivity extends BaseMvpActivity<MainPresenter> implements Main
         mSquareFragment = new SquareFragment();
         replace(mSquareFragment);
 
-        mPresenter.getTeensStatus(SPUtils.getInstance().getUserInfo().getId());
-
+//        mPresenter.getTeensStatus(SPUtils.getInstance().getUserInfo().getId());
+        getAppTopic();
     }
 
     private void showEasyFloat(String photoUrl) {
@@ -286,5 +299,42 @@ public class MainActivity extends BaseMvpActivity<MainPresenter> implements Main
     @Override
     public void onError(String msg) {
         ToastUtils.showShort(msg);
+    }
+
+    public void  getAppTopic(){
+        HttpClient.getApi().getAppTopic("1","10",SPUtils.getInstance().getUserInfo().getId())
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Observer<BaseResponse<HomeRoomResult<List<FriendsCircleResult>>>>() {
+                    @Override
+                    public void onSubscribe(@NonNull Disposable d) {
+                    }
+                    @Override
+                    public void onNext(@NonNull BaseResponse<HomeRoomResult<List<FriendsCircleResult>>> getBaiDUTokenBeanBaseResponse) {
+                            if(getBaiDUTokenBeanBaseResponse.getData().getRecords().size()==0){
+                               String title="";
+                        if(SPUtils.getInstance().getUserInfo().getUserSex()!=0){
+                            title="你需要发表个帅气的图片~";
+                        }else {
+                            title="你需要发表⼀个美美哒的图⽚~";
+                        }
+                                TipsDialog.createDialog(MainActivity.this, R.layout.login_useradd)
+                                        .setCancelable(false)
+                                        .setCanceledOnTouchOutside(false)
+                                        .setText(R.id.tv_title_2,title)
+                                        .bindClick(R.id.tv_cancel, (v, dialog) -> {
+                                            ActStartUtils.startAct(MainActivity.this, GraphicReleaseAct.class);
+                                        }).show();
+                            }
+                    }
+                    @Override
+                    public void onError(@NonNull Throwable e) {
+
+                    }
+                    @Override
+                    public void onComplete() {
+
+                    }
+                });
     }
 }

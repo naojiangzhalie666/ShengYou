@@ -219,6 +219,16 @@ public interface Api {
                                                                                              @Field("userId") String userId,
                                                                                                  @Field("city") String city,
                                                                                                  @Field("userSex") String userSex);
+
+    /**
+     * 强制发布动态，如果records数组的元素>0，说明⽤户已经发
+     * 表过动态，反之，则提示⽤户去发表动态
+     */
+    @POST("app_topic/query_all")
+    @FormUrlEncoded
+    HttpObservable<BaseResponse<HomeRoomResult<List<FriendsCircleResult>>>> getAppTopic(@Field("current") String current,
+                                                                                                 @Field("size") String size,
+                                                                                                 @Field("userId") String userId);
     /**
      * 获取推荐朋友圈
      *
