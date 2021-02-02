@@ -91,7 +91,6 @@ public class SplashActivity extends BaseMvpActivity<SplashPresenter> implements 
                     startActivity(new Intent(SplashActivity.this, LoginActivity.class));
                 } else {
                     getAppMinetBaseData();
-//                    startActivity(new Intent(SplashActivity.this, MainActivity.class));
                 }
             }
         }, 1500);
@@ -210,7 +209,7 @@ public class SplashActivity extends BaseMvpActivity<SplashPresenter> implements 
             return;
         }
         startActivity(new Intent (this,MainActivity.class));
-
+        finish();
     }
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @androidx.annotation.Nullable Intent data) {
@@ -238,6 +237,7 @@ public class SplashActivity extends BaseMvpActivity<SplashPresenter> implements 
             }
             ToastUtils.showShort("恭喜您支付成功！");
             startActivity(new Intent (this,MainActivity.class));
+            finish();
         }
     }
 }

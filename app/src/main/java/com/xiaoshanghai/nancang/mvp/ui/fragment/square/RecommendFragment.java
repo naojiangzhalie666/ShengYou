@@ -223,10 +223,9 @@ public class RecommendFragment extends BaseMvpFragment<RecommendPresenter> imple
     @Override
     public void onClickChat(FriendsCircleResult result, int position) {
                 if (result == null ) return;
-
         ChatInfo chatInfo = new ChatInfo();
         chatInfo.setType(V2TIMConversation.V2TIM_C2C);
-        chatInfo.setId(result.getId());
+        chatInfo.setId(result.getUserId());
         chatInfo.setChatName(result.getUserName());
         List<Object> iconUrl = new ArrayList<>();
         iconUrl.add(result.getUserPictureUrl());
