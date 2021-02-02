@@ -93,8 +93,6 @@ class RoomSettingView private constructor() : BottomSheetDialogFragment(), View.
         mIvLwz = view.findViewById(R.id.iv_lwz)
         mTvLwz = view.findViewById(R.id.tv_lwz)
         mIvRoomSetting = view.findViewById(R.id.iv_room_setting)
-        mTvRoomSetting = view.findViewById(R.id.tv_room_setting)
-
         mIvTx?.setOnClickListener(this)
         mIvGp?.setOnClickListener(this)
         mIvLwz?.setOnClickListener(this)

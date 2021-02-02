@@ -236,9 +236,9 @@ class RoomSettingAct : BaseMvpActivity<RoomSettingPresenter>(), RoomSettingContr
             mLlRoomPsd.visibility = View.GONE
             mTvRoomPsd.text = ""
         }
-
-        mTvTypeName.setTextColor(Color.parseColor(roomInfo?.roomTypeColor))
-
+        if(!roomInfo?.roomTypeColor.isNullOrEmpty()) {
+            mTvTypeName.setTextColor(Color.parseColor(roomInfo?.roomTypeColor))
+        }
         mTvTypeName.text = roomInfo?.roomNoticeTitle
 
         mSwitchGift.isChecked = SPUtils.getInstance().getBoolean(SpConstant.ROOM_IS_PLAY, true)

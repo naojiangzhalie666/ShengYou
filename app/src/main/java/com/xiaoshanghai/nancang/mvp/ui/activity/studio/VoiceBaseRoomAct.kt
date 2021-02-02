@@ -2024,7 +2024,7 @@ open class VoiceBaseRoomAct : BaseMvpActivity<ViceBaseRoomPresenter>(), ViceBase
      * 点击房间设置按钮回调 - 点击设置
      */
     override fun onSetting() {
-        var bundle = Bundle()
+        val bundle = Bundle()
         bundle.putSerializable(Constant.ROOM_INFO, mRoomInfo)
         ActStartUtils.startAct(this, RoomSettingAct::class.java, bundle)
     }

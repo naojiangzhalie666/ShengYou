@@ -1,4 +1,4 @@
-package com.xiaoshanghai.nancang.mvp.ui.activity;
+    package com.xiaoshanghai.nancang.mvp.ui.activity;
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageInfo;
