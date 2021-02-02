@@ -86,8 +86,6 @@ public class RecommendFragment extends BaseMvpFragment<RecommendPresenter> imple
     public void refresh(RefreshLayout refreshLayout, List<FriendsCircleResult> roomResults) {
         refreshLayout.finishRefresh();
         mAdapter.setList(roomResults);
-        Log.e("aa","-----------city==="+getArguments().getString("city"));
-
         if (roomResults.size() <= 0) {
             refreshLayout.finishLoadMoreWithNoMoreData();
         } else {
@@ -127,12 +125,12 @@ public class RecommendFragment extends BaseMvpFragment<RecommendPresenter> imple
     @Override
     public void onRefresh(@NonNull RefreshLayout refreshLayout) {
         mPresenter.mPage = mPresenter.initPage;
-        mPresenter.getFriendsCircle(refreshLayout,city);
+        mPresenter.getFriendsCircle(refreshLayout,city,getContext());
     }
 
     @Override
     public void onLoadMore(@NonNull RefreshLayout refreshLayout) {
-        mPresenter.getFriendsCircle(refreshLayout,city);
+        mPresenter.getFriendsCircle(refreshLayout,city,getContext());
     }
 
 

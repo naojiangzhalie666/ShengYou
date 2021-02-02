@@ -1,5 +1,7 @@
 package com.xiaoshanghai.nancang.mvp.contract;
 
+import android.content.Context;
+
 import com.xiaoshanghai.nancang.base.BaseView;
 import com.xiaoshanghai.nancang.net.HttpObservable;
 import com.xiaoshanghai.nancang.net.bean.BaseResponse;
@@ -59,7 +61,7 @@ public interface RecommendContract {
          *
          * @param refreshLayout
          */
-        void getFriendsCircle(RefreshLayout refreshLayout,String city);
+        void getFriendsCircle(RefreshLayout refreshLayout, String city, Context context);
 
         /**
          * 获取关注朋友圈数据数据
