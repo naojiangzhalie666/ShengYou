@@ -14,7 +14,7 @@ public interface Squarev1Constract {
 
     interface Presenter {
 
-        void initFragment(MagicIndicator indicator, ViewPager viewPager);
+        void initFragment(MagicIndicator indicator, ViewPager viewPager,String city);
 
     }
 

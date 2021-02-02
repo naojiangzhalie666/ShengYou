@@ -36,12 +36,12 @@ class MyLinearLayoutManager : LinearLayoutManager {
       * @param state
       */
      override fun onScrollStateChanged(state: Int) {
-         if (state == RecyclerView.SCROLL_STATE_IDLE){
              val viewIdle = mPagerSnapHelper.findSnapView(this)
-             val positionIdle = getPosition(viewIdle!!)
-             if (mOnViewPagerListener != null && childCount == 1) {
-                 mOnViewPagerListener!!.onPageSelected(positionIdle, positionIdle == itemCount - 1)
-             }
+                 val positionIdle = viewIdle?.let { getPosition(it) }
+                 if (mOnViewPagerListener != null && childCount == 1) {
+                     if (positionIdle != null) {
+                         mOnViewPagerListener!!.onPageSelected(positionIdle, positionIdle == itemCount - 1)
+                 }
          }
      }
 

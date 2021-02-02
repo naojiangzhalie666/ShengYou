@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
 import com.xiaoshanghai.nancang.R;
+import com.xiaoshanghai.nancang.base.BaseApplication;
 import com.xiaoshanghai.nancang.base.BaseMvpFragment;
 import com.xiaoshanghai.nancang.callback.HomeSortCallback;
 import com.xiaoshanghai.nancang.mvp.contract.SquareConstract;
@@ -58,38 +59,34 @@ public class SquareFragment extends BaseMvpFragment<SquarePresenter> implements 
     @Override
     public void initView(Bundle savedInstanceState) {
         mPresenter.attachView(this);
-        SquareV1Fragment squareV1Fragment1 = new SquareV1Fragment();
-        SquareV1Fragment squareV1Fragment2 = new SquareV1Fragment();
-        HallFragment hallFragment = new HallFragment();
-        FamilyFragment familyFragment = new FamilyFragment();
         List<Fragment> fragments = new ArrayList<>();
+        //附近
+        RecommendFragment squareV1Fragment1 = new RecommendFragment();
+        Bundle bundle = new Bundle();
+        bundle.putString("city", BaseApplication.city);
+        squareV1Fragment1.setArguments(bundle);
         fragments.add(squareV1Fragment1);
+        //推荐
+        RecommendFragment squareV1Fragment2 = new RecommendFragment();
+        Bundle bundle1 = new Bundle();
+        bundle1.putString("city","");
+        squareV1Fragment2.setArguments(bundle1);
         fragments.add(squareV1Fragment2);
+        //大厅
+        HallFragment hallFragment = new HallFragment();
         fragments.add(hallFragment);
-//        fragments.add(familyFragment);
-
         FragmentManager supportFragmentManager = getChildFragmentManager();
-
         HomeRadioPageAdapter adapter = new HomeRadioPageAdapter(supportFragmentManager, fragments);
-
         sViewPager.setAdapter(adapter);
         sViewPager.setOffscreenPageLimit(3);
-
         List<String> tables = new ArrayList<>();
         tables.add("附近");
         tables.add("推荐");
         tables.add("大厅");
-//        tables.add("家族");
-
-
         CommonNavigator commonNavigator = new CommonNavigator(getActivity());
         commonNavigator.setAdapter(new SquareIndexAdapter(tables, magicindicator, (HomeSortCallback<String>) (result, index) -> sViewPager.setCurrentItem(index)));
-
         magicindicator.setNavigator(commonNavigator);
-
         ViewPagerHelper.bind(magicindicator, sViewPager);
-
-
     }
 
 

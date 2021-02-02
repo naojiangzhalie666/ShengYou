@@ -22,20 +22,14 @@ public class SquareV1Fragment extends BaseMvpFragment<Squarev1Presenter> impleme
     ViewPager nsViewPager;
     @BindView(R.id.iv_release)
     ImageView ivRelease;
-
     @Override
     public int setLayoutId() {
         return R.layout.fragment_squarev1;
     }
-
     @Override
     public void initView(Bundle savedInstanceState) {
-
         mPresenter.attachView(this);
-
-        mPresenter.initFragment(index, nsViewPager);
-
-
+        mPresenter.initFragment(index, nsViewPager,getArguments().getString("city"));
     }
 
     @Override

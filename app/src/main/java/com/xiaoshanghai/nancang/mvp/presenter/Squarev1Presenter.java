@@ -26,8 +26,11 @@ import java.util.List;
 public class Squarev1Presenter extends BasePresenter<Squarev1Constract.View> implements Squarev1Constract.Presenter {
 
     @Override
-    public void initFragment(MagicIndicator index, ViewPager viewPager) {
+    public void initFragment(MagicIndicator index, ViewPager viewPager,String city) {
         RecommendFragment recommendFragment = new RecommendFragment();
+        Bundle bundle = new Bundle();
+        bundle.putString("city", city);
+        recommendFragment.setArguments(bundle);
 //        AttentionFragment attentionFragment = new AttentionFragment();
         List<Fragment> fragments = new ArrayList<>();
         fragments.add(recommendFragment);

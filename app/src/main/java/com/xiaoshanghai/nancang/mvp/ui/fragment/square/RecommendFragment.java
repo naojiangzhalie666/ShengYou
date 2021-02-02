@@ -2,6 +2,7 @@ package com.xiaoshanghai.nancang.mvp.ui.fragment.square;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 
 import androidx.annotation.NonNull;
@@ -64,9 +65,9 @@ public class RecommendFragment extends BaseMvpFragment<RecommendPresenter> imple
 
     @Override
     public void initView(Bundle savedInstanceState) {
-//        if(getArguments().getString("city")!=null){
-//            city=getArguments().getString("city");
-//        }
+        if(getArguments().getString("city")!=null){
+            city=getArguments().getString("city");
+        }
         mPresenter.attachView(this);
         refreshLayout.setOnRefreshLoadMoreListener(this);
 
@@ -85,7 +86,7 @@ public class RecommendFragment extends BaseMvpFragment<RecommendPresenter> imple
     public void refresh(RefreshLayout refreshLayout, List<FriendsCircleResult> roomResults) {
         refreshLayout.finishRefresh();
         mAdapter.setList(roomResults);
-
+        Log.e("aa","-----------city==="+getArguments().getString("city"));
 
         if (roomResults.size() <= 0) {
             refreshLayout.finishLoadMoreWithNoMoreData();
