@@ -185,6 +185,7 @@ public class SplashActivity extends BaseMvpActivity<SplashPresenter> implements 
                     @Override
                     public void onError(@NonNull Throwable e) {
                         ToastUtils.showLong("请稍后再重试！系统出错啦！");
+                        startActivity(new Intent(SplashActivity.this, LoginActivity.class));
                     }
                     @Override
                     public void onComplete() {

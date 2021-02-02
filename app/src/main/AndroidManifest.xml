@@ -148,7 +148,7 @@
             tool:ignore="Instantiatable"
             android:windowSoftInputMode="adjustPan|stateHidden" />
         <activity
-            android:name=".ui.activity.square.TopicNotificAct"
+            android:name=".mvp.ui.activity.square.TopicNotificAct"
             android:screenOrientation="portrait"
             tool:ignore="Instantiatable,MissingClass"
             android:windowSoftInputMode="adjustPan|stateHidden" />

@@ -214,10 +214,11 @@ public interface Api {
      */
     @POST("app_topic/query_all")
     @FormUrlEncoded
-    HttpObservable<BaseResponse<HomeRoomResult<List<FriendsCircleResult>>>> getFriendsCircle(@Field("current") String current,
+    HttpObservable<BaseResponse<HomeRoomResult<List<FriendsCircleResult>>>> getFriendsCircleCity(@Field("current") String current,
                                                                                              @Field("size") String size,
-                                                                                             @Field("userId") String userId
-    , @Field("city") String city);
+                                                                                             @Field("userId") String userId,
+                                                                                                 @Field("city") String city,
+                                                                                                 @Field("userSex") String userSex);
     /**
      * 获取推荐朋友圈
      *
@@ -229,7 +230,8 @@ public interface Api {
     @FormUrlEncoded
     HttpObservable<BaseResponse<HomeRoomResult<List<FriendsCircleResult>>>> getFriendsCircle(@Field("current") String current,
                                                                                              @Field("size") String size,
-                                                                                             @Field("userId") String userId);
+                                                                                             @Field("userId") String userId,
+                                                                                             @Field("userSex") String userSex);
 
     /**
      * 获取关注朋友圈

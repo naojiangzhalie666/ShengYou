@@ -59,7 +59,7 @@ public class GoldRechargeAct extends BaseMvpActivity<GoldRechargePresenter> impl
     private GoldResult goldResult;
     private GoldRechargeHeader headerView;
 
-    private int mWxOrAL = 2;
+    private int mWxOrAL = 1;
 
     private IWXAPI api;
 
