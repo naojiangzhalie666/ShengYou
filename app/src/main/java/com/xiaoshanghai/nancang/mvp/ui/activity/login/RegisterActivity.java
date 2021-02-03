@@ -92,6 +92,7 @@ public class RegisterActivity extends BaseMvpActivity<RegisterPresenter> impleme
     }
     @OnTextChanged({R.id.et_nickname, R.id.et_birthday})
     void onLoginCheck(Editable editable) {
+        showInput(etNickname);
         tvLogon.setEnabled(etNickname.length() > 0 && etBirthday.length() > 0);
         tvLogon.setAlpha(tvLogon.isEnabled() ? 1f : 0.5f);
     }
@@ -115,6 +116,7 @@ public class RegisterActivity extends BaseMvpActivity<RegisterPresenter> impleme
                 selectSex(mSex);
                 break;
             case R.id.et_birthday:
+                hideInput();
                 mPresenter.selectTime(etBirthday.getText().toString().trim());
                 break;
             case R.id.tv_logon:

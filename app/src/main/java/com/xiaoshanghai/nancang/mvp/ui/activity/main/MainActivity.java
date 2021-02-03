@@ -1,5 +1,6 @@
 package com.xiaoshanghai.nancang.mvp.ui.activity.main;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.Gravity;
@@ -9,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.TextView;
 
+import androidx.annotation.Nullable;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
@@ -337,4 +339,5 @@ public class MainActivity extends BaseMvpActivity<MainPresenter> implements Main
                     }
                 });
     }
+
 }

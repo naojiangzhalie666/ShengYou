@@ -88,13 +88,6 @@ public class HallFragment extends BaseMvpFragment implements GroupChatManagerKit
         loadChatMessages(null);
 
     }
-
-    @Override
-    public void onResume() {
-        super.onResume();
-//        loadChatMessages(null);
-    }
-
     public void loadChatMessages(final MessageInfo lastMessage) {
         mGroupChatManager.loadChatMessages(lastMessage, new IUIKitCallBack() {
             @Override

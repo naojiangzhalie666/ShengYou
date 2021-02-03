@@ -1,16 +1,19 @@
 package com.xiaoshanghai.nancang.mvp.ui.fragment.square;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
 import com.xiaoshanghai.nancang.R;
 import com.xiaoshanghai.nancang.base.BaseApplication;
 import com.xiaoshanghai.nancang.base.BaseMvpFragment;
+import com.xiaoshanghai.nancang.bean.MessageWrap;
 import com.xiaoshanghai.nancang.callback.HomeSortCallback;
 import com.xiaoshanghai.nancang.mvp.contract.SquareConstract;
 import com.xiaoshanghai.nancang.mvp.presenter.SquarePresenter;
@@ -28,6 +31,10 @@ import com.xiaoshanghai.nancang.view.TipsDialog;
 import net.lucode.hackware.magicindicator.MagicIndicator;
 import net.lucode.hackware.magicindicator.ViewPagerHelper;
 import net.lucode.hackware.magicindicator.buildins.commonnavigator.CommonNavigator;
+
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -61,6 +68,7 @@ public class SquareFragment extends BaseMvpFragment<SquarePresenter> implements 
     @Override
     public void initView(Bundle savedInstanceState) {
         mPresenter.attachView(this);
+        EventBus.getDefault().register(this);
         List<Fragment> fragments = new ArrayList<>();
         //附近
         RecommendFragment squareV1Fragment1 = new RecommendFragment();
@@ -131,6 +139,16 @@ public class SquareFragment extends BaseMvpFragment<SquarePresenter> implements 
 
     @OnClick({R.id.ct_tz})
     public void onClick(View v) {
-        ActStartUtils.startAct(getContext(), TopicNotificAct.class);
+        ActStartUtils.startForAct(getActivity(), TopicNotificAct.class,new Bundle(),10);
+    }
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void onMessageEvent(MessageWrap event) {
+        mPresenter.getTopicMsg(SPUtils.getInstance().getUserInfo().getId());
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        EventBus.getDefault().unregister(this);
     }
 }

@@ -1,6 +1,7 @@
 package com.xiaoshanghai.nancang.mvp.ui.activity.square
 
 import android.os.Bundle
+import android.view.KeyEvent
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import butterknife.BindView
@@ -19,6 +20,8 @@ import com.xiaoshanghai.nancang.utils.SPUtils
 import com.xiaoshanghai.nancang.utils.ToastUtils
 import com.scwang.smartrefresh.layout.api.RefreshLayout
 import com.scwang.smartrefresh.layout.listener.OnRefreshLoadMoreListener
+import com.xiaoshanghai.nancang.bean.MessageWrap
+import org.greenrobot.eventbus.EventBus
 
 class TopicNotificAct : BaseMvpActivity<TopicNotifcPresenter>(), TopicNotifcContract.View, TitleBarClickCallback, OnRefreshLoadMoreListener {
 
@@ -100,11 +103,16 @@ class TopicNotificAct : BaseMvpActivity<TopicNotifcPresenter>(), TopicNotifcCont
     override fun onError(msg: String?) {
         ToastUtils.showShort(msg)
     }
-
     override fun titleLeftClick() {
+        EventBus.getDefault().post( MessageWrap())
         finish()
     }
 
+    override fun onKeyUp(keyCode: Int, event: KeyEvent?): Boolean {
+        EventBus.getDefault().post( MessageWrap())
+        finish()
+        return true
+    }
     override fun titleRightClick(status: Int) {
     }
 

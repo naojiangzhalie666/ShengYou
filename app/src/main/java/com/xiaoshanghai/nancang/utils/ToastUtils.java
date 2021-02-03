@@ -200,6 +200,9 @@ public class ToastUtils {
 //        if (text.equals("解析错误")) {
 //            return;
 //        }
+        if(text.equals("操作失败")){
+            return;
+        }
         show(text, Toast.LENGTH_SHORT);
     }
 
