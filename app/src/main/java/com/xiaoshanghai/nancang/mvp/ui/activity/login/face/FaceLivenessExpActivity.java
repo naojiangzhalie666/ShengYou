@@ -185,11 +185,14 @@ public class FaceLivenessExpActivity extends FaceLivenessActivity implements
             public void onNext(BaiduFaceDetectBean value) {
                 if (value != null && value.result != null && value.result.face_list != null && value.result.face_list.size() > 0) {
                     intent.putExtra("gender",value.result.face_list.get(0).gender.type);
-//                    intent.putExtra("gender","female");//测试
                     setResult(100,intent);
                     finish();
                     if(value.result.face_list.get(0).gender.type.equals("female")){//判断为女性需要在走一个接口
                     getUpdateAuthentication();
+                    }else {
+                        ToastUtils.showLong("性别不符！");
+                        setResult(100);
+                        finish();
                     }
                 }else {
                     ToastUtils.showLong("获取性别失败！");

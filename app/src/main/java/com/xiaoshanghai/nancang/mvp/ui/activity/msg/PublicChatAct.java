@@ -7,12 +7,14 @@ import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.view.KeyEvent;
 import android.view.View;
 import android.view.WindowManager;
 
 import com.google.gson.Gson;
 import com.xiaoshanghai.nancang.R;
 import com.xiaoshanghai.nancang.base.BaseMvpActivity;
+import com.xiaoshanghai.nancang.bean.HallMessage;
 import com.xiaoshanghai.nancang.callback.OnChatGiftCallback;
 import com.xiaoshanghai.nancang.callback.OnChatSeatClickCallback;
 import com.xiaoshanghai.nancang.constant.Constant;
@@ -42,6 +44,8 @@ import com.tencent.qcloud.tim.uikit.modules.chat.layout.input.PublicInputLayout;
 import com.tencent.qcloud.tim.uikit.modules.chat.layout.message.MessageLayout;
 import com.tencent.qcloud.tim.uikit.modules.message.MessageInfo;
 import com.tencent.qcloud.tim.uikit.modules.message.MessageInfoUtil;
+
+import org.greenrobot.eventbus.EventBus;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -147,6 +151,7 @@ public class PublicChatAct extends BaseMvpActivity<PublicChatPresenter> implemen
             @Override
             public void onClick(View view) {
                 finish();
+                EventBus.getDefault().post(new HallMessage());
             }
         });
 
@@ -357,5 +362,12 @@ public class PublicChatAct extends BaseMvpActivity<PublicChatPresenter> implemen
     @Override
     public void onGiftDismiss() {
         isChatView = false;
+    }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        EventBus.getDefault().post(new HallMessage());
+        finish();
+        return true;
     }
 }

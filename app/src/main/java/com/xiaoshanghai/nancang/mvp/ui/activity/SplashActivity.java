@@ -197,6 +197,7 @@ public class SplashActivity extends BaseMvpActivity<SplashPresenter> implements 
      */
     public void startLogin(GetAppMinetBaseDataBean bean){
         if(bean.getData()==null){
+            startActivity(new Intent(SplashActivity.this, LoginActivity.class));
             ToastUtil.toastLongMessage("系统错误！");
             return;
         }

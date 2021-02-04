@@ -9,6 +9,8 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import com.xiaoshanghai.nancang.R;
 import com.xiaoshanghai.nancang.base.BaseMvpFragment;
 import com.xiaoshanghai.nancang.base.BasePresenter;
+import com.xiaoshanghai.nancang.bean.HallMessage;
+import com.xiaoshanghai.nancang.bean.MessageWrap;
 import com.xiaoshanghai.nancang.constant.Constant;
 import com.xiaoshanghai.nancang.constant.URLConstant;
 import com.xiaoshanghai.nancang.helper.ChatLayoutHelper;
@@ -26,6 +28,11 @@ import com.tencent.qcloud.tim.uikit.modules.chat.layout.message.MessageListAdapt
 import com.tencent.qcloud.tim.uikit.modules.group.info.GroupInfo;
 import com.tencent.qcloud.tim.uikit.modules.message.MessageInfo;
 import com.tencent.qcloud.tim.uikit.utils.ToastUtil;
+import com.xiaoshanghai.nancang.utils.SPUtils;
+
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -34,7 +41,6 @@ public class HallFragment extends BaseMvpFragment implements GroupChatManagerKit
 
     @BindView(R.id.chat_message_layout)
     MessageLayout mChatMessage;
-
 
     private GroupChatManagerKit mGroupChatManager;
 
@@ -48,6 +54,7 @@ public class HallFragment extends BaseMvpFragment implements GroupChatManagerKit
 
     @Override
     public void initView(Bundle savedInstanceState) {
+        EventBus.getDefault().register(this);
         LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity()) {
             @Override
             public boolean canScrollVertically() {
@@ -88,6 +95,17 @@ public class HallFragment extends BaseMvpFragment implements GroupChatManagerKit
         loadChatMessages(null);
 
     }
+    //刷新公聊大厅
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void onMessageEvent(HallMessage event) {
+        mGroupChatManager = GroupChatManagerKit.getInstance();
+        mGroupChatManager.setGroupHandler(this);
+        GroupInfo groupInfo = new GroupInfo();
+        groupInfo.setId(Constant.PUBLIC_CHAT_GROUP_ID);
+        groupInfo.setChatName("公聊大厅");
+        mGroupChatManager.setCurrentChatInfo(groupInfo);
+        loadChatMessages(null);
+    }
     public void loadChatMessages(final MessageInfo lastMessage) {
         mGroupChatManager.loadChatMessages(lastMessage, new IUIKitCallBack() {
             @Override
@@ -108,10 +126,9 @@ public class HallFragment extends BaseMvpFragment implements GroupChatManagerKit
     }
 
     public void setDataProvider(IChatProvider provider) {
-
         if (mAdapter != null) {
             mAdapter.setDataSource(provider);
-            mGroupChatManager.setLastMessageInfo(mAdapter.getItemCount() > 0 ? mAdapter.getItem(1) : null);
+                mGroupChatManager.setLastMessageInfo(mAdapter.getItemCount() > 0 ? mAdapter.getItem(1) : null);
         }
     }
 
@@ -166,4 +183,9 @@ public class HallFragment extends BaseMvpFragment implements GroupChatManagerKit
         }
     }
 
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        EventBus.getDefault().unregister(this);
+    }
 }

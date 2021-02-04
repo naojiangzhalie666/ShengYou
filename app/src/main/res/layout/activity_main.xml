@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
 
     <FrameLayout
@@ -9,9 +10,17 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1" />
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dp_55">
+
+
 
     <RadioGroup
+
         android:id="@+id/rgGroup"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp_55"
         android:background="@color/color_191919"
@@ -88,4 +97,20 @@
             android:drawableTop="@drawable/rb_tab_four"
             android:gravity="center"/>
     </RadioGroup>
+    <TextView
+        android:visibility="gone"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="@dimen/dp_5"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:id="@+id/tv_notice_num"
+        android:paddingVertical="@dimen/dp_2"
+        android:paddingHorizontal="@dimen/dp_3"
+        android:layout_marginEnd="@dimen/dp_100"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_r20_r_bg"
+        android:text="11"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp_8" />
+</androidx.constraintlayout.widget.ConstraintLayout>
 </LinearLayout>

@@ -38,25 +38,13 @@ public class NewsPresenter extends BasePresenter<NewsContract.View> implements N
         // 会话列表面板的默认UI和交互初始化
         mConversationLayout.initDefault();
         mConversationLayout.getTitleBar().setVisibility(View.GONE);
-
         // 通过API设置ConversataonLayout各种属性的样例，开发者可以打开注释，体验效果
         ConversationLayoutHelper.customizeConversation(mConversationLayout);
-        mConversationLayout.getConversationList().setOnItemClickListener(new ConversationListLayout.OnItemClickListener() {
-            @Override
-            public void onItemClick(View view, int position, ConversationInfo conversationInfo) {
-                //此处为demo的实现逻辑，更根据会话类型跳转到相关界面，开发者可根据自己的应用场景灵活实现
-                startChatActivity(conversationInfo);
-            }
+        mConversationLayout.getConversationList().setOnItemClickListener((view, position, conversationInfo) -> {
+            //此处为demo的实现逻辑，更根据会话类型跳转到相关界面，开发者可根据自己的应用场景灵活实现
+            startChatActivity(conversationInfo);
         });
-        mConversationLayout.getConversationList().setOnItemLongClickListener(new ConversationListLayout.OnItemLongClickListener() {
-            @Override
-            public void OnItemLongClick(View view, int position, ConversationInfo conversationInfo) {
-
-
-                startPopShow(position, mConversationLayout, conversationInfo);
-
-            }
-        });
+        mConversationLayout.getConversationList().setOnItemLongClickListener((view, position, conversationInfo) -> startPopShow(position, mConversationLayout, conversationInfo));
     }
 
     @Override

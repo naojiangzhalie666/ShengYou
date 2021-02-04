@@ -382,7 +382,6 @@ public abstract class ChatManagerKit extends V2TIMAdvancedMsgListener implements
         } else {
             lastTIMMsg = lastMessage.getTimMessage();
         }
-//        final int unread = (int) mCurrentConversation.getUnreadMessageNum();
         final ChatInfo chatInfo = getCurrentChatInfo();
         if (chatInfo.getType() == V2TIMConversation.V2TIM_C2C) {
             V2TIMManager.getMessageManager().getC2CHistoryMessageList(chatInfo.getId(), MSG_PAGE_COUNT, lastTIMMsg, new V2TIMValueCallback<List<V2TIMMessage>>() {

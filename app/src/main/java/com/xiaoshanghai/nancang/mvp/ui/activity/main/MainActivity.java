@@ -14,6 +14,10 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import com.tencent.imsdk.TIMConversation;
+import com.tencent.imsdk.TIMConversationType;
+import com.tencent.imsdk.TIMManager;
+import com.tencent.imsdk.v2.V2TIMFriendshipManager;
 import com.xiaoshanghai.nancang.R;
 import com.xiaoshanghai.nancang.base.BaseMvpActivity;
 import com.xiaoshanghai.nancang.base.BaseMvpFragment;
@@ -146,12 +150,13 @@ public class MainActivity extends BaseMvpActivity<MainPresenter> implements Main
         if (userInfo != null) {
             EventBusUtil.sendEvent(new Event(EventConstant.LOGIN_SUCCESS));
         }
-//        mHomeFragment = new HomeFragment();
         mSquareFragment = new SquareFragment();
         replace(mSquareFragment);
-
-//        mPresenter.getTeensStatus(SPUtils.getInstance().getUserInfo().getId());
         getAppTopic();
+//        //获取会话扩展实例
+//        TIMConversation con = TIMManager.getInstance().getConversation(TIMConversationType.C2C, );
+//        //获取会话未读数
+//        long num = con.getUnreadMessageNum();
     }
 
     private void showEasyFloat(String photoUrl) {
