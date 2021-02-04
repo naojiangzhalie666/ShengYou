@@ -46,7 +46,7 @@ public class BaseApplication extends Application {
     public static String  latitude="30.49347";
     public static String longitude="114.410726";
     public static String HTTP_BASE_URL = BuildConfig.APP_BASE_URL;
-
+    public static boolean sexStatus=false;
     private static Context application;
 
     private static IWXAPI api;

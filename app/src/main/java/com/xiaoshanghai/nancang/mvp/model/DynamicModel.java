@@ -1,5 +1,6 @@
 package com.xiaoshanghai.nancang.mvp.model;
 
+import com.xiaoshanghai.nancang.base.BaseApplication;
 import com.xiaoshanghai.nancang.mvp.contract.DynamicContract;
 import com.xiaoshanghai.nancang.net.HttpClient;
 import com.xiaoshanghai.nancang.net.HttpObservable;
@@ -14,7 +15,11 @@ public class DynamicModel implements DynamicContract.Model {
 
     @Override
     public HttpObservable<BaseResponse<HomeRoomResult<List<FriendsCircleResult>>>> getFriendsCircle(String current, String size, String userId) {
-        return HttpClient.getApi().getFriendsCircle(current, size, userId, SPUtils.getInstance().getUserInfo().getUserSex()+"");
+       if(    BaseApplication.sexStatus=false) {
+           return HttpClient.getApi().getFriendsCircle(current, size, userId, SPUtils.getInstance().getUserInfo().getUserSex() + "");
+       }else {
+           return HttpClient.getApi().getFriendsCircle(current, size, userId);
+       }
     }
 
     @Override

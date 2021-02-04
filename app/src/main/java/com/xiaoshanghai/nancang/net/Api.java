@@ -242,7 +242,18 @@ public interface Api {
                                                                                              @Field("size") String size,
                                                                                              @Field("userId") String userId,
                                                                                              @Field("userSex") String userSex);
-
+    /**
+     * 获取推荐朋友圈
+     *
+     * @param current
+     * @param size
+     * @return
+     */
+    @POST("app_topic/query_all")
+    @FormUrlEncoded
+    HttpObservable<BaseResponse<HomeRoomResult<List<FriendsCircleResult>>>> getFriendsCircle(@Field("current") String current,
+                                                                                             @Field("size") String size,
+                                                                                             @Field("userId") String userId);
     /**
      * 获取关注朋友圈
      *

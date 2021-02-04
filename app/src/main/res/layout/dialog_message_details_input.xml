@@ -51,7 +51,7 @@
                 android:id="@+id/confrim_btn"
                 android:layout_width="50dp"
                 android:layout_height="30dp"
-                android:background="@drawable/shape_button_rounded_reg_select"
+                android:background="@drawable/shape_button_rounded_reg_select1"
                 android:gravity="center"
                 android:text="@string/trtcvoiceroom_send"
                 android:textColor="@color/colorWhite" />

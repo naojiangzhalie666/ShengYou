@@ -17,8 +17,19 @@ import androidx.fragment.app.FragmentTransaction;
 import com.tencent.imsdk.TIMConversation;
 import com.tencent.imsdk.TIMConversationType;
 import com.tencent.imsdk.TIMManager;
+import com.tencent.imsdk.v2.V2TIMConversation;
+import com.tencent.imsdk.v2.V2TIMConversationListener;
+import com.tencent.imsdk.v2.V2TIMConversationResult;
 import com.tencent.imsdk.v2.V2TIMFriendshipManager;
+import com.tencent.imsdk.v2.V2TIMManager;
+import com.tencent.imsdk.v2.V2TIMValueCallback;
+import com.tencent.qcloud.tim.uikit.base.IMEventListener;
+import com.tencent.qcloud.tim.uikit.modules.conversation.ConversationManagerKit;
+import com.tencent.qcloud.tim.uikit.modules.conversation.base.ConversationInfo;
+import com.tencent.qcloud.tim.uikit.utils.SharedPreferenceUtils;
+import com.tencent.qcloud.tim.uikit.utils.TUIKitLog;
 import com.xiaoshanghai.nancang.R;
+import com.xiaoshanghai.nancang.base.BaseApplication;
 import com.xiaoshanghai.nancang.base.BaseMvpActivity;
 import com.xiaoshanghai.nancang.base.BaseMvpFragment;
 import com.xiaoshanghai.nancang.constant.Constant;
@@ -51,6 +62,7 @@ import com.lzf.easyfloat.enums.ShowPattern;
 import com.lzf.easyfloat.enums.SidePattern;
 import com.tencent.liteav.trtcvoiceroom.model.TRTCVoiceRoom;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
@@ -73,7 +85,8 @@ public class MainActivity extends BaseMvpActivity<MainPresenter> implements Main
     RadioButton rbMsg;
     @BindView(R.id.rbMine)
     RadioButton rbMine;
-
+    @BindView(R.id.tv_notice_num)
+    TextView tvNoticeBum;
     private HomeFragment mHomeFragment;
     private SquareFragment mSquareFragment;
     private MsgFragment mMsgFragment;
@@ -153,10 +166,57 @@ public class MainActivity extends BaseMvpActivity<MainPresenter> implements Main
         mSquareFragment = new SquareFragment();
         replace(mSquareFragment);
         getAppTopic();
-//        //获取会话扩展实例
-//        TIMConversation con = TIMManager.getInstance().getConversation(TIMConversationType.C2C, );
-//        //获取会话未读数
-//        long num = con.getUnreadMessageNum();
+        V2TIMManager.getConversationManager().getConversationList(0, 100, new V2TIMValueCallback<V2TIMConversationResult>() {
+            @Override
+            public void onError(int code, String desc) {
+            }
+
+            @Override
+            public void onSuccess(V2TIMConversationResult v2TIMConversationResult) {
+                List<V2TIMConversation> v2TIMConversationList = v2TIMConversationResult.getConversationList();
+                if(getNum(v2TIMConversationList)==0){
+                    tvNoticeBum.setVisibility(View.GONE);
+                }else {
+                    tvNoticeBum.setVisibility(View.VISIBLE);
+                    tvNoticeBum.setText(getNum(v2TIMConversationList)+"");
+                }
+            }
+        });
+        V2TIMManager.getConversationManager().setConversationListener(new V2TIMConversationListener() {
+            @Override
+            public void onSyncServerStart() {
+                super.onSyncServerStart();
+            }
+
+            @Override
+            public void onSyncServerFinish() {
+                super.onSyncServerFinish();
+            }
+
+            @Override
+            public void onSyncServerFailed() {
+                super.onSyncServerFailed();
+            }
+
+            @Override
+            public void onNewConversation(List<V2TIMConversation> conversationList) {
+                 if(getNum(conversationList)==0){
+                     tvNoticeBum.setVisibility(View.GONE);
+                 }else {
+                     tvNoticeBum.setVisibility(View.VISIBLE);
+                     tvNoticeBum.setText(getNum(conversationList)+"");
+                 }
+            }
+            @Override
+            public void onConversationChanged(List<V2TIMConversation> conversationList) {
+                if(getNum(conversationList)==0){
+                    tvNoticeBum.setVisibility(View.GONE);
+                }else {
+                    tvNoticeBum.setVisibility(View.VISIBLE);
+                    tvNoticeBum.setText(getNum(conversationList)+"");
+                }
+            }
+        });
     }
 
     private void showEasyFloat(String photoUrl) {
@@ -249,6 +309,7 @@ public class MainActivity extends BaseMvpActivity<MainPresenter> implements Main
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.rbHome:
+                BaseApplication.sexStatus=false;
                 if (mSquareFragment == null)
                     mSquareFragment = new SquareFragment();
                 replace(mSquareFragment);
@@ -345,4 +406,11 @@ public class MainActivity extends BaseMvpActivity<MainPresenter> implements Main
                 });
     }
 
+    private int getNum(List<V2TIMConversation> conversationList){
+          int messageNum=0;
+           for (int i=0;i<conversationList.size();i++){
+               messageNum=messageNum+conversationList.get(i).getUnreadCount();
+           }
+          return messageNum;
+    }
 }

@@ -12,6 +12,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 
 import com.xiaoshanghai.nancang.R;
+import com.xiaoshanghai.nancang.base.BaseApplication;
 import com.xiaoshanghai.nancang.base.BaseMvpFragment;
 import com.xiaoshanghai.nancang.constant.CacheConstant;
 import com.xiaoshanghai.nancang.constant.Constant;
@@ -218,6 +219,7 @@ public class MineFragment extends BaseMvpFragment<MinePresenter> implements Mine
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.tv_user_info:
+                BaseApplication.sexStatus=true;
                 Bundle bundle = new Bundle();
                 bundle.putString(Constant.USER_ID, SPUtils.getInstance().getUserInfo().getId());
                 ActStartUtils.startAct(getActivity(), HomePageAct.class, bundle);

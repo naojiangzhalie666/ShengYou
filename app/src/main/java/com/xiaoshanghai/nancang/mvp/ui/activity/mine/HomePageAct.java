@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -15,6 +16,7 @@ import androidx.viewpager.widget.ViewPager;
 import com.github.mmin18.widget.RealtimeBlurView;
 import com.google.android.material.appbar.AppBarLayout;
 import com.xiaoshanghai.nancang.R;
+import com.xiaoshanghai.nancang.base.BaseApplication;
 import com.xiaoshanghai.nancang.base.BaseMvpActivity;
 import com.xiaoshanghai.nancang.callback.AppBarStateChangeListener;
 import com.xiaoshanghai.nancang.callback.TitleBarClickCallback;
@@ -405,6 +407,7 @@ public class HomePageAct extends BaseMvpActivity<HomePagePresenter> implements H
 
     @Override
     public void titleLeftClick() {
+        BaseApplication.sexStatus=false;
         finish();
     }
 
@@ -506,5 +509,12 @@ public class HomePageAct extends BaseMvpActivity<HomePagePresenter> implements H
     protected void onDestroy() {
         super.onDestroy();
         isFrist = false;
+    }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        BaseApplication.sexStatus=false;
+        finish();
+        return true;
     }
 }
