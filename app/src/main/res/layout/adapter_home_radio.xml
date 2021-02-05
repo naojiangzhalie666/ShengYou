@@ -2,7 +2,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools">
 
 
     <com.xiaoshanghai.nancang.view.CircleImageView
@@ -46,18 +47,37 @@
         app:layout_constraintEnd_toStartOf="@id/tv_num"
         app:layout_constraintTop_toTopOf="@id/tv_num" />
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_marginTop="@dimen/dp_5"
+        android:layout_below="@id/civ_room"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/itemRoom"
+            android:layout_width="wrap_content"
+            android:text="语音房"
+            android:paddingVertical="@dimen/dp_2"
+            android:paddingHorizontal="@dimen/dp_5"
+            android:background="@drawable/shape_car_bg1"
+            android:textSize="@dimen/sp_14"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_height="wrap_content"/>
 
     <TextView
+        android:layout_marginLeft="@dimen/dp_5"
+        app:layout_constraintLeft_toRightOf="@+id/itemRoom"
+        app:layout_constraintTop_toTopOf="parent"
         android:id="@+id/tv_room_name"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/civ_room"
-        android:layout_marginTop="@dimen/dp_14"
         android:maxLines="2"
-        android:textColor="@color/color_484848"
+        tools:text="ddddddddd"
+        android:textColor="@color/black"
         android:textSize="@dimen/sp_16"
-        app:layout_constraintTop_toBottomOf="@id/civ_room" />
-
+       />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <!--    </RelativeLayout>-->
 

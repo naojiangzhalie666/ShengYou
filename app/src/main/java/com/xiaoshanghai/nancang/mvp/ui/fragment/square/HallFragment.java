@@ -34,6 +34,9 @@ import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
 
+import java.util.Timer;
+import java.util.TimerTask;
+
 import butterknife.BindView;
 import butterknife.OnClick;
 
@@ -93,7 +96,7 @@ public class HallFragment extends BaseMvpFragment implements GroupChatManagerKit
         groupInfo.setChatName("公聊大厅");
         mGroupChatManager.setCurrentChatInfo(groupInfo);
         loadChatMessages(null);
-
+        scheduleTimeout();
     }
     //刷新公聊大厅
     @Subscribe(threadMode = ThreadMode.MAIN)
@@ -106,6 +109,19 @@ public class HallFragment extends BaseMvpFragment implements GroupChatManagerKit
         mGroupChatManager.setCurrentChatInfo(groupInfo);
         loadChatMessages(null);
     }
+    Timer timer = new Timer();
+    private TimerTask timeoutTask = new TimerTask() {
+        @Override
+        public void run() {
+            mGroupChatManager = GroupChatManagerKit.getInstance();
+            mGroupChatManager.setGroupHandler(HallFragment.this);
+            GroupInfo groupInfo = new GroupInfo();
+            groupInfo.setId(Constant.PUBLIC_CHAT_GROUP_ID);
+            groupInfo.setChatName("公聊大厅");
+            mGroupChatManager.setCurrentChatInfo(groupInfo);
+            loadChatMessages(null);
+        }
+    };
     public void loadChatMessages(final MessageInfo lastMessage) {
         mGroupChatManager.loadChatMessages(lastMessage, new IUIKitCallBack() {
             @Override
@@ -187,5 +203,15 @@ public class HallFragment extends BaseMvpFragment implements GroupChatManagerKit
     public void onDestroy() {
         super.onDestroy();
         EventBus.getDefault().unregister(this);
+        cancel();
+    }
+    public void scheduleTimeout(){
+        timer.schedule(timeoutTask,3000);
+    }
+
+    public void cancel(){
+        //timer cancel后不能再次调用schedule方法，需要重新创建，所以可以调用task.cancel方法取消任务
+        //timer.cancel();
+        timeoutTask.cancel();
     }
 }

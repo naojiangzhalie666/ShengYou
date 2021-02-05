@@ -30,29 +30,8 @@ public class HomeRadioAdapter extends BaseQuickAdapter<RoomResult, HomeRadioAdap
 
     @Override
     protected void convert(@NotNull HomeRadioHolder holder, RoomResult s) {
-
-
-        int width = getContext().getResources().getDisplayMetrics().widthPixels;
-        width = width / 30;
-
-        int length = s.getRoomTypeName().trim().length();
-        if (s.getRoomTypeName() != null&&s.getRoomTypeColor()!=null) {
-            Drawable drawable = TextDrawable.builder()
-                    .beginConfig()
-                    .width((length + 1) * width)  // width in px
-                    .height(ScreenUtils.dp2px(getContext(), 18)) // height in px
-                    .textColor(Color.parseColor("#ffffff"))
-                    .fontSize(ScreenUtils.dp2px(getContext(), 12))
-                    .endConfig()
-                    .buildRoundRect(s.getRoomTypeName(), Color.parseColor(s.getRoomTypeColor()), ScreenUtils.dp2px(getContext(), 10));
-
-        drawable.setBounds(0, 0, drawable.getMinimumWidth(), drawable.getMinimumHeight());
-
-        setTextStyle(s.getRoomName(), drawable, holder.mTvName);
-        }
+        holder.mTvName.setText(s.getRoomName());
         GlideAppUtil.loadImage(getContext(), s.getUserPictureUrl(), holder.mCivRoom);
-
-
         Glide.with(getContext()).asGif().load(R.mipmap.icon_home_flag).into(holder.mIvFlag);
         holder.mTvNum.setText(s.getPersonCount() + "");
 
