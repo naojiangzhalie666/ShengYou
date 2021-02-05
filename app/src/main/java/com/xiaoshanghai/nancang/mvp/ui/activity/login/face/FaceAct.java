@@ -218,7 +218,9 @@ public class FaceAct extends BaseActivity  implements View.OnClickListener {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        setResult(100,data);
-        finish();
+        if(requestCode==100&&resultCode==100) {
+            setResult(100, data);
+            finish();
+        }
     }
 }

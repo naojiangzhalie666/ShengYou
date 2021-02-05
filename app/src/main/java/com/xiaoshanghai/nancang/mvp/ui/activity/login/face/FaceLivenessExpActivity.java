@@ -191,7 +191,7 @@ public class FaceLivenessExpActivity extends FaceLivenessActivity implements
                     getUpdateAuthentication();
                     }else {
                         ToastUtils.showLong("性别不符！");
-                        setResult(100);
+                        setResult(50);
                         finish();
                     }
                 }else {
