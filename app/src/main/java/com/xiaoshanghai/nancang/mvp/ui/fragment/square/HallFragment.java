@@ -10,7 +10,6 @@ import com.xiaoshanghai.nancang.R;
 import com.xiaoshanghai.nancang.base.BaseMvpFragment;
 import com.xiaoshanghai.nancang.base.BasePresenter;
 import com.xiaoshanghai.nancang.bean.HallMessage;
-import com.xiaoshanghai.nancang.bean.MessageWrap;
 import com.xiaoshanghai.nancang.constant.Constant;
 import com.xiaoshanghai.nancang.constant.URLConstant;
 import com.xiaoshanghai.nancang.helper.ChatLayoutHelper;
@@ -28,7 +27,6 @@ import com.tencent.qcloud.tim.uikit.modules.chat.layout.message.MessageListAdapt
 import com.tencent.qcloud.tim.uikit.modules.group.info.GroupInfo;
 import com.tencent.qcloud.tim.uikit.modules.message.MessageInfo;
 import com.tencent.qcloud.tim.uikit.utils.ToastUtil;
-import com.xiaoshanghai.nancang.utils.SPUtils;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;

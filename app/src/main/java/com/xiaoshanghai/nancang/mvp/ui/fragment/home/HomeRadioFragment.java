@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -74,8 +75,8 @@ public class HomeRadioFragment extends BaseMvpFragment<HomeRadioPresenter> imple
     @Override
     protected void onLazyLoad() {
         mAdapter = new HomeRadioAdapter();
-//        rlView.setLayoutManager(new GridLayoutManager(getActivity(), 2));
-        rlView.setLayoutManager(new LinearLayoutManager(getActivity()));
+        rlView.setLayoutManager(new GridLayoutManager(getActivity(), 2));
+//        rlView.setLayoutManager(new LinearLayoutManager(getActivity()));
         rlView.addItemDecoration(new HomeGridDecoration(25,26,30,30,2));
         rlView.setAdapter(mAdapter);
 
