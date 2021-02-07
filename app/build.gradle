@@ -22,8 +22,8 @@ android {
         }
         //腾讯im配置
         manifestPlaceholders = [
-                XG_ACCESS_ID : "1500017275",
-                XG_ACCESS_KEY : "ACW9KUCQNEXO",
+                XG_ACCESS_ID : "1500017280",
+                XG_ACCESS_KEY : "AU8Z6B9WHFAF",
         ]
     }
 //    MD5: 9F:A8:47:39:0F:05:95:2D:79:CE:F5:28:21:4D:D3:3B

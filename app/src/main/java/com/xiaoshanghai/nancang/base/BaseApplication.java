@@ -46,7 +46,7 @@ import java.util.Set;
 
 
 public class BaseApplication extends Application {
-    public static String city="北京市";
+    public static String city="南昌市";
     public static String  latitude="30.49347";
     public static String longitude="114.410726";
     public static String HTTP_BASE_URL = BuildConfig.APP_BASE_URL;
