@@ -74,6 +74,7 @@ public class SplashActivity extends BaseMvpActivity<SplashPresenter> implements 
                     BaseApplication.longitude=amapLocation.getLongitude()+"";
                     AMapLocationTools.INSTANCE.stopLocation();
                 } else {
+                    ToastUtils.showLong("定位失败,请刷新重试！");
                     //定位失败时，可通过ErrCode（错误码）信息来确定失败的原因，errInfo是错误信息，详见错误码表。
                     Log.e("aa", "------location Error, ErrCode:"
                             + amapLocation.getErrorCode() + ", errInfo:"
