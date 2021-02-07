@@ -18,7 +18,7 @@ buildscript {
     dependencies {
         classpath 'com.android.tools.build:gradle:4.1.2'
 //        classpath 'com.android.tools.build:gradle:3.4.1'
-
+        classpath "com.tencent.android.tpns:tpnsplugin:1.7.0" //tpns集成插件
         //添加plugin
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
         // NOTE: Do not place your application dependencies here; they belong
@@ -28,7 +28,7 @@ buildscript {
 
 allprojects {
     repositories {
-
+        maven {url 'http://developer.huawei.com/repo/'} // 华为仓，如果不集成华为可以不加
         maven { url 'https://maven.aliyun.com/repository/public/' }
         maven { url 'https://maven.aliyun.com/repository/google/' }
         maven { url 'https://maven.aliyun.com/repository/jcenter' }

@@ -1,0 +1,13 @@
+{
+    "tpns": {
+        "access_id": "1500017280",
+        "access_key": "AU8Z6B9WHFAF"
+    },
+    "com.xiaoshanghai.nancang": {
+        "channel": {
+            "enable": true
+        }
+    },
+    "debug": false,
+    "version": "1.2.3.1"
+}

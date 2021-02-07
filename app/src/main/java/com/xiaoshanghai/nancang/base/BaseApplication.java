@@ -5,8 +5,12 @@ import android.app.Application;
 import android.content.Context;
 import android.net.http.HttpResponseCache;
 import android.text.TextUtils;
+import android.util.Log;
 
 import com.baidu.idl.face.platform.LivenessTypeEnum;
+import com.tencent.android.tpush.XGIOperateCallback;
+import com.tencent.android.tpush.XGPushConfig;
+import com.tencent.android.tpush.XGPushManager;
 import com.xiaoshanghai.nancang.BuildConfig;
 import com.xiaoshanghai.nancang.R;
 import com.xiaoshanghai.nancang.constant.Const;
@@ -55,6 +59,20 @@ public class BaseApplication extends Application {
     public void onCreate() {
         super.onCreate();
         application = this;
+        XGPushConfig.enableDebug(this,true);
+        XGPushConfig.enablePullUpOtherApp(this,false);
+        XGPushManager.registerPush(this, new XGIOperateCallback() {
+            @Override
+            public void onSuccess(Object data, int flag) {
+                //token在设备卸载重装的时候有可能会变
+                Log.e("aa", "-----注册成功，设备token为：" + data);
+            }
+
+            @Override
+            public void onFail(Object data, int errCode, String msg) {
+                Log.e("aa", "-------注册失败，错误码：" + errCode + ",错误信息：" + msg);
+            }
+        });
         initSVAG();
         initWeChat();
         createNormalRefreshHeader();
