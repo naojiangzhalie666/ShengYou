@@ -3,6 +3,7 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 apply plugin: "com.tencent.android.tpns"
+apply plugin: 'com.huawei.agconnect'      // HMS SDK gradle 插件
 def releaseTime() {
     return new Date().format("yyyy-MM-dd", TimeZone.getTimeZone("GMT+08"))
 }
@@ -175,4 +176,7 @@ dependencies {
     //腾讯推送
     implementation 'com.tencent.jg:jg:1.1'
     implementation 'com.tencent.tpns:tpns:1.2.3.1-release'
+    implementation 'com.tencent.tpns:huawei:1.2.3.1-release'      //  华为推送 [VERSION] 为当前最新 SDK 版本号，版本号可在 Android SDK 发布动态 查看
+    implementation 'com.huawei.hms:push:5.0.2.300'       // HMS Core Push 模块依赖
+    implementation 'com.tencent.tpns:xiaomi:1.2.3.1-release'//小米推送 [VERSION] 为当前 SDK 版本号，版本号可在 Android SDK 发布动态查看
 }

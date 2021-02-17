@@ -5,7 +5,14 @@
     },
     "com.xiaoshanghai.nancang": {
         "channel": {
-            "enable": true
+            "enable": true,
+            "huawei": {
+                "app_id": "103587683"
+            },
+            "xiaomi": {
+                "app_id": "2882303761518945412",
+                "app_key": "5211894513412"
+            }
         }
     },
     "debug": false,

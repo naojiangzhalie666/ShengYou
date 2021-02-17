@@ -4,11 +4,16 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 
+import com.tencent.android.tpush.XGIOperateCallback;
+import com.tencent.android.tpush.XGPushManager;
+import com.tencent.qcloud.tim.uikit.utils.ToastUtil;
 import com.xiaoshanghai.nancang.R;
 import com.xiaoshanghai.nancang.constant.Constant;
 import com.xiaoshanghai.nancang.constant.LoginStatus;
 import com.xiaoshanghai.nancang.constant.URLConstant;
+import com.xiaoshanghai.nancang.mvp.ui.activity.SplashActivity;
 import com.xiaoshanghai.nancang.mvp.ui.activity.login.RegisterActivity;
 import com.xiaoshanghai.nancang.mvp.ui.activity.login.face.LoginPayAct;
 import com.xiaoshanghai.nancang.mvp.ui.activity.main.MainActivity;
@@ -78,6 +83,23 @@ public class ActStartUtils {
 
     public static void loginStartAct(Activity activity, LogonResult result, Bundle bundle) {
         if (result == null) return;
+        Log.e("aa","------------userid===="+result.getUser().getId());
+        XGPushManager.clearAndAppendAccount(activity,result.getUser().getId(), XGPushManager.AccountType.PHONE_NUMBER.getValue(),new XGIOperateCallback(){
+            @Override
+            public void onSuccess(Object o, int i) {
+                Log.e("aa","----------i==="+i);
+                loginStartAct1(activity,result,bundle);
+            }
+            @Override
+            public void onFail(Object o, int i, String s) {
+                ToastUtil.toastLongMessage("绑定账号失败请重试！");
+            }
+        });
+
+
+    }
+    public static void loginStartAct1(Activity activity, LogonResult result, Bundle bundle) {
+
         switch (LoginStatus.getValue(result.getStatus())) {
             //状态，1成功 2账号冻结 3密码错误 4用户不存在 5验证码错误 6手机号为空 7密码为空 8验证码为空 9验证码超时
             case SUCCESS:   //成功
@@ -110,9 +132,7 @@ public class ActStartUtils {
                 break;
 
         }
-
     }
-
     public static void webActStart(Activity activity,String type) {
         switch (type) {
             case Constant.PRIVACY:  //隐私政策

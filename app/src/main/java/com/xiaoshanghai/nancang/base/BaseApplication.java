@@ -59,8 +59,12 @@ public class BaseApplication extends Application {
     public void onCreate() {
         super.onCreate();
         application = this;
+        //打开第三方推送
         XGPushConfig.enableDebug(this,true);
         XGPushConfig.enablePullUpOtherApp(this,false);
+        XGPushConfig.setMiPushAppId(getApplicationContext(), "2882303761518945412");
+        XGPushConfig.setMiPushAppKey(getApplicationContext(), "5211894513412");
+        XGPushConfig.enableOtherPush(getApplicationContext(), true);
         XGPushManager.registerPush(this, new XGIOperateCallback() {
             @Override
             public void onSuccess(Object data, int flag) {

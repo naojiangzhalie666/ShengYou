@@ -12,6 +12,8 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
 import com.google.gson.Gson;
+import com.tencent.android.tpush.XGIOperateCallback;
+import com.tencent.android.tpush.XGPushManager;
 import com.tencent.qcloud.tim.uikit.utils.ToastUtil;
 import com.xiaoshanghai.nancang.R;
 import com.xiaoshanghai.nancang.base.BaseApplication;
@@ -210,8 +212,20 @@ public class SplashActivity extends BaseMvpActivity<SplashPresenter> implements 
             startActivityForResult(new Intent(this, LoginPayAct.class),50);
             return;
         }
-        startActivity(new Intent (this,MainActivity.class));
-        finish();
+        Log.e("aa","------------userid===="+ bean.getData().getId());
+        XGPushManager.clearAndAppendAccount(this,bean.getData().getId(), XGPushManager.AccountType.PHONE_NUMBER.getValue(),new XGIOperateCallback(){
+            @Override
+            public void onSuccess(Object o, int i) {
+                Log.e("aa","----------i==="+i);
+                startActivity(new Intent (SplashActivity.this,MainActivity.class));
+                finish();
+            }
+            @Override
+            public void onFail(Object o, int i, String s) {
+                ToastUtil.toastLongMessage("绑定账号失败请重试！");
+            }
+        });
+
     }
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @androidx.annotation.Nullable Intent data) {
