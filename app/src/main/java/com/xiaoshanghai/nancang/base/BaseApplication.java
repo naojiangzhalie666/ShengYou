@@ -65,18 +65,18 @@ public class BaseApplication extends Application {
         XGPushConfig.setMiPushAppId(getApplicationContext(), "2882303761518945412");
         XGPushConfig.setMiPushAppKey(getApplicationContext(), "5211894513412");
         XGPushConfig.enableOtherPush(getApplicationContext(), true);
-        XGPushManager.registerPush(this, new XGIOperateCallback() {
-            @Override
-            public void onSuccess(Object data, int flag) {
-                //token在设备卸载重装的时候有可能会变
-                Log.e("aa", "-----注册成功，设备token为：" + data);
-            }
-
-            @Override
-            public void onFail(Object data, int errCode, String msg) {
-                Log.e("aa", "-------注册失败，错误码：" + errCode + ",错误信息：" + msg);
-            }
-        });
+//        XGPushManager.registerPush(this, new XGIOperateCallback() {
+//            @Override
+//            public void onSuccess(Object data, int flag) {
+//                //token在设备卸载重装的时候有可能会变
+//                Log.e("aa", "-----注册成功，设备token为：" + data);
+//            }
+//
+//            @Override
+//            public void onFail(Object data, int errCode, String msg) {
+//                Log.e("aa", "-------注册失败，错误码：" + errCode + ",错误信息：" + msg);
+//            }
+//        });
         initSVAG();
         initWeChat();
         createNormalRefreshHeader();

@@ -213,7 +213,7 @@ public class SplashActivity extends BaseMvpActivity<SplashPresenter> implements 
             return;
         }
         Log.e("aa","------------userid===="+ bean.getData().getId());
-        XGPushManager.clearAndAppendAccount(this,bean.getData().getId(), XGPushManager.AccountType.PHONE_NUMBER.getValue(),new XGIOperateCallback(){
+        XGPushManager.clearAndAppendAccount(this,bean.getData().getId(), XGPushManager.AccountType.WX_OPEN_ID.getValue(),new XGIOperateCallback(){
             @Override
             public void onSuccess(Object o, int i) {
                 Log.e("aa","----------i==="+i);

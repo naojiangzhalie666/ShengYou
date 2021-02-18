@@ -49,11 +49,11 @@ public class GuideAct extends BaseActivity implements GuideCallback {
         GuidBean guidaOne = new GuidBean(0, R.drawable.img_guid_1);
         GuidBean guidaTwo = new GuidBean(1, R.drawable.img_guid_2);
         GuidBean guidaThree = new GuidBean(2, R.drawable.img_guid_3);
-
+        GuidBean guidaThree4 = new GuidBean(3, R.drawable.img_guid_4);
         mGuids.add(guidaOne);
         mGuids.add(guidaTwo);
         mGuids.add(guidaThree);
-
+        mGuids.add(guidaThree4);
         mAdapter = new GuideAdapter(this, mGuids,this);
 
         initBanner();
