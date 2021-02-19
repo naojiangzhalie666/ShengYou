@@ -40,7 +40,7 @@ public class GuideAdapter extends BannerAdapter<GuidBean, GuideAdapter.Holder> {
         GlideAppUtil.loadImage(mContext, data.getGuidaImage(), holder.mIvBg);
 
         holder.mClickView.setOnClickListener(view -> {
-           if (data.getIndex() == 2){
+           if (data.getIndex() == 3){
                if (mCallback!=null) {
                    mCallback.onEnterClick();
                }
